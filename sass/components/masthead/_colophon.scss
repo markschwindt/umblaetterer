@@ -42,7 +42,7 @@
 	padding-bottom: clamp(1.5rem, 3vw, 2.2rem);
 }
 
-.colophon > * {
+.colophon>* {
 	/*
 	 * No block is split across a column boundary. A widget cut in half reads
 	 * as two half-finished widgets, and the reader has no way to tell that the
@@ -61,7 +61,7 @@
 
 /* What must not break: a heading away from its list, or a line away from
    itself. */
-.colophon__block > .widget-title,
+.colophon__block>.widget-title,
 .colophon__title {
 	break-after: avoid;
 }
@@ -73,7 +73,7 @@
 
 /* --- Inside a cell ------------------------------------------------------- */
 
-.colophon__block > .widget-title,
+.colophon__block>.widget-title,
 .colophon__title {
 	@include kicker(0.7rem, 0.18em, 600);
 
@@ -136,11 +136,16 @@
  * It is not broken: it is one block, entire, across the top. What remains
  * balances across all four columns beneath it, which is the point.
  */
-.colophon > :has(li:nth-child(40)) {
+.colophon> :has(li:nth-child(40)) {
+	/* Ruled off from the four columns beneath it, so the band reads as its own
+	   register rather than as a widget that happens to be very wide. */
+	border-bottom: 1px solid var(--rule);
 	column-span: all;
+	margin-bottom: clamp(1.4rem, 3vw, 2rem);
+	padding-bottom: clamp(1.1rem, 2.5vw, 1.6rem);
 }
 
-.colophon > :has(li:nth-child(40)) ul {
+.colophon> :has(li:nth-child(40)) ul {
 	column-gap: 1.6rem;
 	column-width: 11rem;
 }
@@ -199,8 +204,8 @@
 	margin: 1.1rem 0 0.45rem;
 }
 
-.colophon__block > h3:first-child,
-.colophon__block > h4:first-child {
+.colophon__block>h3:first-child,
+.colophon__block>h4:first-child {
 	margin-top: 0;
 }
 
@@ -214,7 +219,7 @@
 
 /* --- The yearbook series ------------------------------------------------- */
 
-.colophon__serie + .colophon__serie {
+.colophon__serie+.colophon__serie {
 	margin-top: 0.9rem;
 }
 
@@ -244,16 +249,23 @@
 }
 
 /*
- * Die Hausmarken
- * --------------
+ * Die Auszeichnungen — the badges
+ * -------------------------------
  * The strip of house marks between the colophon and the imprint: the awards,
  * the Bluesky account, the Google Earth tour. A newspaper set this kind of
  * matter in a ruled band at the foot of the page, so that is what it gets —
  * items divided by the same hairline the columns above use, hung from a
  * pseudo-element so the rule falls between items and never at either end.
  */
-.hausmarken {
+.badges {
 	align-items: stretch;
+	/*
+	 * The band's own opening rule. The items' top shadows are clipped away by
+	 * the overflow below — they fall outside the padding box — so this is the
+	 * only line here, and it separates the badges from the colophon above in
+	 * the same hairline the imprint uses beneath them.
+	 */
+	border-top: 1px solid var(--rule);
 	display: flex;
 	flex-wrap: wrap;
 	/*
@@ -261,14 +273,13 @@
 	 * the ones that fall off its edges. That draws a rule between items and
 	 * between rows wherever the flex line happens to wrap — four across, two
 	 * and two, or one below the other — without a breakpoint having to guess
-	 * where the wrap will land. A media query cannot know; this does not have
-	 * to. The top row's rule opens the band, so the container needs no border
-	 * of its own.
+	 * where the wrap will land. A media query cannot know; this does not
+	 * have to.
 	 */
 	overflow: hidden;
 }
 
-.hausmarken__item {
+.badges__item {
 	align-items: center;
 	box-shadow:
 		-1px 0 0 var(--rule),
@@ -285,21 +296,21 @@
 	text-decoration: none;
 }
 
-.hausmarken__label {
+.badges__label {
 	@include kicker(0.68rem, 0.18em, 600);
 
 	color: var(--blue);
 }
 
-.hausmarken__text {
+.badges__text {
 	color: var(--ink-soft);
 	font-size: 0.88rem;
 	line-height: 1.4;
 	text-wrap: balance;
 }
 
-.hausmarken__item:hover .hausmarken__text,
-.hausmarken__item:focus .hausmarken__text {
+.badges__item:hover .badges__text,
+.badges__item:focus .badges__text {
 	color: var(--blue);
 }
 
@@ -314,7 +325,7 @@
  * patch of their own — but only in the day edition: against the dark paper
  * multiply would swallow them whole.
  */
-.hausmarken__badge {
+img.badges__mark {
 	display: block;
 	height: auto;
 	margin: 0;
@@ -329,10 +340,28 @@
  * paper, which reads as a mistake. Given a little padding and the ivory behind
  * it, the same rectangle reads as what it is: a clipping pasted onto the page.
  */
-:root[data-edition="nacht"] .hausmarken__badge {
+:root[data-edition="nacht"] img.badges__mark {
 	background: #{$paper};
 	mix-blend-mode: normal;
 	padding: 0.4rem;
+}
+
+/*
+ * The two drawn marks — the Bluesky butterfly and the map pin — stand where
+ * the bitmap badges stand, so all four items hang from the same line. They are
+ * set a little smaller than the badges: a badge is a thing that was awarded,
+ * an icon is only a signpost, and the row should not pretend otherwise.
+ */
+svg.badges__mark {
+	fill: currentColor;
+	color: var(--blue);
+	height: 2.5rem;
+	width: 2.5rem;
+}
+
+.badges__item:hover svg.badges__mark,
+.badges__item:focus svg.badges__mark {
+	color: var(--ink);
 }
 
 /* The imprint line proper. */
