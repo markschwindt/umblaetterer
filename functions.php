@@ -160,6 +160,70 @@ function umblaetterer_preload_fonts() {
 add_action( 'wp_head', 'umblaetterer_preload_fonts', 1 );
 
 /**
+ * The default social-sharing card.
+ *
+ * A screenshot of the front page at 1200×630 — the masthead, the dateline and
+ * the top of the lead. The archive has essentially no featured images (one
+ * attachment in twenty years), so without a default every link shared from
+ * here would unfurl as a bare grey box.
+ *
+ * @return string
+ */
+function umblaetterer_social_image() {
+	return get_template_directory_uri() . '/assets/social-card.jpg';
+}
+
+/**
+ * Hand the card to Yoast, which owns the Open Graph output when it is active.
+ *
+ * Yoast only reaches for a fallback when the piece itself has no image, so
+ * this fills the gap rather than overriding a post that has its own.
+ *
+ * @param WPSEO_OpenGraph_Image $images Yoast's image collection.
+ */
+function umblaetterer_yoast_social_image( $images ) {
+	if ( is_object( $images ) && method_exists( $images, 'get_images' ) && $images->get_images() ) {
+		return;
+	}
+
+	if ( is_object( $images ) && method_exists( $images, 'add_image' ) ) {
+		$images->add_image( umblaetterer_social_image() );
+	}
+}
+add_action( 'wpseo_add_opengraph_images', 'umblaetterer_yoast_social_image' );
+
+/**
+ * The same card for Twitter/X, which Yoast builds on a separate path.
+ *
+ * @param string $image Whatever Yoast has already found, if anything.
+ * @return string
+ */
+function umblaetterer_yoast_twitter_image( $image ) {
+	return $image ? $image : umblaetterer_social_image();
+}
+add_filter( 'wpseo_twitter_image', 'umblaetterer_yoast_twitter_image' );
+
+/**
+ * Print the card ourselves when no SEO plugin is doing it.
+ *
+ * Guarded on Yoast so the page never carries two og:image tags.
+ */
+function umblaetterer_social_meta() {
+	if ( defined( 'WPSEO_VERSION' ) ) {
+		return;
+	}
+
+	$url = umblaetterer_social_image();
+
+	printf( '<meta property="og:image" content="%s">' . "\n", esc_url( $url ) );
+	echo '<meta property="og:image:width" content="1200">' . "\n";
+	echo '<meta property="og:image:height" content="630">' . "\n";
+	printf( '<meta name="twitter:image" content="%s">' . "\n", esc_url( $url ) );
+	echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
+}
+add_action( 'wp_head', 'umblaetterer_social_meta', 5 );
+
+/**
  * The browser icon.
  *
  * WordPress emits nothing at all unless a Site Icon has been uploaded in the
