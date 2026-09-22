@@ -97,10 +97,18 @@
 
 		<a class="badges__item"
 			href="<?php echo esc_url($umblaetterer_maulwurf ? get_permalink($umblaetterer_maulwurf) : home_url('/best-of-feuilleton-2025/')); ?>">
-			<img class="badges__mark badges__mark--image"
-				src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/goldener-maulwurf-2025.jpg'); ?>"
-				width="80" height="70" loading="lazy" decoding="async"
-				alt="<?php esc_attr_e('Der Goldene Maulwurf', 'umblaetterer'); ?>">
+			<?php
+			/*
+			 * Vector, and transparent: it needs none of the blend the raster
+			 * badge beside it needs to lose its white box. The alt is empty
+			 * because the caption below already names the award, and a screen
+			 * reader would otherwise read it twice inside one link.
+			 */
+			?>
+			<img class="badges__mark badges__mark--vector"
+				src="<?php echo esc_url(get_template_directory_uri() . '/assets/the-golden-mole.svg'); ?>"
+				width="283" height="333" loading="lazy" decoding="async"
+				alt="">
 			<span class="badges__text">
 				<?php esc_html_e('Der Goldene Maulwurf', 'umblaetterer'); ?><br>
 				<?php esc_html_e('Best of Feuilleton 2025', 'umblaetterer'); ?>
@@ -117,7 +125,7 @@
 			 * the same award twice inside one link.
 			 */
 			?>
-			<img class="badges__mark badges__mark--image"
+			<img class="badges__mark badges__mark--raster"
 				src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/grimme-nominiert-2010.gif'); ?>"
 				width="120" height="85" loading="lazy" decoding="async" alt="">
 			<span class="badges__text">

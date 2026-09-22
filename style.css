@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /*!
 Theme Name: Umblätterer
 Theme URI: https://markschwindt.com/
@@ -22,6 +23,7 @@ Type: Noto Serif (Google), Spectral (Production Type), Jost* (Owen Earl,
 after Paul Renner) — all under the SIL Open Font License, self-hosted in
 assets/fonts.
 */
+
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -48,37 +50,43 @@ assets/fonts.
 	- Alignments
 	- Print
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
+
 /* Normalize
 --------------------------------------------- */
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
 /* Document
 	 ========================================================================== */
+
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
 }
 
 /* Sections
 	 ========================================================================== */
+
 /**
  * Remove the margin in all browsers.
  */
 body {
-  margin: 0;
+	margin: 0;
 }
 
 /**
  * Render the `main` element consistently in IE.
  */
 main {
-  display: block;
+	display: block;
 }
 
 /**
@@ -86,20 +94,21 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+	font-size: 2em;
+	margin: 0.67em 0;
 }
 
 /* Grouping content
 	 ========================================================================== */
+
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
+	box-sizing: content-box;
+	height: 0;
+	overflow: visible;
 }
 
 /**
@@ -107,17 +116,18 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-  font-family: monospace, monospace;
-  font-size: 1em;
+	font-family: monospace, monospace;
+	font-size: 1em;
 }
 
 /* Text-level semantics
 	 ========================================================================== */
+
 /**
  * Remove the gray background on active links in IE 10.
  */
 a {
-  background-color: transparent;
+	background-color: transparent;
 }
 
 /**
@@ -125,9 +135,9 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
-  text-decoration: underline dotted;
+	border-bottom: none;
+	text-decoration: underline;
+	text-decoration: underline dotted;
 }
 
 /**
@@ -135,7 +145,7 @@ abbr[title] {
  */
 b,
 strong {
-  font-weight: bolder;
+	font-weight: bolder;
 }
 
 /**
@@ -145,15 +155,15 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
+	font-family: monospace, monospace;
+	font-size: 1em;
 }
 
 /**
  * Add the correct font size in all browsers.
  */
 small {
-  font-size: 80%;
+	font-size: 80%;
 }
 
 /**
@@ -162,31 +172,33 @@ small {
  */
 sub,
 sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
 }
 
 sub {
-  bottom: -0.25em;
+	bottom: -0.25em;
 }
 
 sup {
-  top: -0.5em;
+	top: -0.5em;
 }
 
 /* Embedded content
 	 ========================================================================== */
+
 /**
  * Remove the border on images inside links in IE 10.
  */
 img {
-  border-style: none;
+	border-style: none;
 }
 
 /* Forms
 	 ========================================================================== */
+
 /**
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
@@ -196,10 +208,10 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0;
 }
 
 /**
@@ -208,7 +220,7 @@ textarea {
  */
 button,
 input {
-  overflow: visible;
+	overflow: visible;
 }
 
 /**
@@ -217,45 +229,45 @@ input {
  */
 button,
 select {
-  text-transform: none;
+	text-transform: none;
 }
 
 /**
  * Correct the inability to style clickable types in iOS and Safari.
  */
 button,
-[type=button],
-[type=reset],
-[type=submit] {
-  -webkit-appearance: button;
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button;
 }
 
 /**
  * Remove the inner border and padding in Firefox.
  */
 button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
 }
 
 /**
  * Restore the focus styles unset by the previous rule.
  */
 button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
-  outline: 1px dotted ButtonText;
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+	outline: 1px dotted ButtonText;
 }
 
 /**
  * Correct the padding in Firefox.
  */
 fieldset {
-  padding: 0.35em 0.75em 0.625em;
+	padding: 0.35em 0.75em 0.625em;
 }
 
 /**
@@ -265,60 +277,60 @@ fieldset {
  *		`fieldset` elements in all browsers.
  */
 legend {
-  box-sizing: border-box;
-  color: inherit;
-  display: table;
-  max-width: 100%;
-  padding: 0;
-  white-space: normal;
+	box-sizing: border-box;
+	color: inherit;
+	display: table;
+	max-width: 100%;
+	padding: 0;
+	white-space: normal;
 }
 
 /**
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
  */
 progress {
-  vertical-align: baseline;
+	vertical-align: baseline;
 }
 
 /**
  * Remove the default vertical scrollbar in IE 10+.
  */
 textarea {
-  overflow: auto;
+	overflow: auto;
 }
 
 /**
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
  */
-[type=checkbox],
-[type=radio] {
-  box-sizing: border-box;
-  padding: 0;
+[type="checkbox"],
+[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
 }
 
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
-  height: auto;
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+	height: auto;
 }
 
 /**
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-[type=search] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
+[type="search"] {
+	-webkit-appearance: textfield;
+	outline-offset: -2px;
 }
 
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-[type=search]::-webkit-search-decoration {
-  -webkit-appearance: none;
+[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
 }
 
 /**
@@ -326,312 +338,338 @@ textarea {
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
+	-webkit-appearance: button;
+	font: inherit;
 }
 
 /* Interactive
 	 ========================================================================== */
+
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
 details {
-  display: block;
+	display: block;
 }
 
 /*
  * Add the correct display in all browsers.
  */
 summary {
-  display: list-item;
+	display: list-item;
 }
 
 /* Misc
 	 ========================================================================== */
+
 /**
  * Add the correct display in IE 10+.
  */
 template {
-  display: none;
+	display: none;
 }
 
 /**
  * Add the correct display in IE 10.
  */
 [hidden] {
-  display: none;
+	display: none;
 }
 
 /* Box sizing
 --------------------------------------------- */
+
 /* Inherit box-sizing to more easily change it's value on a component level.
 @link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
+
 /* Typography
 --------------------------------------------- */
+
 /* Type
 --------------------------------------------- */
+
 /* spectral 400 italic — latin-ext */
 @font-face {
-  font-family: spectral;
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url(./assets/fonts/spectral-400-italic-latin-ext.woff2) format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	font-family: spectral;
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(./assets/fonts/spectral-400-italic-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 /* spectral 400 italic — latin */
 @font-face {
-  font-family: spectral;
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url(./assets/fonts/spectral-400-italic-latin.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	font-family: spectral;
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(./assets/fonts/spectral-400-italic-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 /* spectral 600 italic — latin-ext */
 @font-face {
-  font-family: spectral;
-  font-style: italic;
-  font-weight: 600;
-  font-display: swap;
-  src: url(./assets/fonts/spectral-600-italic-latin-ext.woff2) format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	font-family: spectral;
+	font-style: italic;
+	font-weight: 600;
+	font-display: swap;
+	src: url(./assets/fonts/spectral-600-italic-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 /* spectral 600 italic — latin */
 @font-face {
-  font-family: spectral;
-  font-style: italic;
-  font-weight: 600;
-  font-display: swap;
-  src: url(./assets/fonts/spectral-600-italic-latin.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	font-family: spectral;
+	font-style: italic;
+	font-weight: 600;
+	font-display: swap;
+	src: url(./assets/fonts/spectral-600-italic-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 /* spectral 400 normal — latin-ext */
 @font-face {
-  font-family: spectral;
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(./assets/fonts/spectral-400-normal-latin-ext.woff2) format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	font-family: spectral;
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(./assets/fonts/spectral-400-normal-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 /* spectral 400 normal — latin */
 @font-face {
-  font-family: spectral;
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(./assets/fonts/spectral-400-normal-latin.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	font-family: spectral;
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(./assets/fonts/spectral-400-normal-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 /* spectral 500 normal — latin-ext */
 @font-face {
-  font-family: spectral;
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(./assets/fonts/spectral-500-normal-latin-ext.woff2) format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	font-family: spectral;
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url(./assets/fonts/spectral-500-normal-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 /* spectral 500 normal — latin */
 @font-face {
-  font-family: spectral;
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(./assets/fonts/spectral-500-normal-latin.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	font-family: spectral;
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url(./assets/fonts/spectral-500-normal-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 /* spectral 600 normal — latin-ext */
 @font-face {
-  font-family: spectral;
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url(./assets/fonts/spectral-600-normal-latin-ext.woff2) format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	font-family: spectral;
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url(./assets/fonts/spectral-600-normal-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 /* spectral 600 normal — latin */
 @font-face {
-  font-family: spectral;
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url(./assets/fonts/spectral-600-normal-latin.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	font-family: spectral;
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url(./assets/fonts/spectral-600-normal-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 /* spectral 700 normal — latin-ext */
 @font-face {
-  font-family: spectral;
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(./assets/fonts/spectral-700-normal-latin-ext.woff2) format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	font-family: spectral;
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(./assets/fonts/spectral-700-normal-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 /* spectral 700 normal — latin */
 @font-face {
-  font-family: spectral;
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(./assets/fonts/spectral-700-normal-latin.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	font-family: spectral;
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(./assets/fonts/spectral-700-normal-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 /* jost 400 italic — latin-ext */
 @font-face {
-  font-family: jost;
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url(./assets/fonts/jost-400-italic-latin-ext.woff2) format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	font-family: jost;
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(./assets/fonts/jost-400-italic-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 /* jost 400 italic — latin */
 @font-face {
-  font-family: jost;
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url(./assets/fonts/jost-400-italic-latin.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	font-family: jost;
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(./assets/fonts/jost-400-italic-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 /* jost 300-700 normal — latin-ext */
 @font-face {
-  font-family: jost;
-  font-style: normal;
-  font-weight: 300 700;
-  font-display: swap;
-  src: url(./assets/fonts/jost-300-700-normal-latin-ext.woff2) format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	font-family: jost;
+	font-style: normal;
+	font-weight: 300 700;
+	font-display: swap;
+	src: url(./assets/fonts/jost-300-700-normal-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 /* jost 300-700 normal — latin */
 @font-face {
-  font-family: jost;
-  font-style: normal;
-  font-weight: 300 700;
-  font-display: swap;
-  src: url(./assets/fonts/jost-300-700-normal-latin.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	font-family: jost;
+	font-style: normal;
+	font-weight: 300 700;
+	font-display: swap;
+	src: url(./assets/fonts/jost-300-700-normal-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 /* noto serif variable 100–900, italic — latin-ext */
 @font-face {
-  font-family: "Noto Serif";
-  font-style: italic;
-  font-weight: 100 900;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(./assets/fonts/notoserif-var-italic-latin-ext.woff2) format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	font-family: "Noto Serif";
+	font-style: italic;
+	font-weight: 100 900;
+	font-stretch: 100%;
+	font-display: swap;
+	src: url(./assets/fonts/notoserif-var-italic-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 /* noto serif variable 100–900, italic — latin */
 @font-face {
-  font-family: "Noto Serif";
-  font-style: italic;
-  font-weight: 100 900;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(./assets/fonts/notoserif-var-italic-latin.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	font-family: "Noto Serif";
+	font-style: italic;
+	font-weight: 100 900;
+	font-stretch: 100%;
+	font-display: swap;
+	src: url(./assets/fonts/notoserif-var-italic-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 /* noto serif variable 100–900, normal — latin-ext */
 @font-face {
-  font-family: "Noto Serif";
-  font-style: normal;
-  font-weight: 100 900;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(./assets/fonts/notoserif-var-normal-latin-ext.woff2) format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	font-family: "Noto Serif";
+	font-style: normal;
+	font-weight: 100 900;
+	font-stretch: 100%;
+	font-display: swap;
+	src: url(./assets/fonts/notoserif-var-normal-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 /* noto serif variable 100–900, normal — latin */
 @font-face {
-  font-family: "Noto Serif";
-  font-style: normal;
-  font-weight: 100 900;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(./assets/fonts/notoserif-var-normal-latin.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	font-family: "Noto Serif";
+	font-style: normal;
+	font-weight: 100 900;
+	font-stretch: 100%;
+	font-display: swap;
+	src: url(./assets/fonts/notoserif-var-normal-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 /*
  * Running copy
  */
 p {
-  margin: 0 0 1.35em;
+	margin: 0 0 1.35em;
 }
 
 p:last-child {
-  margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 b,
 strong {
-  font-weight: 600;
+	font-weight: 600;
 }
 
 dfn,
 cite,
 em,
 i {
-  font-style: italic;
+	font-style: italic;
 }
 
 /* An abbreviation gets a dotted rule, the way a footnote marker would. */
 abbr[title] {
-  border-bottom: 1px dotted var(--ink-faint);
-  cursor: help;
-  text-decoration: none;
+	border-bottom: 1px dotted var(--ink-faint);
+	cursor: help;
+	text-decoration: none;
 }
 
 address {
-  font-style: normal;
-  margin: 0 0 1.5em;
+	font-style: normal;
+	margin: 0 0 1.5em;
 }
 
 big {
-  font-size: 125%;
+	font-size: 125%;
 }
 
 small {
-  font-size: 0.73em;
+	font-size: 0.73em;
 }
 
 sub,
 sup {
-  font-size: 0.7em;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
+	font-size: 0.7em;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
 }
 
 sup {
-  top: -0.5em;
+	top: -0.5em;
 }
 
 sub {
-  bottom: -0.2em;
+	bottom: -0.2em;
 }
 
 mark,
 ins {
-  background-color: rgba(163, 48, 42, 0.14);
-  box-shadow: 0 -0.35em 0 rgba(163, 48, 42, 0.14) inset;
-  color: inherit;
-  text-decoration: none;
+	background-color: rgba(163, 48, 42, 0.14);
+	box-shadow: 0 -0.35em 0 rgba(163, 48, 42, 0.14) inset;
+	color: inherit;
+	text-decoration: none;
 }
 
 /*
@@ -640,42 +678,42 @@ ins {
  * hung into the margin — as it would be in a well-set German book.
  */
 blockquote {
-  border-left: 2px solid var(--rule-blue);
-  color: var(--blue);
-  font-size: 0.95em;
-  line-height: 1.55;
-  margin: 2em 0;
-  padding: 0.15em 0 0.15em 1.5em;
+	border-left: 2px solid var(--rule-blue);
+	color: var(--blue);
+	font-size: 0.95em;
+	line-height: 1.55;
+	margin: 2em 0;
+	padding: 0.15em 0 0.15em 1.5em;
 }
 
 blockquote cite {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.7rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  display: block;
-  margin-top: 0.9em;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.7rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.16em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--ink-faint);
+	display: block;
+	margin-top: 0.9em;
 }
 
 /* Pull quote: the one place the display face appears inside body copy. */
 .pullquote {
-  border: 0;
-  color: var(--blue);
-  font-family: "Noto Serif", "Times New Roman", times, serif;
-  font-size: clamp(1.4rem, 1.1rem + 1.2vw, 1.9rem);
-  font-style: italic;
-  line-height: 1.24;
-  margin: 2.2em 0;
-  padding: 0;
-  text-align: center;
+	border: 0;
+	color: var(--blue);
+	font-family: "Noto Serif", "Times New Roman", times, serif;
+	font-size: clamp(1.4rem, 1.1rem + 1.2vw, 1.9rem);
+	font-style: italic;
+	line-height: 1.24;
+	margin: 2.2em 0;
+	padding: 0;
+	text-align: center;
 }
 
 q {
-  quotes: "»" "«" "›" "‹";
+	quotes: "»" "«" "›" "‹";
 }
 
 code,
@@ -683,29 +721,29 @@ kbd,
 tt,
 var,
 samp {
-  background-color: rgba(29, 26, 20, 0.05);
-  border-radius: 2px;
-  font-family: SFMono-Regular, menlo, monaco, consolas, monospace;
-  font-size: 0.86em;
-  padding: 0.1em 0.35em;
+	background-color: rgba(29, 26, 20, 0.05);
+	border-radius: 2px;
+	font-family: SFMono-Regular, menlo, monaco, consolas, monospace;
+	font-size: 0.86em;
+	padding: 0.1em 0.35em;
 }
 
 pre {
-  background-color: var(--paper-warm);
-  border-left: 2px solid var(--rule-blue);
-  font-family: SFMono-Regular, menlo, monaco, consolas, monospace;
-  font-size: 0.86em;
-  line-height: 1.55;
-  margin: 2em 0;
-  max-width: 100%;
-  overflow: auto;
-  padding: 1.2em 1.4em;
-  tab-size: 2;
+	background-color: var(--paper-warm);
+	border-left: 2px solid var(--rule-blue);
+	font-family: SFMono-Regular, menlo, monaco, consolas, monospace;
+	font-size: 0.86em;
+	line-height: 1.55;
+	margin: 2em 0;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.2em 1.4em;
+	tab-size: 2;
 }
 
 pre code {
-  background: none;
-  padding: 0;
+	background: none;
+	padding: 0;
 }
 
 /*
@@ -726,55 +764,56 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--ink);
-  font-family: "Noto Serif", "Times New Roman", times, serif;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  line-height: 1.1;
-  margin: 0 0 0.5em;
-  text-wrap: balance;
+	color: var(--ink);
+	font-family: "Noto Serif", "Times New Roman", times, serif;
+	font-weight: 400;
+	letter-spacing: -0.01em;
+	line-height: 1.1;
+	margin: 0 0 0.5em;
+	text-wrap: balance;
 }
 
 h1 {
-  font-size: clamp(2rem, 1.3rem + 3.2vw, 3.25rem);
-  line-height: 1.02;
+	font-size: clamp(2rem, 1.3rem + 3.2vw, 3.25rem);
+	line-height: 1.02;
 }
 
 h2 {
-  font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.35rem);
-  line-height: 1.08;
+	font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.35rem);
+	line-height: 1.08;
 }
 
 h3 {
-  font-size: clamp(1.3rem, 1.1rem + 0.9vw, 1.7rem);
+	font-size: clamp(1.3rem, 1.1rem + 0.9vw, 1.7rem);
 }
 
 h4 {
-  font-size: 1.2rem;
+	font-size: 1.2rem;
 }
 
 /* Below h4 the display face has nothing left to say, so the sans takes over
    and behaves like a sub-rubric. */
 h5,
 h6 {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.78rem;
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--blue);
-  margin-bottom: 0.8em;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.78rem;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--blue);
+	margin-bottom: 0.8em;
 }
 
 h6 {
-  color: var(--ink-soft);
-  font-size: 0.72rem;
+	color: var(--ink-soft);
+	font-size: 0.72rem;
 }
 
 /* Elements
 --------------------------------------------- */
+
 /*
  * The sheet
  * ---------
@@ -783,29 +822,30 @@ h6 {
  * whole theme by redefining eleven values.
  */
 :root {
-  --paper: #f4efe1;
-  --paper-warm: #efe8d6;
-  --paper-deep: #e7dfc9;
-  --paper-edge: #d9cfb4;
-  --ink: #1d1a14;
-  --ink-soft: #4e4839;
-  --ink-faint: #6f6854;
-  --blue: #112e60;
-  --blue-deep: #0a1c3d;
-  --blue-mid: #35507f;
-  --blue-pale: #8496b4;
-  --red: #a3302a;
-  /* Rules are ink diluted, never grey: grey rules read as screen furniture. */
-  --rule: rgba(29, 26, 20, 0.2);
-  --rule-soft: rgba(29, 26, 20, 0.11);
-  --rule-blue: rgba(17, 46, 96, 0.28);
-  --grain-opacity: 0.4;
-  --grain-blend: multiply;
-  --gutter: clamp(1.15rem, 4vw, 3rem);
-  --spread: 76rem;
-  --page: 62rem;
-  --measure: 36rem;
-  color-scheme: light;
+	--paper: #f4efe1;
+	--paper-warm: #efe8d6;
+	--paper-deep: #e7dfc9;
+	--paper-edge: #d9cfb4;
+	--ink: #1d1a14;
+	--ink-soft: #4e4839;
+	--ink-faint: #6f6854;
+	--blue: #112e60;
+	--blue-deep: #0a1c3d;
+	--blue-mid: #35507f;
+	--blue-pale: #8496b4;
+	--red: #a3302a;
+
+	/* Rules are ink diluted, never grey: grey rules read as screen furniture. */
+	--rule: rgba(29, 26, 20, 0.2);
+	--rule-soft: rgba(29, 26, 20, 0.11);
+	--rule-blue: rgba(17, 46, 96, 0.28);
+	--grain-opacity: 0.4;
+	--grain-blend: multiply;
+	--gutter: clamp(1.15rem, 4vw, 3rem);
+	--spread: 76rem;
+	--page: 62rem;
+	--measure: 36rem;
+	color-scheme: light;
 }
 
 /*
@@ -816,25 +856,25 @@ h6 {
  * this theme, so the ivory is what everybody gets until they ask for
  * something else — a dark desktop is not a request for a dark newspaper.
  */
-:root[data-edition=nacht] {
-  --paper: #11141b;
-  --paper-warm: #171b24;
-  --paper-deep: #1d222d;
-  --paper-edge: rgba(235, 255, 210, 0.18);
-  --ink: #ebffd2;
-  --ink-soft: #d3d688;
-  --ink-faint: #799482;
-  --blue: #96eebc;
-  --blue-deep: #96eebc;
-  --blue-mid: #96eebc;
-  --blue-pale: rgba(150, 238, 188, 0.55);
-  --red: #d98078;
-  --rule: rgba(235, 255, 210, 0.22);
-  --rule-soft: rgba(235, 255, 210, 0.12);
-  --rule-blue: rgba(150, 238, 188, 0.34);
-  --grain-opacity: 0.22;
-  --grain-blend: overlay;
-  color-scheme: dark;
+:root[data-edition="nacht"] {
+	--paper: #11141b;
+	--paper-warm: #171b24;
+	--paper-deep: #1d222d;
+	--paper-edge: rgba(235, 255, 210, 0.18);
+	--ink: #ebffd2;
+	--ink-soft: #d3d688;
+	--ink-faint: #799482;
+	--blue: #96eebc;
+	--blue-deep: #96eebc;
+	--blue-mid: #96eebc;
+	--blue-pale: rgba(150, 238, 188, 0.55);
+	--red: #d98078;
+	--rule: rgba(235, 255, 210, 0.22);
+	--rule-soft: rgba(235, 255, 210, 0.12);
+	--rule-blue: rgba(150, 238, 188, 0.34);
+	--grain-opacity: 0.22;
+	--grain-blend: overlay;
+	color-scheme: dark;
 }
 
 /*
@@ -842,31 +882,35 @@ h6 {
  * The palette itself lives in _tokens.scss.
  */
 html {
-  -webkit-text-size-adjust: 100%;
-  scroll-behavior: smooth;
+	-webkit-text-size-adjust: 100%;
+	scroll-behavior: smooth;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+
+	html {
+		scroll-behavior: auto;
+	}
 }
+
 body {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background-color: var(--paper);
-  color: var(--ink);
-  font-family: spectral, "Iowan Old Style", "Palatino Linotype", georgia, serif;
-  font-size: 1.0625rem;
-  font-variant-numeric: oldstyle-num;
-  line-height: 1.62;
-  min-height: 100vh;
-  position: relative;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	background-color: var(--paper);
+	color: var(--ink);
+	font-family: spectral, "Iowan Old Style", "Palatino Linotype", georgia, serif;
+	font-size: 1.0625rem;
+	font-variant-numeric: oldstyle-num;
+	line-height: 1.62;
+	min-height: 100vh;
+	position: relative;
 }
+
 @media (min-width: 37.5em) {
-  body {
-    font-size: 1.125rem;
-  }
+
+	body {
+		font-size: 1.125rem;
+	}
 }
 
 /*
@@ -876,45 +920,46 @@ body {
  * nothing at all, which is precisely how paper behaves.
  */
 body::before {
-  /* The data URI carries parentheses and apostrophes, so it has to be
+
+	/* The data URI carries parentheses and apostrophes, so it has to be
      quoted; url() without quotes cannot hold either. */
-  /* stylelint-disable-next-line function-url-quotes */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-  content: "";
-  inset: 0;
-  mix-blend-mode: var(--grain-blend);
-  opacity: var(--grain-opacity);
-  pointer-events: none;
-  position: fixed;
-  z-index: 9999;
+	/* stylelint-disable-next-line function-url-quotes */
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+	content: "";
+	inset: 0;
+	mix-blend-mode: var(--grain-blend);
+	opacity: var(--grain-opacity);
+	pointer-events: none;
+	position: fixed;
+	z-index: 9999;
 }
 
 /* The warm shadow a stacked sheet casts towards its edges. */
 body::after {
-  background: radial-gradient(120% 80% at 50% 0, transparent 55%, rgba(217, 207, 180, 0.5) 100%);
-  content: "";
-  inset: 0;
-  pointer-events: none;
-  position: fixed;
-  z-index: 9998;
-  opacity: 42%;
+	background: radial-gradient(120% 80% at 50% 0, transparent 55%, rgba(217, 207, 180, 0.5) 100%);
+	content: "";
+	inset: 0;
+	pointer-events: none;
+	position: fixed;
+	z-index: 9998;
+	opacity: 42%;
 }
 
-:root[data-edition=nacht] body::after {
-  background: radial-gradient(120% 80% at 50% 0, transparent 50%, rgba(0, 0, 0, 0.45) 100%);
+:root[data-edition="nacht"] body::after {
+	background: radial-gradient(120% 80% at 50% 0, transparent 50%, rgba(0, 0, 0, 0.45) 100%);
 }
 
 ::selection {
-  background-color: rgba(17, 46, 96, 0.18);
-  color: var(--ink);
+	background-color: rgba(17, 46, 96, 0.18);
+	color: var(--ink);
 }
 
 /* The sheet itself, holding the whole site. */
 .site {
-  margin: 0 auto;
-  max-width: var(--spread);
-  padding: 0 var(--gutter);
-  position: relative;
+	margin: 0 auto;
+	max-width: var(--spread);
+	padding: 0 var(--gutter);
+	position: relative;
 }
 
 /*
@@ -925,108 +970,108 @@ body::after {
  * and the fleuron that closes an article.
  */
 hr {
-  background: none;
-  border: 0;
-  border-top: 1px solid var(--rule);
-  height: 0;
-  margin: 2.5em 0;
+	background: none;
+	border: 0;
+	border-top: 1px solid var(--rule);
+	height: 0;
+	margin: 2.5em 0;
 }
 
 /* A hairline. The workhorse. */
 .rule {
-  border: 0;
-  border-top: 1px solid var(--rule);
-  height: 0;
-  margin: 0;
+	border: 0;
+	border-top: 1px solid var(--rule);
+	height: 0;
+	margin: 0;
 }
 
 .rule--blue {
-  border-top-color: var(--rule-blue);
+	border-top-color: var(--rule-blue);
 }
 
 /* Thick over thin — opens and closes the page. */
 .rule--double {
-  border: 0;
-  border-bottom: 1px solid var(--blue);
-  border-top: 4px solid var(--blue);
-  height: 4px;
-  margin: 0;
+	border: 0;
+	border-bottom: 1px solid var(--blue);
+	border-top: 4px solid var(--blue);
+	height: 4px;
+	margin: 0;
 }
 
 .rule--double-thin {
-  border-top-width: 2px;
+	border-top-width: 2px;
 }
 
 /* A rule with a fleuron set into it, for closing a section. */
 .rule--fleuron {
-  align-items: center;
-  border: 0;
-  color: var(--blue);
-  display: flex;
-  gap: 1.1rem;
-  margin: 3rem 0;
+	align-items: center;
+	border: 0;
+	color: var(--blue);
+	display: flex;
+	gap: 1.1rem;
+	margin: 3rem 0;
 }
 
 .rule--fleuron::before,
 .rule--fleuron::after {
-  background: var(--rule);
-  content: "";
-  flex: 1;
-  height: 1px;
+	background: var(--rule);
+	content: "";
+	flex: 1;
+	height: 1px;
 }
 
 .rule--fleuron > span {
-  font-family: "Noto Serif", "Times New Roman", times, serif;
-  font-size: 1.1rem;
-  line-height: 1;
+	font-family: "Noto Serif", "Times New Roman", times, serif;
+	font-size: 1.1rem;
+	line-height: 1;
 }
 
 ul,
 ol {
-  margin: 0 0 1.5em;
-  padding-left: 1.4em;
+	margin: 0 0 1.5em;
+	padding-left: 1.4em;
 }
 
 ul {
-  list-style: none;
+	list-style: none;
 }
 
 /* A square bullet, hung in the margin, sitting on the x-height. */
 .entry-content ul > li {
-  position: relative;
+	position: relative;
 }
 
 .entry-content ul > li::before {
-  background: var(--blue);
-  content: "";
-  height: 0.3em;
-  left: -1.05em;
-  position: absolute;
-  top: 0.7em;
-  width: 0.3em;
+	background: var(--blue);
+	content: "";
+	height: 0.3em;
+	left: -1.05em;
+	position: absolute;
+	top: 0.7em;
+	width: 0.3em;
 }
 
 ol {
-  list-style: decimal;
+	list-style: decimal;
 }
 
 li > ul,
 li > ol {
-  margin-bottom: 0;
-  margin-left: 0.6em;
-  margin-top: 0.4em;
+	margin-bottom: 0;
+	margin-left: 0.6em;
+	margin-top: 0.4em;
 }
 
 li {
-  margin-bottom: 0.4em;
+	margin-bottom: 0.4em;
 }
 
 dt {
-  font-weight: 600;
+	font-weight: 600;
 }
 
 dd {
-  margin: 0 0 1em 1.4em;
+	margin: 0 0 1em 1.4em;
 }
 
 /*
@@ -1039,117 +1084,119 @@ dd {
 img,
 svg,
 video {
-  height: auto;
-  max-width: 100%;
+	height: auto;
+	max-width: 100%;
 }
 
 img {
-  display: block;
-  /* Halftone-era photographs were never crisp. A whisper of warmth sits them
+	display: block;
+
+	/* Halftone-era photographs were never crisp. A whisper of warmth sits them
      on the ivory instead of on top of it. */
-  background-color: var(--paper-warm);
+	background-color: var(--paper-warm);
 }
 
 /* Legacy content sets width="" on images; let it scale down but not up. */
 .entry-content img[width],
 .entry-content img[height] {
-  height: auto;
-  max-width: 100%;
+	height: auto;
+	max-width: 100%;
 }
 
 figure {
-  margin: 2.2em 0;
+	margin: 2.2em 0;
 }
 
 embed,
 iframe,
 object {
-  max-width: 100%;
+	max-width: 100%;
 }
 
 /* oEmbeds and raw iframes — keep video inside the column. */
 .entry-content iframe {
-  aspect-ratio: 16/9;
-  border: 0;
-  display: block;
-  height: auto;
-  width: 100%;
+	aspect-ratio: 16/9;
+	border: 0;
+	display: block;
+	height: auto;
+	width: 100%;
 }
 
 .wp-caption,
 figure.wp-caption {
-  margin-bottom: 2em;
-  max-width: 100%;
+	margin-bottom: 2em;
+	max-width: 100%;
 }
 
-.wp-caption img[class*=wp-image-] {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .wp-caption .wp-caption-text,
 figcaption {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.7rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  line-height: 1.45;
-  text-transform: none;
-  border-top: 1px solid var(--rule);
-  color: var(--ink-soft);
-  margin: 0.7em 0 0;
-  padding-top: 0.55em;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.7rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+	line-height: 1.45;
+	text-transform: none;
+	border-top: 1px solid var(--rule);
+	color: var(--ink-soft);
+	margin: 0.7em 0 0;
+	padding-top: 0.55em;
 }
 
 table {
-  border-collapse: collapse;
-  font-size: 0.92em;
-  margin: 2em 0;
-  width: 100%;
+	border-collapse: collapse;
+	font-size: 0.92em;
+	margin: 2em 0;
+	width: 100%;
 }
 
 caption {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.7rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  margin-bottom: 0.8em;
-  text-align: left;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.7rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.16em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--ink-soft);
+	margin-bottom: 0.8em;
+	text-align: left;
 }
 
 th {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  border-bottom: 1px solid var(--blue);
-  color: var(--blue);
-  padding: 0.5em 0.8em 0.5em 0;
-  text-align: left;
-  vertical-align: bottom;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	border-bottom: 1px solid var(--blue);
+	color: var(--blue);
+	padding: 0.5em 0.8em 0.5em 0;
+	text-align: left;
+	vertical-align: bottom;
 }
 
 td {
-  border-bottom: 1px solid var(--rule-soft);
-  padding: 0.55em 0.8em 0.55em 0;
-  vertical-align: top;
+	border-bottom: 1px solid var(--rule-soft);
+	padding: 0.55em 0.8em 0.55em 0;
+	vertical-align: top;
 }
 
 tr:last-child td {
-  border-bottom: 0;
+	border-bottom: 0;
 }
 
 /* Links
 --------------------------------------------- */
+
 /*
  * Links
  * -----
@@ -1159,48 +1206,49 @@ tr:last-child td {
  * that reacts, not the word.
  */
 a {
-  color: var(--blue);
-  text-decoration-color: var(--rule-blue);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.18em;
-  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+	color: var(--blue);
+	text-decoration-color: var(--rule-blue);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.18em;
+	transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 
 a:hover,
 a:focus {
-  color: var(--ink);
-  text-decoration-color: var(--blue);
+	color: var(--ink);
+	text-decoration-color: var(--blue);
 }
 
 a:focus-visible {
-  border-radius: 1px;
-  outline: 2px solid var(--blue);
-  outline-offset: 2px;
+	border-radius: 1px;
+	outline: 2px solid var(--blue);
+	outline-offset: 2px;
 }
 
 /* Inside running copy the underline belongs to the paper, not to the ink. */
 .entry-content a {
-  color: inherit;
-  text-decoration: underline;
-  text-decoration-color: var(--rule-blue);
-  text-decoration-skip-ink: auto;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.16em;
+	color: inherit;
+	text-decoration: underline;
+	text-decoration-color: var(--rule-blue);
+	text-decoration-skip-ink: auto;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.16em;
 }
 
 .entry-content p {
-  hyphens: auto;
+	hyphens: auto;
 }
 
 .entry-content a:hover,
 .entry-content a:focus {
-  color: var(--blue);
-  text-decoration-color: var(--blue);
-  text-decoration-thickness: 2px;
+	color: var(--blue);
+	text-decoration-color: var(--blue);
+	text-decoration-thickness: 2px;
 }
 
 /* Forms
 --------------------------------------------- */
+
 /*
  * Buttons
  * -------
@@ -1208,55 +1256,55 @@ a:focus-visible {
  * and it presses down a hair when you push it.
  */
 button,
-input[type=button],
-input[type=reset],
-input[type=submit],
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
 .button {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.72rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  background-color: var(--blue);
-  border: 1px solid var(--blue);
-  border-radius: 0;
-  color: var(--paper);
-  cursor: pointer;
-  display: inline-block;
-  padding: 0.72em 1.4em;
-  text-decoration: none;
-  transition: background-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.72rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.16em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	background-color: var(--blue);
+	border: 1px solid var(--blue);
+	border-radius: 0;
+	color: var(--paper);
+	cursor: pointer;
+	display: inline-block;
+	padding: 0.72em 1.4em;
+	text-decoration: none;
+	transition: background-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
 }
 
 button:hover,
-input[type=button]:hover,
-input[type=reset]:hover,
-input[type=submit]:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
 .button:hover,
 button:focus,
 .button:focus {
-  background-color: var(--blue-deep);
-  color: var(--paper);
+	background-color: var(--blue-deep);
+	color: var(--paper);
 }
 
 button:active,
-input[type=submit]:active,
+input[type="submit"]:active,
 .button:active {
-  transform: translateY(1px);
+	transform: translateY(1px);
 }
 
 /* The quieter variant: ink on paper, outlined. */
 .button--ghost {
-  background-color: transparent;
-  color: var(--blue);
+	background-color: transparent;
+	color: var(--blue);
 }
 
 .button--ghost:hover,
 .button--ghost:focus {
-  background-color: var(--blue);
-  color: var(--paper);
+	background-color: var(--blue);
+	color: var(--paper);
 }
 
 /*
@@ -1264,76 +1312,78 @@ input[type=submit]:active,
  * ------
  * Ruled lines on a form, not boxes: the underline is the line you write on.
  */
-input[type=text],
-input[type=email],
-input[type=url],
-input[type=password],
-input[type=search],
-input[type=number],
-input[type=tel],
-input[type=date],
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
 textarea {
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: transparent;
-  border: 0;
-  border-bottom: 1px solid var(--rule);
-  border-radius: 0;
-  color: var(--ink);
-  font-family: spectral, "Iowan Old Style", "Palatino Linotype", georgia, serif;
-  font-size: 1rem;
-  padding: 0.5em 0.1em;
-  transition: border-color 0.15s ease;
-  width: 100%;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	border: 0;
+	border-bottom: 1px solid var(--rule);
+	border-radius: 0;
+	color: var(--ink);
+	font-family: spectral, "Iowan Old Style", "Palatino Linotype", georgia, serif;
+	font-size: 1rem;
+	padding: 0.5em 0.1em;
+	transition: border-color 0.15s ease;
+	width: 100%;
 }
 
 input:focus,
 textarea:focus {
-  border-bottom-color: var(--blue);
-  outline: 0;
+	border-bottom-color: var(--blue);
+	outline: 0;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: var(--ink-faint);
-  font-style: italic;
-  opacity: 1;
+	color: var(--ink-faint);
+	font-style: italic;
+	opacity: 1;
 }
 
 textarea {
-  line-height: 1.55;
-  resize: vertical;
+	line-height: 1.55;
+	resize: vertical;
 }
 
 select {
-  background-color: transparent;
-  border: 1px solid var(--rule);
-  border-radius: 0;
-  color: var(--ink);
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.85rem;
-  max-width: 100%;
-  padding: 0.5em;
+	background-color: transparent;
+	border: 1px solid var(--rule);
+	border-radius: 0;
+	color: var(--ink);
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.85rem;
+	max-width: 100%;
+	padding: 0.5em;
 }
 
 label {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  display: block;
-  margin-bottom: 0.3em;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.16em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--ink-soft);
+	display: block;
+	margin-bottom: 0.3em;
 }
 
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
+
 /* Masthead & colophon
 --------------------------------------------- */
+
 /*
  * Der Kopf — the masthead
  * -----------------------
@@ -1349,35 +1399,35 @@ label {
  * palette instead of being a fixed navy image stranded on a dark page.
  */
 .site-header {
-  padding-top: clamp(1.2rem, 3vw, 2.4rem);
-  position: relative;
+	padding-top: clamp(1.2rem, 3vw, 2.4rem);
+	position: relative;
 }
 
 .site-header__opening {
-  border-bottom: 1px solid var(--blue);
-  border-top: 5px solid var(--blue);
-  height: 4px;
+	border-bottom: 1px solid var(--blue);
+	border-top: 5px solid var(--blue);
+	height: 4px;
 }
 
 .site-branding {
-  padding: clamp(1.6rem, 5vw, 3.4rem) 0 clamp(1.1rem, 3vw, 2rem);
-  text-align: center;
+	padding: clamp(1.6rem, 5vw, 3.4rem) 0 clamp(1.1rem, 3vw, 2rem);
+	text-align: center;
 }
 
 .site-title {
-  line-height: 1;
-  margin: 0;
+	line-height: 1;
+	margin: 0;
 }
 
 .site-title a {
-  color: var(--blue);
-  display: block;
-  text-decoration: none;
+	color: var(--blue);
+	display: block;
+	text-decoration: none;
 }
 
 .site-title a:hover,
 .site-title a:focus {
-  color: var(--blue);
+	color: var(--blue);
 }
 
 /*
@@ -1389,11 +1439,11 @@ label {
  * height the masthead wants, not from the width.
  */
 .site-logo {
-  display: block;
-  fill: currentColor;
-  height: auto;
-  margin: 0 auto;
-  width: min(100%, 54rem);
+	display: block;
+	fill: currentColor;
+	height: auto;
+	margin: 0 auto;
+	width: min(100%, 54rem);
 }
 
 /*
@@ -1413,50 +1463,55 @@ label {
  * has to wait for.
  */
 @keyframes umbl-federzug {
-  from {
-    clip-path: polygon(-15% -60%, 115% -60%, 115% -45%, -15% -5%);
-  }
-  to {
-    clip-path: polygon(-15% -60%, 115% -60%, 115% 105%, -15% 145%);
-  }
+
+	from {
+		clip-path: polygon(-15% -60%, 115% -60%, 115% -45%, -15% -5%);
+	}
+
+	to {
+		clip-path: polygon(-15% -60%, 115% -60%, 115% 105%, -15% 145%);
+	}
 }
+
 /*
  * The index comes from the inlined SVG, where umblaetterer_wordmark() numbers
  * each path — the letters sit in two groups, so :nth-child would restart
  * counting partway through the word.
  */
 .site-logo path {
-  animation: umbl-federzug 512ms cubic-bezier(0.25, 0.8, 0.35, 1) backwards;
-  animation-delay: calc(var(--i, 0) * 32ms);
+	animation: umbl-federzug 512ms cubic-bezier(0.25, 0.8, 0.35, 1) backwards;
+	animation-delay: calc(var(--i, 0) * 32ms);
 }
 
 /* A reader who has asked for less motion gets the word already written. */
 @media (prefers-reduced-motion: reduce) {
-  .site-logo path {
-    animation: none;
-  }
+
+	.site-logo path {
+		animation: none;
+	}
 }
+
 .site-logo--fallback {
-  font-family: "Noto Serif", "Times New Roman", times, serif;
-  font-size: clamp(2.4rem, 9vw, 5.5rem);
-  letter-spacing: -0.02em;
+	font-family: "Noto Serif", "Times New Roman", times, serif;
+	font-size: clamp(2.4rem, 9vw, 5.5rem);
+	letter-spacing: -0.02em;
 }
 
 /* Pressing the wordmark should feel like pressing a stamp. */
 .site-title a:active .site-logo {
-  transform: translateY(1px);
+	transform: translateY(1px);
 }
 
 .site-description {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.7rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  margin: 1.1rem 0 0;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.7rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.22em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--ink-soft);
+	margin: 1.1rem 0 0;
 }
 
 /*
@@ -1466,53 +1521,58 @@ label {
  * the three slots every paper of the period used, and in that order.
  */
 .dateline {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.7rem;
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: 0.13em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  align-items: baseline;
-  border-bottom: 1px solid var(--blue);
-  border-top: 1px solid var(--blue);
-  color: var(--ink-soft);
-  display: grid;
-  gap: 0.35rem 1rem;
-  grid-template-columns: 1fr;
-  padding: 0.62rem 0;
-  text-align: center;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.7rem;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: 0.13em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	align-items: baseline;
+	border-bottom: 1px solid var(--blue);
+	border-top: 1px solid var(--blue);
+	color: var(--ink-soft);
+	display: grid;
+	gap: 0.35rem 1rem;
+	grid-template-columns: 1fr;
+	padding: 0.62rem 0;
+	text-align: center;
 }
+
 @media (min-width: 48em) {
-  .dateline {
-    grid-template-columns: 1fr auto 1fr;
-    text-align: left;
-  }
+
+	.dateline {
+		grid-template-columns: 1fr auto 1fr;
+		text-align: left;
+	}
 }
 
 .dateline__issue {
-  color: var(--blue);
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-align: center;
-  white-space: nowrap;
+	color: var(--blue);
+	font-weight: 600;
+	letter-spacing: 0.18em;
+	text-align: center;
+	white-space: nowrap;
 }
 
 .dateline__motto {
-  font-style: normal;
+	font-style: normal;
 }
+
 @media (min-width: 48em) {
-  .dateline__motto {
-    text-align: right;
-  }
+
+	.dateline__motto {
+		text-align: right;
+	}
 }
 
 /* Hide the date on the narrowest screens: three slots in 320px is a mess,
    and the issue number is the one that earns its keep. */
 @media (max-width: 37.4375em) {
-  .dateline__date {
-    display: none;
-  }
+
+	.dateline__date {
+		display: none;
+	}
 }
 
 /*
@@ -1521,22 +1581,24 @@ label {
  * kept to the least it can be and still be useful.
  */
 .reading-rule {
-  background: var(--blue);
-  height: 2px;
-  left: 0;
-  position: fixed;
-  top: 0;
-  transform: scaleX(0);
-  transform-origin: 0 50%;
-  width: 100%;
-  z-index: 10000;
+	background: var(--blue);
+	height: 2px;
+	left: 0;
+	position: fixed;
+	top: 0;
+	transform: scaleX(0);
+	transform-origin: 0 50%;
+	width: 100%;
+	z-index: 10000;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .reading-rule {
-    transition: transform 0.1s linear;
-  }
+
+	.reading-rule {
+		transition: transform 0.1s linear;
+	}
 }
+
 /*
  * Das Impressum — the colophon
  * ----------------------------
@@ -1545,14 +1607,14 @@ label {
  * sheet the same way the masthead opened it.
  */
 .site-footer {
-  margin-top: clamp(2.5rem, 5vw, 4rem);
-  padding-bottom: clamp(2rem, 5vw, 3.5rem);
+	margin-top: clamp(2.5rem, 5vw, 4rem);
+	padding-bottom: clamp(2rem, 5vw, 3.5rem);
 }
 
 .site-footer__closing {
-  border-bottom: 1px solid var(--blue);
-  border-top: 4px solid var(--blue);
-  height: 4px;
+	border-bottom: 1px solid var(--blue);
+	border-top: 4px solid var(--blue);
+	height: 4px;
 }
 
 /*
@@ -1567,7 +1629,8 @@ label {
  * columns, which is the device the whole theme is built on.
  */
 .colophon {
-  /*
+
+	/*
    * The column width is set so that a 390px phone still resolves to two
    * columns: 353px of content less a 17.6px gap leaves 167px each, and the
    * browser needs the declared width to be under that to fit two. One column
@@ -1575,18 +1638,20 @@ label {
    * scrolling; two halves it at no real cost to legibility. Four is the cap,
    * so the desktop footer does not shred into narrow slivers.
    */
-  /* Closes the colophon off from the badges beneath it. The line used to sit
+
+	/* Closes the colophon off from the badges beneath it. The line used to sit
      on the band; it lives here now so that .badges carries no border. */
-  border-bottom: 1px solid var(--rule);
-  column-gap: clamp(1.1rem, 3vw, 2.75rem);
-  column-rule: 1px solid var(--rule);
-  columns: 9.5rem 4;
-  margin-top: clamp(1.4rem, 3vw, 2.2rem);
-  padding-bottom: clamp(1.5rem, 3vw, 2.2rem);
+	border-bottom: 1px solid var(--rule);
+	column-gap: clamp(1.1rem, 3vw, 2.75rem);
+	column-rule: 1px solid var(--rule);
+	columns: 9.5rem 4;
+	margin-top: clamp(1.4rem, 3vw, 2.2rem);
+	padding-bottom: clamp(1.5rem, 3vw, 2.2rem);
 }
 
 .colophon > * {
-  /*
+
+	/*
    * No block is split across a column boundary. A widget cut in half reads
    * as two half-finished widgets, and the reader has no way to tell that the
    * orphaned tail belongs to the heading three columns back.
@@ -1597,43 +1662,43 @@ label {
    * this is why, and the fix is to shorten the offending widget rather than
    * to let it fragment again.
    */
-  break-inside: avoid;
-  margin: 0 0 clamp(1.5rem, 3vw, 2.2rem);
-  min-width: 0;
+	break-inside: avoid;
+	margin: 0 0 clamp(1.5rem, 3vw, 2.2rem);
+	min-width: 0;
 }
 
 /* What must not break: a heading away from its list, or a line away from
    itself. */
 .colophon__block > .widget-title,
 .colophon__title {
-  break-after: avoid;
+	break-after: avoid;
 }
 
 .colophon__block li,
 .colophon__serie {
-  break-inside: avoid;
+	break-inside: avoid;
 }
 
 /* --- Inside a cell ------------------------------------------------------- */
 .colophon__block > .widget-title,
 .colophon__title {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.7rem;
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  border-bottom: 1px solid var(--rule);
-  color: var(--blue);
-  margin: 0 0 0.75rem;
-  padding-bottom: 0.4rem;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.7rem;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: 0.18em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	border-bottom: 1px solid var(--rule);
+	color: var(--blue);
+	margin: 0 0 0.75rem;
+	padding-bottom: 0.4rem;
 }
 
 .colophon__block ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 /*
@@ -1641,14 +1706,14 @@ label {
  * things; down here, across a hundred and twenty, it is corduroy.
  */
 .colophon__block li {
-  border: 0;
-  line-height: 1.4;
-  margin: 0 0 0.34rem;
-  padding: 0;
+	border: 0;
+	line-height: 1.4;
+	margin: 0 0 0.34rem;
+	padding: 0;
 }
 
 .colophon__block li:last-child {
-  margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 /*
@@ -1666,8 +1731,8 @@ label {
  * so it keeps working for whatever is added here later.
  */
 .colophon__block ul:has(li:nth-child(20)) {
-  column-gap: 1rem;
-  column-width: 7rem;
+	column-gap: 1rem;
+	column-width: 7rem;
 }
 
 /*
@@ -1684,22 +1749,25 @@ label {
  * balances across all four columns beneath it, which is the point.
  */
 .colophon > :has(li:nth-child(40)) {
-  /* Ruled off from the four columns beneath it, so the band reads as its own
+
+	/* Ruled off from the four columns beneath it, so the band reads as its own
      register rather than as a widget that happens to be very wide. */
-  border-bottom: 1px solid var(--rule);
-  column-span: all;
-  margin-bottom: clamp(1.4rem, 3vw, 2rem);
-  padding-bottom: clamp(1.1rem, 2.5vw, 1.6rem);
+	border-bottom: 1px solid var(--rule);
+	column-span: all;
+	margin-bottom: clamp(1.4rem, 3vw, 2rem);
+	padding-bottom: clamp(1.1rem, 2.5vw, 1.6rem);
 }
 
 .colophon > :has(li:nth-child(40)) ul {
-  /* Four sub-columns at most. The width alone fits five or six across the
+
+	/* Four sub-columns at most. The width alone fits five or six across the
      full measure, but the band then reads as a finer grain than the four
      columns beneath it and the two stop looking like the same page. The
      width stays as the lower bound, so narrow viewports still fold the list
      down to three, two or one. */
-  column-count: 4;
-  /*
+	column-count: 4;
+
+	/*
    * The gap is the colophon's own, not a value of its own choosing, and that
    * is the whole trick: same width, same count, same gap means the band's
    * sub-column rules fall on exactly the same axes as the four column rules
@@ -1707,9 +1775,9 @@ label {
    * this width — puts them five to thirteen pixels out, which reads as a
    * mistake rather than as a second register.
    */
-  column-gap: clamp(1.1rem, 3vw, 2.75rem);
-  column-rule: 1px solid var(--rule);
-  column-width: 11rem;
+	column-gap: clamp(1.1rem, 3vw, 2.75rem);
+	column-rule: 1px solid var(--rule);
+	column-width: 11rem;
 }
 
 /* On a phone the width alone folds the band into a single file — fifty-four
@@ -1717,62 +1785,68 @@ label {
    outright rather than left to the width, so it holds at any phone size, and
    the gap tightens to buy the two columns their measure back. */
 @media (max-width: 37.4375em) {
-  .colophon > :has(li:nth-child(40)) ul {
-    column-count: 2;
-    /* Inherit the colophon's gap here too, so the single rule stays on
+
+	.colophon > :has(li:nth-child(40)) ul {
+		column-count: 2;
+
+		/* Inherit the colophon's gap here too, so the single rule stays on
        axis with the two columns below. */
-    column-width: auto;
-  }
-  /* Two forced columns on a 320px screen leave about 130px each, and
+		column-width: auto;
+	}
+
+	/* Two forced columns on a 320px screen leave about 130px each, and
      "Fritz-J.-Raddatz-Festwochen" is wider than that on its own. Without
      somewhere to break, it pushes the whole page sideways. Hyphenation takes
      the German titles apart properly; break-word catches whatever is left. */
-  .colophon > :has(li:nth-child(40)) li {
-    hyphens: auto;
-    overflow-wrap: break-word;
-  }
+	.colophon > :has(li:nth-child(40)) li {
+		hyphens: auto;
+		overflow-wrap: break-word;
+	}
 }
+
 .colophon__block a {
-  color: var(--ink-soft);
-  font-size: 0.86rem;
-  text-decoration: none;
+	color: var(--ink-soft);
+	font-size: 0.86rem;
+	text-decoration: none;
 }
+
 @media (min-width: 48em) {
-  .colophon__block a {
-    font-size: 0.9rem;
-  }
+
+	.colophon__block a {
+		font-size: 0.9rem;
+	}
 }
 
 .colophon__block a:hover,
 .colophon__block a:focus {
-  color: var(--blue);
+	color: var(--blue);
 }
 
 .colophon__block p {
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-  line-height: 1.5;
-  margin: 0 0 0.6rem;
+	color: var(--ink-soft);
+	font-size: 0.9rem;
+	line-height: 1.5;
+	margin: 0 0 0.6rem;
 }
 
 /* Registers keep their leaders down here, in a single column. */
 .colophon__block .rubrik-index {
-  columns: 1;
+	columns: 1;
 }
 
 .colophon__block .rubrik-index a {
-  font-size: 0.9rem;
+	font-size: 0.9rem;
 }
 
 /* Widgets that render a select — the category and archive dropdowns — fill
    their column rather than sitting at the browser's default width. */
 .colophon__block select {
-  margin-top: 0.2rem;
-  width: 100%;
+	margin-top: 0.2rem;
+	width: 100%;
 }
 
 .colophon__block .search-form {
-  max-width: none;
+	max-width: none;
 }
 
 /*
@@ -1781,63 +1855,63 @@ label {
  */
 .colophon__block h3,
 .colophon__block h4 {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  margin: 1.1rem 0 0.45rem;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.12em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--ink-faint);
+	margin: 1.1rem 0 0.45rem;
 }
 
 .colophon__block > h3:first-child,
 .colophon__block > h4:first-child {
-  margin-top: 0;
+	margin-top: 0;
 }
 
 /* The links widget renders favicons inline with the link text. */
 .colophon__block img {
-  display: inline-block;
-  margin-right: 0.35em;
-  vertical-align: -0.15em;
-  width: auto;
+	display: inline-block;
+	margin-right: 0.35em;
+	vertical-align: -0.15em;
+	width: auto;
 }
 
 /* --- The yearbook series ------------------------------------------------- */
 .colophon__serie + .colophon__serie {
-  margin-top: 0.9rem;
+	margin-top: 0.9rem;
 }
 
 .colophon__serie-title {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  margin: 0 0 0.35rem;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.12em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--ink-faint);
+	margin: 0 0 0.35rem;
 }
 
 .colophon__years {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.15rem 0.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.15rem 0.5rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 .colophon__years li {
-  margin: 0;
+	margin: 0;
 }
 
 .colophon__years a {
-  font-variant-numeric: lining-nums;
-  white-space: nowrap;
+	font-variant-numeric: lining-nums;
+	white-space: nowrap;
 }
 
 /*
@@ -1849,6 +1923,7 @@ label {
  * items divided by the same hairline the columns above use, hung from a
  * pseudo-element so the rule falls between items and never at either end.
  */
+
 /*
  * No rules inside the band. The badges are four separate things standing side
  * by side, not a table, and the space between them says so well enough. The
@@ -1856,46 +1931,47 @@ label {
  * colophon's side, so nothing here carries a border at all.
  */
 .badges {
-  align-items: stretch;
-  display: flex;
-  flex-wrap: wrap;
+	align-items: stretch;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .badges__item {
-  align-items: center;
-  display: flex;
-  /* They still share the line equally rather than taking a max-width, so the
+	align-items: center;
+	display: flex;
+
+	/* They still share the line equally rather than taking a max-width, so the
      four sit evenly whether the row holds four, two or one. */
-  flex: 1 1 11rem;
-  flex-direction: column;
-  gap: 0.65rem;
-  justify-content: center;
-  padding: 1.5rem 1.1rem;
-  text-align: center;
-  text-decoration: none;
+	flex: 1 1 11rem;
+	flex-direction: column;
+	gap: 0.65rem;
+	justify-content: center;
+	padding: 1.5rem 1.1rem;
+	text-align: center;
+	text-decoration: none;
 }
 
 .badges__label {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--blue);
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: 0.18em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--blue);
 }
 
 .badges__text {
-  color: var(--ink-soft);
-  font-size: 0.88rem;
-  line-height: 1.4;
-  text-wrap: balance;
+	color: var(--ink-soft);
+	font-size: 0.88rem;
+	line-height: 1.4;
+	text-wrap: balance;
 }
 
 .badges__item:hover .badges__text,
 .badges__item:focus .badges__text {
-  color: var(--blue);
+	color: var(--blue);
 }
 
 /*
@@ -1904,30 +1980,42 @@ label {
  * shrink. The colophon sets images inline-block with a right margin, for the
  * blogroll favicons; these are not those.
  *
- * Both were cut for a white page. Multiplying them into the ivory drops the
- * white rectangle around them so they sit on the stock instead of on a bright
- * patch of their own — but only in the day edition: against the dark paper
- * multiply would swallow them whole.
+ * The mole is a vector on a transparent ground and needs nothing done to it.
+ * The Grimme badge is a GIF cut against white, so it is multiplied into the
+ * ivory, which drops the white rectangle and sits it on the stock instead of
+ * on a bright patch of its own.
  */
 img.badges__mark {
-  display: block;
-  height: auto;
-  margin: 0;
-  max-height: 4.4rem;
-  mix-blend-mode: multiply;
-  width: auto;
+
+	/*
+   * The base stylesheet tints every img with a whisper of warm stock, which
+   * sits a photograph on the paper instead of on top of it. A badge on a
+   * transparent ground is not a photograph, and the tint shows straight
+   * through it as a rectangle.
+   */
+	background: none;
+	display: block;
+	height: auto;
+	margin: 0;
+	max-height: 4.4rem;
+	width: auto;
+}
+
+.badges__mark--raster {
+	mix-blend-mode: multiply;
 }
 
 /*
- * At night the multiply would swallow them, so it comes off — but then the
- * white each bitmap was cut against shows as a hard rectangle on the dark
+ * At night the multiply would swallow the raster badge, so it comes off — but
+ * then the white it was cut against shows as a hard rectangle on the dark
  * paper, which reads as a mistake. Given a little padding and the ivory behind
  * it, the same rectangle reads as what it is: a clipping pasted onto the page.
+ * The vector badge needs none of this and is left alone.
  */
-:root[data-edition=nacht] img.badges__mark {
-  background: #f4efe1;
-  mix-blend-mode: normal;
-  padding: 0.4rem;
+:root[data-edition="nacht"] .badges__mark--raster {
+	background: #f4efe1;
+	mix-blend-mode: normal;
+	padding: 0.4rem;
 }
 
 /*
@@ -1937,61 +2025,62 @@ img.badges__mark {
  * an icon is only a signpost, and the row should not pretend otherwise.
  */
 svg.badges__mark {
-  fill: currentColor;
-  color: var(--blue);
-  height: 2.5rem;
-  width: 2.5rem;
+	fill: currentColor;
+	color: var(--blue);
+	height: 2.5rem;
+	width: 2.5rem;
 }
 
 .badges__item:hover svg.badges__mark,
 .badges__item:focus svg.badges__mark {
-  color: var(--ink);
+	color: var(--ink);
 }
 
 /* The imprint line proper. */
 .site-info {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.13em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  align-items: baseline;
-  border-top: 1px solid var(--rule);
-  color: var(--ink-faint);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem 0.9rem;
-  justify-content: center;
-  padding-top: 1.1rem;
-  text-align: center;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.13em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	align-items: baseline;
+	border-top: 1px solid var(--rule);
+	color: var(--ink-faint);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem 0.9rem;
+	justify-content: center;
+	padding-top: 1.1rem;
+	text-align: center;
 }
 
 .site-info a {
-  color: var(--ink-soft);
-  text-decoration: none;
+	color: var(--ink-soft);
+	text-decoration: none;
 }
 
 .site-info a:hover,
 .site-info a:focus {
-  color: var(--blue);
+	color: var(--blue);
 }
 
 .site-info .sep {
-  color: var(--paper-edge);
+	color: var(--paper-edge);
 }
 
 /* A printer's mark: the fleuron sitting in the very last line, the way a
    pressman's device sat at the foot of the page. */
 .site-info__mark {
-  color: var(--blue);
-  font-family: "Noto Serif", "Times New Roman", times, serif;
-  font-size: 0.95rem;
+	color: var(--blue);
+	font-family: "Noto Serif", "Times New Roman", times, serif;
+	font-size: 0.95rem;
 }
 
 /* Navigation
 --------------------------------------------- */
+
 /*
  * Navigation
  * ----------
@@ -2000,191 +2089,202 @@ svg.badges__mark {
  * by a bullet or a pipe, which is how a printed index would do it.
  */
 .main-navigation {
-  border-bottom: 2px solid var(--blue);
-  position: relative;
+	border-bottom: 2px solid var(--blue);
+	position: relative;
 }
 
 .main-navigation .menu,
 .main-navigation ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 .main-navigation li {
-  margin: 0;
-  position: relative;
+	margin: 0;
+	position: relative;
 }
 
 .main-navigation a {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.7rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--ink);
-  display: block;
-  padding: 0.85rem clamp(0.6rem, 1.6vw, 1.15rem);
-  text-decoration: none;
-  transition: color 0.15s ease;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.7rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.15em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--ink);
+	display: block;
+	padding: 0.85rem clamp(0.6rem, 1.6vw, 1.15rem);
+	text-decoration: none;
+	transition: color 0.15s ease;
 }
 
 /* The separating hairline, hung between items rather than after them. */
 .main-navigation li + li::before {
-  background: var(--rule);
-  content: "";
-  height: 0.85em;
-  left: 0;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1px;
+	background: var(--rule);
+	content: "";
+	height: 0.85em;
+	left: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 1px;
 }
 
 .main-navigation a:hover,
 .main-navigation a:focus {
-  color: var(--blue);
+	color: var(--blue);
 }
 
 /* The current rubric is underscored in navy, as a compositor would mark it. */
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-ancestor > a {
-  box-shadow: 0 -3px 0 var(--blue) inset;
-  color: var(--blue);
+	box-shadow: 0 -3px 0 var(--blue) inset;
+	color: var(--blue);
 }
 
 /* Sub-menus drop as a pasted slip of paper. */
 .main-navigation ul ul {
-  background: var(--paper);
-  border: 1px solid var(--rule);
-  box-shadow: 0 6px 18px rgba(29, 26, 20, 0.1);
-  display: block;
-  flex-direction: column;
-  left: 0;
-  min-width: 13rem;
-  opacity: 0;
-  padding: 0.3rem 0;
-  pointer-events: none;
-  position: absolute;
-  top: 100%;
-  transform: translateY(-4px);
-  transition: opacity 0.15s ease, transform 0.15s ease;
-  z-index: 50;
+	background: var(--paper);
+	border: 1px solid var(--rule);
+	box-shadow: 0 6px 18px rgba(29, 26, 20, 0.1);
+	display: block;
+	flex-direction: column;
+	left: 0;
+	min-width: 13rem;
+	opacity: 0;
+	padding: 0.3rem 0;
+	pointer-events: none;
+	position: absolute;
+	top: 100%;
+	transform: translateY(-4px);
+	transition: opacity 0.15s ease, transform 0.15s ease;
+	z-index: 50;
 }
 
 .main-navigation li:hover > ul,
 .main-navigation li:focus-within > ul {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
+	opacity: 1;
+	pointer-events: auto;
+	transform: translateY(0);
 }
 
 .main-navigation ul ul li + li::before {
-  display: none;
+	display: none;
 }
 
 .main-navigation ul ul a {
-  padding: 0.5rem 1rem;
-  text-align: left;
+	padding: 0.5rem 1rem;
+	text-align: left;
 }
 
 /*
  * Small screens: the running head folds into a stack behind a toggle.
  */
 .menu-toggle {
-  display: none;
+	display: none;
 }
 
 @media (max-width: 47.9375em) {
-  .menu-toggle {
-    background: transparent;
-    border: 0;
-    color: var(--blue);
-    display: block;
-    margin: 0 auto;
-    padding: 0.8rem 1rem;
-    width: 100%;
-  }
-  .menu-toggle::after {
-    content: " ▾";
-  }
-  .main-navigation[aria-expanded=true] .menu-toggle::after,
-  .main-navigation .menu-toggle[aria-expanded=true]::after {
-    content: " ▴";
-  }
-  .main-navigation .menu,
-  .main-navigation > div > ul {
-    display: none;
-    flex-direction: column;
-    padding-bottom: 0.6rem;
-  }
-  .main-navigation.toggled .menu,
-  .main-navigation.toggled > div > ul {
-    display: flex;
-  }
-  .main-navigation li + li::before {
-    display: none;
-  }
-  .main-navigation li + li {
-    border-top: 1px solid var(--rule-soft);
-  }
-  .main-navigation a {
-    padding: 0.7rem 0.4rem;
-    text-align: center;
-  }
-  .main-navigation ul ul {
-    border: 0;
-    box-shadow: none;
-    opacity: 1;
-    pointer-events: auto;
-    position: static;
-    transform: none;
-  }
-  .main-navigation ul ul a {
-    color: var(--ink-soft);
-    text-align: center;
-  }
+
+	.menu-toggle {
+		background: transparent;
+		border: 0;
+		color: var(--blue);
+		display: block;
+		margin: 0 auto;
+		padding: 0.8rem 1rem;
+		width: 100%;
+	}
+
+	.menu-toggle::after {
+		content: " ▾";
+	}
+
+	.main-navigation[aria-expanded="true"] .menu-toggle::after,
+	.main-navigation .menu-toggle[aria-expanded="true"]::after {
+		content: " ▴";
+	}
+
+	.main-navigation .menu,
+	.main-navigation > div > ul {
+		display: none;
+		flex-direction: column;
+		padding-bottom: 0.6rem;
+	}
+
+	.main-navigation.toggled .menu,
+	.main-navigation.toggled > div > ul {
+		display: flex;
+	}
+
+	.main-navigation li + li::before {
+		display: none;
+	}
+
+	.main-navigation li + li {
+		border-top: 1px solid var(--rule-soft);
+	}
+
+	.main-navigation a {
+		padding: 0.7rem 0.4rem;
+		text-align: center;
+	}
+
+	.main-navigation ul ul {
+		border: 0;
+		box-shadow: none;
+		opacity: 1;
+		pointer-events: auto;
+		position: static;
+		transform: none;
+	}
+
+	.main-navigation ul ul a {
+		color: var(--ink-soft);
+		text-align: center;
+	}
 }
+
 /*
  * The utility line: search and the edition switch, tucked under the nav.
  */
 .masthead-utility {
-  align-items: center;
-  border-bottom: 1px solid var(--rule);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem 1.25rem;
-  justify-content: space-between;
-  padding: 0.5rem 0;
+	align-items: center;
+	border-bottom: 1px solid var(--rule);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem 1.25rem;
+	justify-content: space-between;
+	padding: 0.5rem 0;
 }
 
 .masthead-utility .search-form {
-  flex: 1 1 14rem;
-  max-width: 22rem;
-  min-width: 0;
+	flex: 1 1 14rem;
+	max-width: 22rem;
+	min-width: 0;
 }
 
 /* The day / night edition toggle. Labelled as an edition, not as a theme,
    because a paper had a morning edition and an evening edition. */
 .edition-toggle {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  background: transparent;
-  border: 1px solid var(--rule);
-  color: var(--ink-soft);
-  flex: none;
-  padding: 1em 2em;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.14em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	background: transparent;
+	border: 1px solid var(--rule);
+	color: var(--ink-soft);
+	flex: none;
+	padding: 1em 2em;
 }
 
 /*
@@ -2198,32 +2298,36 @@ svg.badges__mark {
  * it is always alone on its line, and always in the middle of it.
  */
 @media (max-width: 37.4375em) {
-  .masthead-utility .search-form {
-    flex-basis: 100%;
-    max-width: none;
-  }
-  .edition-toggle {
-    margin-inline: auto;
-  }
+
+	.masthead-utility .search-form {
+		flex-basis: 100%;
+		max-width: none;
+	}
+
+	.edition-toggle {
+		margin-inline: auto;
+	}
 }
+
 .edition-toggle:hover,
 .edition-toggle:focus {
-  background: var(--blue);
-  border-color: var(--blue);
-  color: var(--paper);
+	background: var(--blue);
+	border-color: var(--blue);
+	color: var(--paper);
 }
 
 /* Forms
 --------------------------------------------- */
+
 /*
  * Search — "Im Archiv blättern"
  */
 .search-form {
-  align-items: flex-end;
-  display: flex;
-  gap: 0.75rem;
-  max-width: 30rem;
-  min-width: 0;
+	align-items: flex-end;
+	display: flex;
+	gap: 0.75rem;
+	max-width: 30rem;
+	min-width: 0;
 }
 
 /*
@@ -2233,34 +2337,35 @@ svg.badges__mark {
  * to be told it may give way.
  */
 .search-form .search-field {
-  flex: 1 1 4rem;
-  font-size: 1.05rem;
-  min-width: 0;
+	flex: 1 1 4rem;
+	font-size: 1.05rem;
+	min-width: 0;
 }
 
 .search-form .search-submit {
-  flex: none;
-  padding: 1em 2em;
+	flex: none;
+	padding: 1em 2em;
 }
 
 .search-form label {
-  flex: 1 1 4rem;
-  margin: 0;
-  min-width: 0;
+	flex: 1 1 4rem;
+	margin: 0;
+	min-width: 0;
 }
 
 /* The search that lives in the masthead bar: one ruled line, nothing more. */
 .masthead-search {
-  margin: 0;
-  max-width: none;
+	margin: 0;
+	max-width: none;
 }
 
 .masthead-search .search-field {
-  font-size: 0.95rem;
+	font-size: 0.95rem;
 }
 
 /* The front page
 --------------------------------------------- */
+
 /*
  * Rubrik & Zeile — kickers and datelines
  * --------------------------------------
@@ -2268,88 +2373,89 @@ svg.badges__mark {
  * of these is set in the sans, in caps, letterspaced, and none of them is ever
  * more than one line.
  */
+
 /* The rubric above a headline. This site has 105 of them — "Buchbuch",
    "Kaffeehaus des Monats", "Vossianische Antonomasie" — which is exactly the
    standing-column structure a feuilleton had. They deserve the top slot. */
 .kicker {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.17em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  align-items: baseline;
-  color: var(--blue);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 1rem 0;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.17em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	align-items: baseline;
+	color: var(--blue);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 1rem 0;
 }
 
 .kicker a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 .kicker a:hover,
 .kicker a:focus {
-  color: var(--red);
-  text-decoration: underline;
-  text-underline-offset: 0.25em;
+	color: var(--red);
+	text-decoration: underline;
+	text-underline-offset: 0.25em;
 }
 
 .kicker--large {
-  font-size: 0.76rem;
+	font-size: 0.76rem;
 }
 
 /* A rubric separated by a lozenge, as in a printed index. */
 .kicker__sep {
-  color: var(--ink-faint);
+	color: var(--ink-faint);
 }
 
 /*
  * The dateline: author, date, length. Small, quiet, sitting under a hairline.
  */
 .dateline-line {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.7rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.11em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  align-items: baseline;
-  color: var(--ink-faint);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem 0.7rem;
-  margin-bottom: 0.5rem;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.7rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.11em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	align-items: baseline;
+	color: var(--ink-faint);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.45rem 0.7rem;
+	margin-bottom: 0.5rem;
 }
 
 .dateline-line a {
-  color: var(--ink-soft);
-  text-decoration: none;
+	color: var(--ink-soft);
+	text-decoration: none;
 }
 
 .dateline-line a:hover,
 .dateline-line a:focus {
-  color: var(--blue);
+	color: var(--blue);
 }
 
 /* The author's name is the one thing in the dateline that is not a fact about
    the file, so it gets the ink. */
 .dateline-line .byline {
-  color: var(--ink-soft);
-  font-weight: 600;
+	color: var(--ink-soft);
+	font-weight: 600;
 }
 
 .dateline-line time {
-  font-variant-numeric: lining-nums;
+	font-variant-numeric: lining-nums;
 }
 
 .dateline-line .sep {
-  color: var(--ink);
+	color: var(--ink);
 }
 
 /*
@@ -2358,16 +2464,16 @@ svg.badges__mark {
  * on the front page.
  */
 .flag-new {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.7rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  background: var(--blue-deep);
-  color: var(--paper);
-  padding: 0.25em 0.5em 0.2em;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.7rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.14em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	background: var(--blue-deep);
+	color: var(--paper);
+	padding: 0.25em 0.5em 0.2em;
 }
 
 /*
@@ -2381,10 +2487,11 @@ svg.badges__mark {
  * This turns out not to be a constraint. It is the brief.
  */
 .issue {
-  padding: clamp(2rem, 5vw, 4rem) 0 0;
+	padding: clamp(2rem, 5vw, 4rem) 0 0;
 }
 
 /* --- Der Aufmacher: the lead ------------------------------------------- */
+
 /*
  * The lead is set in two columns on a wide page: the piece itself on the left,
  * the companion register on the right, divided by a single hairline that runs
@@ -2399,221 +2506,254 @@ svg.badges__mark {
  * wins regardless of the breakpoint.)
  */
 .lead {
-  padding-bottom: clamp(2rem, 4vw, 3.2rem);
+	padding-bottom: clamp(2rem, 4vw, 3.2rem);
 }
 
 .lead__title {
-  font-size: clamp(2.4rem, 1rem + 4.6vw, 4.5rem);
-  letter-spacing: -0.018em;
-  line-height: 0.98;
-  /* Tight leading drops the descenders of the last line low; the dateline
+	font-size: clamp(2.4rem, 1rem + 4.6vw, 4.5rem);
+	letter-spacing: -0.018em;
+	line-height: 0.98;
+
+	/* Tight leading drops the descenders of the last line low; the dateline
      needs clearance from those, not from the baseline. */
-  margin: 0.35rem 0 1.5rem;
-  text-wrap: balance;
-  font-weight: 500;
+	margin: 0.35rem 0 1.5rem;
+	text-wrap: balance;
+	font-weight: 500;
 }
 
 .lead__title a {
-  color: var(--blue);
-  text-decoration: none;
+	color: var(--blue);
+	text-decoration: none;
 }
 
 .lead__title a:hover,
 .lead__title a:focus {
-  color: var(--ink);
+	color: var(--ink);
 }
 
 .lead__standfirst {
-  font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
-  hyphens: auto;
-  hyphenate-limit-chars: 6 3 3;
-  text-align: justify;
-  text-wrap: pretty;
-  /* Below about forty characters a column cannot be justified without
+	font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+	hyphens: auto;
+	hyphenate-limit-chars: 6 3 3;
+	text-align: justify;
+	text-wrap: pretty;
+
+	/* Below about forty characters a column cannot be justified without
      tearing rivers through it, however good the hyphenation. Ragged right
      is the honest setting on a phone. */
 }
+
 @media (max-width: 37.4375em) {
-  .lead__standfirst {
-    text-align: left;
-  }
+
+	.lead__standfirst {
+		text-align: left;
+	}
 }
+
 .lead__standfirst {
-  font-size: 1.08em;
-  line-height: 1.55;
-  margin-top: clamp(1.2rem, 2.5vw, 1.8rem);
+	font-size: 1.08em;
+	line-height: 1.55;
+	margin-top: clamp(1.2rem, 2.5vw, 1.8rem);
 }
 
 /* The drop cap. Three lines deep, in the display face, in navy — the single
    most recognisable gesture in the whole of printed journalism. */
 .lead__standfirst > p:first-of-type::first-letter,
 .dropcap::first-letter {
-  color: var(--blue);
-  float: left;
-  font-family: "Noto Serif", "Times New Roman", times, serif;
-  font-size: 4.76em;
-  font-weight: 400;
-  line-height: 0.82;
-  padding-top: 0.42rem;
-  padding-right: 1rem;
+	color: var(--blue);
+	float: left;
+	font-family: "Noto Serif", "Times New Roman", times, serif;
+	font-size: 4.76em;
+	font-weight: 400;
+	line-height: 0.82;
+	padding-top: 0.42rem;
+	padding-right: 1rem;
 }
+
 @media only screen and (max-width: 30rem) {
-  .lead__standfirst > p:first-of-type::first-letter,
-  .dropcap::first-letter {
-    font-size: 4em;
-  }
+
+	.lead__standfirst > p:first-of-type::first-letter,
+	.dropcap::first-letter {
+		font-size: 4em;
+	}
 }
 
 .lead__aside {
-  color: var(--ink-soft);
-  font-size: 0.97em;
-  margin-top: clamp(1.6rem, 3vw, 2.2rem);
+	color: var(--ink-soft);
+	font-size: 0.97em;
+	margin-top: clamp(1.6rem, 3vw, 2.2rem);
 }
 
 @media (min-width: 62em) {
-  .lead {
-    display: grid;
-    gap: 0;
-    /* The piece gets the larger share; a register needs less measure than
+
+	.lead {
+		display: grid;
+		gap: 0;
+
+		/* The piece gets the larger share; a register needs less measure than
        a headline does. */
-    grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
-  }
-  .lead__main {
-    padding-right: clamp(1.4rem, 3vw, 2.5rem);
-  }
-  /*
+		grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+	}
+
+	.lead__main {
+		padding-right: clamp(1.4rem, 3vw, 2.5rem);
+	}
+
+	/*
    * Grid items stretch by default, so this rule runs the full height of the
    * row whichever column is taller. The margin has to go, or the rule starts
    * below the kicker instead of level with it.
    */
-  .lead__aside {
-    border-left: 1px solid var(--rule);
-    margin-top: 0;
-    padding-left: clamp(1.4rem, 3vw, 2.5rem);
-  }
-  /* No companion, no second column. */
-  .lead--solo {
-    display: block;
-  }
-  .lead--solo .lead__main {
-    padding-right: 0;
-  }
+	.lead__aside {
+		border-left: 1px solid var(--rule);
+		margin-top: 0;
+		padding-left: clamp(1.4rem, 3vw, 2.5rem);
+	}
+
+	/* No companion, no second column. */
+	.lead--solo {
+		display: block;
+	}
+
+	.lead--solo .lead__main {
+		padding-right: 0;
+	}
 }
+
 /* --- Die Spalten: the column set ---------------------------------------- */
+
 /*
  * Real column rules. The hairline sits *between* the columns, which means the
  * gap has to be zero and the padding has to be on the items — the same way a
  * compositor spaces around a brass rule.
  */
 .column-set {
-  display: grid;
-  gap: 0;
-  grid-template-columns: 1fr;
+	display: grid;
+	gap: 0;
+	grid-template-columns: 1fr;
 }
 
 .column-set > * {
-  padding: clamp(1.4rem, 3vw, 2rem) 0;
+	padding: clamp(1.4rem, 3vw, 2rem) 0;
 }
 
 .column-set > * + * {
-  border-top: 1px solid var(--rule);
+	border-top: 1px solid var(--rule);
 }
 
 @media (min-width: 48em) {
-  .column-set--3,
-  .column-set--2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .column-set > * {
-    padding: 0 clamp(1rem, 2.4vw, 1.8rem);
-  }
-  .column-set > * + * {
-    border-left: 1px solid var(--rule);
-    border-top: 0;
-  }
-  .column-set > *:first-child {
-    padding-left: 0;
-  }
-  .column-set > *:last-child {
-    padding-right: 0;
-  }
-  /* With two per row, the third item starts a new row and must lose the
+
+	.column-set--3,
+	.column-set--2 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.column-set > * {
+		padding: 0 clamp(1rem, 2.4vw, 1.8rem);
+	}
+
+	.column-set > * + * {
+		border-left: 1px solid var(--rule);
+		border-top: 0;
+	}
+
+	.column-set > *:first-child {
+		padding-left: 0;
+	}
+
+	.column-set > *:last-child {
+		padding-right: 0;
+	}
+
+	/* With two per row, the third item starts a new row and must lose the
      inherited left rule and regain a top one. */
-  .column-set--3 > *:nth-child(odd) {
-    border-left: 0;
-    padding-left: 0;
-  }
-  .column-set--3 > *:nth-child(n+3) {
-    border-top: 1px solid var(--rule);
-    padding-top: clamp(1.2rem, 2.5vw, 1.8rem);
-  }
+	.column-set--3 > *:nth-child(odd) {
+		border-left: 0;
+		padding-left: 0;
+	}
+
+	.column-set--3 > *:nth-child(n+3) {
+		border-top: 1px solid var(--rule);
+		padding-top: clamp(1.2rem, 2.5vw, 1.8rem);
+	}
 }
+
 @media (min-width: 62em) {
-  .column-set--3 {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .column-set--3 > *:nth-child(n) {
-    border-left: 1px solid var(--rule);
-    border-top: 0;
-    padding-left: clamp(1rem, 2.4vw, 1.8rem);
-    padding-top: 0;
-  }
-  .column-set--3 > *:first-child {
-    border-left: 0;
-    padding-left: 0;
-  }
+
+	.column-set--3 {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.column-set--3 > *:nth-child(n) {
+		border-left: 1px solid var(--rule);
+		border-top: 0;
+		padding-left: clamp(1rem, 2.4vw, 1.8rem);
+		padding-top: 0;
+	}
+
+	.column-set--3 > *:first-child {
+		border-left: 0;
+		padding-left: 0;
+	}
 }
+
 /* --- Die Meldung: one story in a column ---------------------------------- */
 .brief__title {
-  font-size: clamp(1.25rem, 1.05rem + 0.75vw, 1.6rem);
-  line-height: 1.12;
-  margin: 0.35rem 0 0.6rem;
-  font-weight: 600;
+	font-size: clamp(1.25rem, 1.05rem + 0.75vw, 1.6rem);
+	line-height: 1.12;
+	margin: 0.35rem 0 0.6rem;
+	font-weight: 600;
 }
 
 .brief__title a {
-  color: var(--blue);
-  text-decoration: none;
+	color: var(--blue);
+	text-decoration: none;
 }
 
 .brief__title a:hover,
 .brief__title a:focus {
-  color: var(--ink);
+	color: var(--ink);
 }
 
 .brief__teaser {
-  font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
-  hyphens: auto;
-  hyphenate-limit-chars: 6 3 3;
-  text-align: justify;
-  text-wrap: pretty;
-  /* Below about forty characters a column cannot be justified without
+	font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+	hyphens: auto;
+	hyphenate-limit-chars: 6 3 3;
+	text-align: justify;
+	text-wrap: pretty;
+
+	/* Below about forty characters a column cannot be justified without
      tearing rivers through it, however good the hyphenation. Ragged right
      is the honest setting on a phone. */
 }
+
 @media (max-width: 37.4375em) {
-  .brief__teaser {
-    text-align: left;
-  }
+
+	.brief__teaser {
+		text-align: left;
+	}
 }
+
 .brief__teaser {
-  color: var(--ink);
-  font-size: 0.94em;
-  line-height: 1.5;
-  margin: 0;
-  hyphens: auto;
+	color: var(--ink);
+	font-size: 0.94em;
+	line-height: 1.5;
+	margin: 0;
+	hyphens: auto;
 }
 
 /* --- Der Umbruch: the lower half ---------------------------------------- */
 .issue__lower {
-  display: grid;
-  gap: clamp(2rem, 4vw, 3.5rem);
-  padding: clamp(1.4rem, 3vw, 2.2rem) 0 0;
+	display: grid;
+	gap: clamp(2rem, 4vw, 3.5rem);
+	padding: clamp(1.4rem, 3vw, 2.2rem) 0 0;
 }
+
 @media (min-width: 62em) {
-  .issue__lower {
-    grid-template-columns: minmax(0, 1.85fr) minmax(0, 1fr);
-  }
+
+	.issue__lower {
+		grid-template-columns: minmax(0, 1.85fr) minmax(0, 1fr);
+	}
 }
 
 /*
@@ -2624,15 +2764,16 @@ svg.badges__mark {
  * instead.
  */
 .issue__lower > * {
-  min-width: 0;
+	min-width: 0;
 }
 
 .issue__rail > * + * {
-  margin-top: clamp(2rem, 4vw, 2.8rem);
+	margin-top: clamp(2rem, 4vw, 2.8rem);
 }
 
 /* Registers & indices
 --------------------------------------------- */
+
 /*
  * Das Register — indices with dot leaders
  * ---------------------------------------
@@ -2641,53 +2782,53 @@ svg.badges__mark {
  * do, and with 1,600 posts in the archive it is also the most useful.
  */
 .section-head {
-  align-items: baseline;
-  border-bottom: 2px solid var(--blue);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1rem;
-  justify-content: space-between;
-  margin-bottom: 1.4rem;
-  padding-bottom: 0.45rem;
+	align-items: baseline;
+	border-bottom: 2px solid var(--blue);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 1rem;
+	justify-content: space-between;
+	margin-bottom: 1.4rem;
+	padding-bottom: 0.45rem;
 }
 
 .section-head__title {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.76rem;
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: 0.19em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--blue);
-  margin: 0;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.76rem;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: 0.19em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--blue);
+	margin: 0;
 }
 
 .section-head__note {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--ink-faint);
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--ink-faint);
 }
 
 .index-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 .index-list > li {
-  border-bottom: 1px solid var(--rule-soft);
-  margin: 0;
-  padding: 0.72rem 0;
+	border-bottom: 1px solid var(--rule-soft);
+	margin: 0;
+	padding: 0.72rem 0;
 }
 
 .index-list > li:last-child {
-  border-bottom: 0;
+	border-bottom: 0;
 }
 
 /*
@@ -2696,33 +2837,34 @@ svg.badges__mark {
  * dotted rule straight across the entry.
  */
 .index-list__row {
-  align-items: baseline;
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 0.45rem;
+	align-items: baseline;
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 0.45rem;
 }
 
 .index-list__title {
-  font-family: "Noto Serif", "Times New Roman", times, serif;
-  font-size: 2.12rem;
-  font-weight: 600;
-  line-height: 1.22;
-  min-width: 0;
-  overflow-wrap: break-word;
+	font-family: "Noto Serif", "Times New Roman", times, serif;
+	font-size: 2.12rem;
+	font-weight: 600;
+	line-height: 1.22;
+	min-width: 0;
+	overflow-wrap: break-word;
 }
 
 .index-list__title a {
-  color: var(--blue);
-  text-decoration: none;
+	color: var(--blue);
+	text-decoration: none;
 }
 
 .index-list__title a:hover,
 .index-list__title a:focus {
-  color: var(--blue);
+	color: var(--blue);
 }
 
 /* The leader. A dotted rule that grows to fill whatever is left of the line —
    which is why it must not shrink below zero and must never wrap. */
+
 /*
  * The leader must never wrap. Given a basis it has to honour, it drops to a
  * line of its own whenever the title's last line ends too near the margin —
@@ -2732,11 +2874,11 @@ svg.badges__mark {
  * simply disappears.
  */
 .index-list__leader {
-  border-bottom: 1px dotted var(--paper-edge);
-  flex: 1 1 0;
-  min-width: 0;
-  position: relative;
-  top: -0.22em;
+	border-bottom: 1px dotted var(--paper-edge);
+	flex: 1 1 0;
+	min-width: 0;
+	position: relative;
+	top: -0.22em;
 }
 
 /*
@@ -2753,113 +2895,116 @@ svg.badges__mark {
  * title's line and runs the dots out to the margin.
  */
 .index-list__meta {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  font-variant-numeric: lining-nums;
-  margin-top: 0.3rem;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--ink-faint);
+	font-variant-numeric: lining-nums;
+	margin-top: 0.3rem;
 }
 
 .index-list__sub {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.13em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--blue);
-  margin-top: 0.3rem;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.13em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--blue);
+	margin-top: 0.3rem;
 }
 
 .index-list__sub a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 .index-list__sub a:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.25em;
+	text-decoration: underline;
+	text-underline-offset: 0.25em;
 }
 
 /*
  * Die Rubriken — the standing columns, set as a two-column register.
  */
 .rubrik-index {
-  columns: 2;
-  column-gap: 1.6rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+	columns: 2;
+	column-gap: 1.6rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
+
 @media (max-width: 37.4375em) {
-  .rubrik-index {
-    columns: 1;
-  }
+
+	.rubrik-index {
+		columns: 1;
+	}
 }
 
 .rubrik-index > li {
-  break-inside: avoid;
-  margin: 0 0 0.42rem;
+	break-inside: avoid;
+	margin: 0 0 0.42rem;
 }
 
 .rubrik-index__row {
-  align-items: baseline;
-  display: flex;
-  gap: 0.35rem;
-  min-width: 0;
+	align-items: baseline;
+	display: flex;
+	gap: 0.35rem;
+	min-width: 0;
 }
 
 .rubrik-index__row > a {
-  min-width: 0;
-  overflow-wrap: break-word;
+	min-width: 0;
+	overflow-wrap: break-word;
 }
 
 .rubrik-index a {
-  color: var(--ink);
-  font-size: 0.92rem;
-  text-decoration: none;
+	color: var(--ink);
+	font-size: 0.92rem;
+	text-decoration: none;
 }
 
 .rubrik-index a:hover,
 .rubrik-index a:focus {
-  color: var(--blue);
+	color: var(--blue);
 }
 
 .rubrik-index__count {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.7rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  flex: none;
-  font-variant-numeric: lining-nums;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.7rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.06em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--ink-faint);
+	flex: none;
+	font-variant-numeric: lining-nums;
 }
 
 /* A well on slightly deeper stock, for the rail. */
 .issue__rail .rubrik-index {
-  columns: 1;
+	columns: 1;
 }
 
 .well {
-  background: var(--paper-warm);
-  padding: clamp(1.1rem, 2.5vw, 1.6rem);
+	background: var(--paper-warm);
+	padding: clamp(1.1rem, 2.5vw, 1.6rem);
 }
 
 .well .section-head {
-  margin-bottom: 1rem;
+	margin-bottom: 1rem;
 }
 
 /* The article
 --------------------------------------------- */
+
 /*
  * Der Artikel — the reading page
  * ------------------------------
@@ -2868,38 +3013,38 @@ svg.badges__mark {
  * make the twentieth paragraph as easy to enter as the first.
  */
 .site-main {
-  padding-bottom: clamp(2rem, 4vw, 3rem);
+	padding-bottom: clamp(2rem, 4vw, 3rem);
 }
 
 .entry {
-  padding-top: clamp(2rem, 5vw, 3.5rem);
+	padding-top: clamp(2rem, 5vw, 3.5rem);
 }
 
 .entry-header {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 44rem;
-  margin-bottom: clamp(1.6rem, 3vw, 2.4rem);
-  text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 44rem;
+	margin-bottom: clamp(1.6rem, 3vw, 2.4rem);
+	text-align: center;
 }
 
 .entry-title {
-  font-size: clamp(2rem, 1.1rem + 3.6vw, 3.6rem);
-  letter-spacing: -0.016em;
-  line-height: 1.02;
-  margin: 0.5rem 0 0;
-  text-wrap: balance;
+	font-size: clamp(2rem, 1.1rem + 3.6vw, 3.6rem);
+	letter-spacing: -0.016em;
+	line-height: 1.02;
+	margin: 0.5rem 0 0;
+	text-wrap: balance;
 }
 
 .entry-header .kicker,
 .entry-header .dateline-line {
-  justify-content: center;
+	justify-content: center;
 }
 
 .entry-header .dateline-line {
-  border-top: 1px solid var(--rule);
-  margin-top: 1.4rem;
-  padding-top: 0.8rem;
+	border-top: 1px solid var(--rule);
+	margin-top: 1.4rem;
+	padding-top: 0.8rem;
 }
 
 /*
@@ -2912,52 +3057,61 @@ svg.badges__mark {
  * pieces that failed to agree.
  */
 @media (max-width: 37.4375em) {
-  .entry-header {
-    text-align: left;
-  }
-  .entry-header .kicker,
-  .entry-header .dateline-line {
-    justify-content: flex-start;
-  }
+
+	.entry-header {
+		text-align: left;
+	}
+
+	.entry-header .kicker,
+	.entry-header .dateline-line {
+		justify-content: flex-start;
+	}
 }
+
 /* --- The body ----------------------------------------------------------- */
 .entry-content {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 36rem;
-  font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
-  hyphens: auto;
-  hyphenate-limit-chars: 6 3 3;
-  text-align: justify;
-  text-wrap: pretty;
-  /* Below about forty characters a column cannot be justified without
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 36rem;
+	font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+	hyphens: auto;
+	hyphenate-limit-chars: 6 3 3;
+	text-align: justify;
+	text-wrap: pretty;
+
+	/* Below about forty characters a column cannot be justified without
      tearing rivers through it, however good the hyphenation. Ragged right
      is the honest setting on a phone. */
 }
+
 @media (max-width: 37.4375em) {
-  .entry-content {
-    text-align: left;
-  }
+
+	.entry-content {
+		text-align: left;
+	}
 }
+
 .entry-content {
-  font-size: 1.06rem;
-  line-height: 1.68;
+	font-size: 1.06rem;
+	line-height: 1.68;
 }
+
 @media (min-width: 37.5em) {
-  .entry-content {
-    font-size: 1.135rem;
-  }
+
+	.entry-content {
+		font-size: 1.135rem;
+	}
 }
 
 /* Drop cap on the opening paragraph of a single post. Deliberately not
    applied in listings, where it would be decoration rather than typography. */
 .single .entry-content > p:first-of-type::first-letter {
-  color: var(--blue);
-  float: left;
-  font-family: "Noto Serif", "Times New Roman", times, serif;
-  font-size: 3.7em;
-  line-height: 0.8;
-  margin: 0.07em 0.09em 0 0;
+	color: var(--blue);
+	float: left;
+	font-family: "Noto Serif", "Times New Roman", times, serif;
+	font-size: 3.7em;
+	line-height: 0.8;
+	margin: 0.07em 0.09em 0 0;
 }
 
 /* …but not when the post opens with a block quote or an image, which several
@@ -2965,32 +3119,32 @@ svg.badges__mark {
    the case where wpautop wraps a lone image in a paragraph. */
 .single .entry-content > p:first-of-type:has(img)::first-letter,
 .single .entry-content > p:first-of-type:has(> a > img)::first-letter {
-  color: inherit;
-  float: none;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  margin: 0;
+	color: inherit;
+	float: none;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	margin: 0;
 }
 
 .entry-content > h2,
 .entry-content > h3,
 .entry-content > h4 {
-  margin-top: 2em;
-  text-align: left;
-  text-wrap: balance;
+	margin-top: 2em;
+	text-align: left;
+	text-wrap: balance;
 }
 
 .entry-content > h2 {
-  border-top: 1px solid var(--rule);
-  padding-top: 0.9em;
+	border-top: 1px solid var(--rule);
+	padding-top: 0.9em;
 }
 
 /* Legacy markup: two decades of inline styles live in this content. A centred
    div is a centred div, and justification must not fight it. */
-.entry-content div[style*=center],
-.entry-content div[style*=right] {
-  hyphens: none;
+.entry-content div[style*="center"],
+.entry-content div[style*="right"] {
+	hyphens: none;
 }
 
 /* Wide elements may breach the measure — images, tables, embeds. */
@@ -2998,89 +3152,91 @@ svg.badges__mark {
 .entry-content > table,
 .entry-content > .wp-caption,
 .entry-content > .wide {
-  max-width: min(100%, 52rem);
-  width: 100%;
+	max-width: min(100%, 52rem);
+	width: 100%;
 }
 
 @media (min-width: 36rem) {
-  .entry-content > figure,
-  .entry-content > .wp-caption,
-  .entry-content > .wide {
-    margin-left: 50%;
-    transform: translateX(-50%);
-  }
+
+	.entry-content > figure,
+	.entry-content > .wp-caption,
+	.entry-content > .wide {
+		margin-left: 50%;
+		transform: translateX(-50%);
+	}
 }
+
 /* The fleuron that closes a piece. */
 .entry-end {
-  color: var(--blue);
-  font-family: "Noto Serif", "Times New Roman", times, serif;
-  font-size: 1.35rem;
-  line-height: 1;
-  margin: 2.6rem auto 0;
-  max-width: var(--measure);
-  text-align: center;
+	color: var(--blue);
+	font-family: "Noto Serif", "Times New Roman", times, serif;
+	font-size: 1.35rem;
+	line-height: 1;
+	margin: 2.6rem auto 0;
+	max-width: var(--measure);
+	text-align: center;
 }
 
 /* --- The footer of a piece ---------------------------------------------- */
 .entry-footer {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 44rem;
-  border-top: 1px solid var(--rule);
-  margin-top: clamp(2.2rem, 4vw, 3rem);
-  padding-top: 1.1rem;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 44rem;
+	border-top: 1px solid var(--rule);
+	margin-top: clamp(2.2rem, 4vw, 3rem);
+	padding-top: 1.1rem;
 }
 
 .entry-footer .kicker {
-  justify-content: center;
+	justify-content: center;
 }
 
 .entry-taxonomy {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.7rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.13em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  align-items: baseline;
-  color: var(--ink-faint);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem 0.6rem;
-  justify-content: center;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.7rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.13em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	align-items: baseline;
+	color: var(--ink-faint);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem 0.6rem;
+	justify-content: center;
 }
 
 .entry-taxonomy a {
-  color: var(--blue);
-  text-decoration: none;
+	color: var(--blue);
+	text-decoration: none;
 }
 
 .entry-taxonomy a:hover,
 .entry-taxonomy a:focus {
-  color: var(--red);
-  text-decoration: underline;
-  text-underline-offset: 0.25em;
+	color: var(--red);
+	text-decoration: underline;
+	text-underline-offset: 0.25em;
 }
 
 .entry-taxonomy__label {
-  color: var(--ink-faint);
+	color: var(--ink-faint);
 }
 
 /* --- Pages (About, Impressum, the Best-of lists) ------------------------ */
 .page .entry-content {
-  hyphens: auto;
+	hyphens: auto;
 }
 
 /* The Best-of and Kinojahr pages are long ranked lists; give them room. */
 .page .entry-content ol {
-  padding-left: 1.8em;
+	padding-left: 1.8em;
 }
 
 .page .entry-content ol > li::marker {
-  color: var(--blue);
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.82em;
+	color: var(--blue);
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.82em;
 }
 
 /*
@@ -3091,312 +3247,328 @@ svg.badges__mark {
  */
 .post-navigation,
 .posts-navigation {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 50rem;
-  margin-top: clamp(2.5rem, 5vw, 4rem);
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 50rem;
+	margin-top: clamp(2.5rem, 5vw, 4rem);
 }
 
 .post-navigation .nav-links {
-  border-top: 2px solid var(--blue);
-  display: grid;
-  gap: 0;
-  grid-template-columns: 1fr;
+	border-top: 2px solid var(--blue);
+	display: grid;
+	gap: 0;
+	grid-template-columns: 1fr;
 }
 
 @media (min-width: 48em) {
-  .post-navigation .nav-links {
-    grid-template-columns: 1fr 1fr;
-  }
-  .post-navigation .nav-next {
-    border-left: 1px solid var(--rule);
-    padding-left: 1.6rem;
-    text-align: right;
-  }
-  .post-navigation .nav-previous {
-    padding-right: 1.6rem;
-  }
+
+	.post-navigation .nav-links {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.post-navigation .nav-next {
+		border-left: 1px solid var(--rule);
+		padding-left: 1.6rem;
+		text-align: right;
+	}
+
+	.post-navigation .nav-previous {
+		padding-right: 1.6rem;
+	}
 }
+
 .post-navigation .nav-previous,
 .post-navigation .nav-next {
-  padding: 1.2rem 0;
+	padding: 1.2rem 0;
 }
 
 @media (max-width: 47.9375em) {
-  .post-navigation .nav-next {
-    border-top: 1px solid var(--rule);
-  }
+
+	.post-navigation .nav-next {
+		border-top: 1px solid var(--rule);
+	}
 }
+
 .post-navigation a {
-  color: var(--ink);
-  display: block;
-  text-decoration: none;
+	color: var(--ink);
+	display: block;
+	text-decoration: none;
 }
 
 .post-navigation .nav-subtitle {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--blue);
-  display: block;
-  margin-bottom: 0.45rem;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.16em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--blue);
+	display: block;
+	margin-bottom: 0.45rem;
 }
 
 .post-navigation .nav-title {
-  display: block;
-  font-family: "Noto Serif", "Times New Roman", times, serif;
-  font-size: 1.15rem;
-  line-height: 1.2;
+	display: block;
+	font-family: "Noto Serif", "Times New Roman", times, serif;
+	font-size: 1.15rem;
+	line-height: 1.2;
 }
 
 .post-navigation a:hover .nav-title,
 .post-navigation a:focus .nav-title {
-  color: var(--blue);
+	color: var(--blue);
 }
 
 /* --- Archive paging ------------------------------------------------------ */
 .pagination {
-  border-top: 2px solid var(--blue);
-  margin-top: clamp(2.5rem, 5vw, 4rem);
-  padding-top: 1.1rem;
+	border-top: 2px solid var(--blue);
+	margin-top: clamp(2.5rem, 5vw, 4rem);
+	padding-top: 1.1rem;
 }
 
 .pagination .nav-links {
-  align-items: baseline;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  justify-content: center;
+	align-items: baseline;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.3rem;
+	justify-content: center;
 }
 
 .pagination .page-numbers {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.7rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  display: block;
-  font-variant-numeric: lining-nums;
-  min-width: 2.2rem;
-  padding: 0.6em 0.5em;
-  text-align: center;
-  text-decoration: none;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.7rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--ink-soft);
+	display: block;
+	font-variant-numeric: lining-nums;
+	min-width: 2.2rem;
+	padding: 0.6em 0.5em;
+	text-align: center;
+	text-decoration: none;
 }
 
 .pagination a.page-numbers:hover,
 .pagination a.page-numbers:focus {
-  background: var(--paper-warm);
-  color: var(--blue);
+	background: var(--paper-warm);
+	color: var(--blue);
 }
 
 .pagination .page-numbers.current {
-  background: var(--blue);
-  color: var(--paper);
+	background: var(--blue);
+	color: var(--paper);
 }
 
 .pagination .page-numbers.dots {
-  color: var(--paper-edge);
-  min-width: 0;
+	color: var(--paper-edge);
+	min-width: 0;
 }
 
 .pagination .prev,
 .pagination .next {
-  letter-spacing: 0.14em;
+	letter-spacing: 0.14em;
 }
 
 /* The simple previous/next on listing pages. */
 .posts-navigation .nav-links {
-  border-top: 2px solid var(--blue);
-  display: flex;
-  justify-content: space-between;
-  padding-top: 1.1rem;
+	border-top: 2px solid var(--blue);
+	display: flex;
+	justify-content: space-between;
+	padding-top: 1.1rem;
 }
 
 .posts-navigation a {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.7rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--blue);
-  text-decoration: none;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.7rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.14em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--blue);
+	text-decoration: none;
 }
 
 .posts-navigation a:hover,
 .posts-navigation a:focus {
-  color: var(--red);
+	color: var(--red);
 }
 
 .page-links {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  margin: 2.5rem auto 0;
-  max-width: var(--measure);
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.16em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	margin: 2.5rem auto 0;
+	max-width: var(--measure);
 }
 
 .page-links a {
-  padding: 0 0.35em;
+	padding: 0 0.35em;
 }
 
 /* Posts and pages
 --------------------------------------------- */
+
 /*
  * Archive and listing furniture
  */
 .page-header {
-  border-bottom: 2px solid var(--blue);
-  margin-bottom: clamp(1rem, 2vw, 1.5rem);
-  padding: clamp(2rem, 5vw, 3.5rem) 0 0.6rem;
+	border-bottom: 2px solid var(--blue);
+	margin-bottom: clamp(1rem, 2vw, 1.5rem);
+	padding: clamp(2rem, 5vw, 3.5rem) 0 0.6rem;
 }
 
 .page-header__kicker {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.7rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  margin-bottom: 0.6rem;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.7rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.18em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--ink-faint);
+	margin-bottom: 0.6rem;
 }
 
 .page-title {
-  font-size: clamp(1.9rem, 2.2rem + 2.8vw, 6rem);
-  line-height: 1.04;
-  margin: 0 0 0.35rem;
+	font-size: clamp(1.9rem, 2.2rem + 2.8vw, 6rem);
+	line-height: 1.04;
+	margin: 0 0 0.35rem;
 }
 
 .page-title span {
-  color: var(--blue);
-  font-style: italic;
+	color: var(--blue);
+	font-style: italic;
 }
 
 .archive-description {
-  font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
-  hyphens: auto;
-  hyphenate-limit-chars: 6 3 3;
-  text-align: justify;
-  text-wrap: pretty;
-  /* Below about forty characters a column cannot be justified without
+	font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+	hyphens: auto;
+	hyphenate-limit-chars: 6 3 3;
+	text-align: justify;
+	text-wrap: pretty;
+
+	/* Below about forty characters a column cannot be justified without
      tearing rivers through it, however good the hyphenation. Ragged right
      is the honest setting on a phone. */
 }
+
 @media (max-width: 37.4375em) {
-  .archive-description {
-    text-align: left;
-  }
+
+	.archive-description {
+		text-align: left;
+	}
 }
+
 .archive-description {
-  color: var(--ink-soft);
-  font-size: 0.98rem;
-  margin: 0.9rem 0 0.9rem;
-  max-width: 42rem;
-  text-align: left;
+	color: var(--ink-soft);
+	font-size: 0.98rem;
+	margin: 0.9rem 0 0.9rem;
+	max-width: 42rem;
+	text-align: left;
 }
 
 .page-header__count {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  font-variant-numeric: lining-nums;
-  padding-bottom: 0.4rem;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.12em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--ink-faint);
+	font-variant-numeric: lining-nums;
+	padding-bottom: 0.4rem;
 }
 
 /* The archive body: a register, because 500 posts in "Buchbuch" is a register
    and nothing else. */
 .archive-index {
-  padding-bottom: 1rem;
+	padding-bottom: 1rem;
 }
 
 /* --- Nothing found ------------------------------------------------------- */
 .no-results,
 .error-404 {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 44rem;
-  padding: clamp(2.5rem, 6vw, 4.5rem) 0;
-  text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 44rem;
+	padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+	text-align: center;
 }
 
 .no-results .search-form,
 .error-404 .search-form {
-  margin: 2rem auto 0;
+	margin: 2rem auto 0;
 }
 
 .error-404__number {
-  color: var(--blue);
-  font-family: "Noto Serif", "Times New Roman", times, serif;
-  font-size: clamp(5rem, 16vw, 11rem);
-  line-height: 0.85;
-  margin: 0;
+	color: var(--blue);
+	font-family: "Noto Serif", "Times New Roman", times, serif;
+	font-size: clamp(5rem, 16vw, 11rem);
+	line-height: 0.85;
+	margin: 0;
 }
 
 .error-404__note {
-  font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
-  hyphens: auto;
-  hyphenate-limit-chars: 6 3 3;
-  text-align: justify;
-  text-wrap: pretty;
-  /* Below about forty characters a column cannot be justified without
+	font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+	hyphens: auto;
+	hyphenate-limit-chars: 6 3 3;
+	text-align: justify;
+	text-wrap: pretty;
+
+	/* Below about forty characters a column cannot be justified without
      tearing rivers through it, however good the hyphenation. Ragged right
      is the honest setting on a phone. */
 }
+
 @media (max-width: 37.4375em) {
-  .error-404__note {
-    text-align: left;
-  }
+
+	.error-404__note {
+		text-align: left;
+	}
 }
+
 .error-404__note {
-  color: var(--ink-soft);
-  margin: 1.5rem auto 0;
-  max-width: 32rem;
-  text-align: center;
+	color: var(--ink-soft);
+	margin: 1.5rem auto 0;
+	max-width: 32rem;
+	text-align: center;
 }
 
 .error-404__suggestions {
-  margin-top: 3rem;
-  text-align: left;
+	margin-top: 3rem;
+	text-align: left;
 }
 
 /* --- Sticky --------------------------------------------------------------- */
 .sticky .kicker::after {
-  color: var(--red);
-  content: "❖";
+	color: var(--red);
+	content: "❖";
 }
 
 /* --- Password-protected ------------------------------------------------ */
 .post-password-form {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 36rem;
-  align-items: flex-end;
-  display: flex;
-  gap: 0.8rem;
-  flex-wrap: wrap;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 36rem;
+	align-items: flex-end;
+	display: flex;
+	gap: 0.8rem;
+	flex-wrap: wrap;
 }
 
 /* Comments
 --------------------------------------------- */
+
 /*
  * Zuschriften — letters to the editor
  * -----------------------------------
@@ -3404,228 +3576,231 @@ svg.badges__mark {
  * on the deeper stock, with the correspondent's name in the dateline style.
  */
 .comments-area {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 44rem;
-  margin-top: clamp(3rem, 6vw, 4.5rem);
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 44rem;
+	margin-top: clamp(3rem, 6vw, 4.5rem);
 }
 
 .comments-title,
 .comment-reply-title {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.76rem;
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: 0.19em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  border-bottom: 2px solid var(--blue);
-  color: var(--blue);
-  margin: 0 0 1.4rem;
-  padding-bottom: 0.45rem;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.76rem;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: 0.19em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	border-bottom: 2px solid var(--blue);
+	color: var(--blue);
+	margin: 0 0 1.4rem;
+	padding-bottom: 0.45rem;
 }
 
 .comment-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 .comment-list .children {
-  list-style: none;
-  margin: 0;
-  padding-left: clamp(1rem, 4vw, 2.2rem);
-  position: relative;
+	list-style: none;
+	margin: 0;
+	padding-left: clamp(1rem, 4vw, 2.2rem);
+	position: relative;
 }
 
 /* A reply hangs off a vertical rule, like a bracketed aside. */
 .comment-list .children::before {
-  background: var(--rule-soft);
-  bottom: 1.5rem;
-  content: "";
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 1px;
+	background: var(--rule-soft);
+	bottom: 1.5rem;
+	content: "";
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 1px;
 }
 
 .comment-body {
-  border-bottom: 1px solid var(--rule-soft);
-  padding: 1.4rem 0;
+	border-bottom: 1px solid var(--rule-soft);
+	padding: 1.4rem 0;
 }
 
 .comment-meta {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-bottom: 0.7rem;
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+	margin-bottom: 0.7rem;
 }
 
 .comment-author {
-  align-items: center;
-  display: flex;
-  gap: 0.6rem;
+	align-items: center;
+	display: flex;
+	gap: 0.6rem;
 }
 
 .comment-author img {
-  border-radius: 50%;
-  filter: grayscale(1) contrast(0.92);
-  flex: none;
-  height: 2rem;
-  width: 2rem;
+	border-radius: 50%;
+	filter: grayscale(1) contrast(0.92);
+	flex: none;
+	height: 2rem;
+	width: 2rem;
 }
 
 .comment-author .fn {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--ink);
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--ink);
 }
 
 .comment-author .says {
-  display: none;
+	display: none;
 }
 
 .comment-metadata {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--ink-faint);
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--ink-faint);
 }
 
 .comment-metadata a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 .comment-metadata a:hover {
-  color: var(--blue);
+	color: var(--blue);
 }
 
 .comment-content {
-  font-size: 0.98rem;
-  hyphens: auto;
-  line-height: 1.58;
+	font-size: 0.98rem;
+	hyphens: auto;
+	line-height: 1.58;
 }
 
 .comment-content p {
-  margin-bottom: 0.9em;
+	margin-bottom: 0.9em;
 }
 
 .reply {
-  margin-top: 0.7rem;
+	margin-top: 0.7rem;
 }
 
 .comment-reply-link {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--blue);
-  text-decoration: none;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.12em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--blue);
+	text-decoration: none;
 }
 
 .comment-reply-link:hover,
 .comment-reply-link:focus {
-  color: var(--red);
+	color: var(--red);
 }
 
 .bypostauthor > .comment-body .fn::after {
-  color: var(--blue);
-  content: " ❖";
+	color: var(--blue);
+	content: " ❖";
 }
 
 .comment-awaiting-moderation {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: var(--red);
-  display: block;
-  margin-bottom: 0.6rem;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.16em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--red);
+	display: block;
+	margin-bottom: 0.6rem;
 }
 
 /* --- The form ----------------------------------------------------------- */
 .comment-respond {
-  background: var(--paper-warm);
-  margin-top: 2.5rem;
-  padding: clamp(1.2rem, 3vw, 2rem);
+	background: var(--paper-warm);
+	margin-top: 2.5rem;
+	padding: clamp(1.2rem, 3vw, 2rem);
 }
 
 .comment-form {
-  display: grid;
-  gap: 1.1rem;
+	display: grid;
+	gap: 1.1rem;
 }
 
 .comment-form .comment-form-comment {
-  margin: 0;
+	margin: 0;
 }
 
 .comment-form p {
-  margin: 0;
+	margin: 0;
 }
 
 @media (min-width: 37.5em) {
-  .comment-form {
-    grid-template-columns: 1fr 1fr;
-  }
-  .comment-form .comment-form-comment,
-  .comment-form .comment-notes,
-  .comment-form .form-submit,
-  .comment-form .comment-form-cookies-consent {
-    grid-column: 1/-1;
-  }
+
+	.comment-form {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.comment-form .comment-form-comment,
+	.comment-form .comment-notes,
+	.comment-form .form-submit,
+	.comment-form .comment-form-cookies-consent {
+		grid-column: 1/-1;
+	}
 }
+
 .comment-notes,
 .comment-form .form-submit {
-  margin: 0;
+	margin: 0;
 }
 
 .comment-notes {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  line-height: 1.2;
-  text-transform: none;
-  color: var(--ink-faint);
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	line-height: 1.2;
+	text-transform: none;
+	color: var(--ink-faint);
 }
 
 .comment-form-cookies-consent {
-  align-items: baseline;
-  display: flex;
-  gap: 0.5rem;
+	align-items: baseline;
+	display: flex;
+	gap: 0.5rem;
 }
 
 .comment-form-cookies-consent label {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  line-height: 1.2;
-  text-transform: none;
-  margin: 0;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.08em;
+	line-height: 1.2;
+	text-transform: none;
+	margin: 0;
 }
 
-.comment-form input[type=checkbox] {
-  accent-color: #112e60;
+.comment-form input[type="checkbox"] {
+	accent-color: #112e60;
 }
 
 /* Akismet and friends append a privacy note after the form. It is a footnote,
@@ -3634,15 +3809,15 @@ svg.badges__mark {
 .comments-area > p:last-child:not([class]),
 .no-comments,
 .comment-form .logged-in-as {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  line-height: 1.2;
-  text-transform: none;
-  color: var(--ink-faint);
-  margin-top: 1rem;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	line-height: 1.2;
+	text-transform: none;
+	color: var(--ink-faint);
+	margin-top: 1rem;
 }
 
 /* Media
@@ -3650,130 +3825,144 @@ svg.badges__mark {
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
-  border: 0;
-  display: inline;
-  margin: 0;
-  padding: 0;
+	border: 0;
+	display: inline;
+	margin: 0;
+	padding: 0;
 }
 
 .custom-logo-link {
-  display: block;
+	display: block;
 }
 
 /* Legacy uploads carry hard-coded borders and alignments from four editors
    ago. Strip the borders; keep the alignment. */
 .entry-content img[border] {
-  border: 0;
+	border: 0;
 }
 
 /* Captions
 --------------------------------------------- */
+
 /*
  * Captions — set as a Bildunterschrift: ruled off above, ragged, never
  * centred (centred captions only ever look centred when they are one line,
  * and these never are).
  */
 .wp-caption {
-  margin: 2.2em 0;
-  max-width: 100%;
+	margin: 2.2em 0;
+	max-width: 100%;
 }
 
-.wp-caption img[class*=wp-image-] {
-  display: block;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
 }
 
 .wp-caption-text,
 .gallery-caption {
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.7rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  line-height: 1.45;
-  text-transform: none;
-  border-top: 1px solid var(--rule);
-  color: var(--ink-soft);
-  display: block;
-  hyphens: auto;
-  margin: 0.7em 0 0;
-  padding-top: 0.55em;
-  text-align: left;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.7rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.04em;
+	line-height: 1.45;
+	text-transform: none;
+	border-top: 1px solid var(--rule);
+	color: var(--ink-soft);
+	display: block;
+	hyphens: auto;
+	margin: 0.7em 0 0;
+	padding-top: 0.55em;
+	text-align: left;
 }
 
 /* Galleries
 --------------------------------------------- */
+
 /*
  * Galleries — a contact sheet, with a hairline grid between the plates.
  */
 .gallery {
-  display: grid;
-  gap: 1.4em;
-  grid-template-columns: repeat(2, 1fr);
-  margin: 2.4em 0;
+	display: grid;
+	gap: 1.4em;
+	grid-template-columns: repeat(2, 1fr);
+	margin: 2.4em 0;
 }
 
 .gallery-columns-1 {
-  grid-template-columns: 1fr;
+	grid-template-columns: 1fr;
 }
 
 @media (min-width: 37.5em) {
-  .gallery-columns-3 {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .gallery-columns-4 {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .gallery-columns-5 {
-    grid-template-columns: repeat(5, 1fr);
-  }
-  .gallery-columns-6 {
-    grid-template-columns: repeat(6, 1fr);
-  }
-  .gallery-columns-7 {
-    grid-template-columns: repeat(7, 1fr);
-  }
-  .gallery-columns-8 {
-    grid-template-columns: repeat(8, 1fr);
-  }
-  .gallery-columns-9 {
-    grid-template-columns: repeat(9, 1fr);
-  }
+
+	.gallery-columns-3 {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.gallery-columns-4 {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	.gallery-columns-5 {
+		grid-template-columns: repeat(5, 1fr);
+	}
+
+	.gallery-columns-6 {
+		grid-template-columns: repeat(6, 1fr);
+	}
+
+	.gallery-columns-7 {
+		grid-template-columns: repeat(7, 1fr);
+	}
+
+	.gallery-columns-8 {
+		grid-template-columns: repeat(8, 1fr);
+	}
+
+	.gallery-columns-9 {
+		grid-template-columns: repeat(9, 1fr);
+	}
 }
+
 .gallery-item {
-  margin: 0;
-  text-align: left;
-  width: 100%;
+	margin: 0;
+	text-align: left;
+	width: 100%;
 }
 
 .gallery-item img {
-  width: 100%;
+	width: 100%;
 }
 
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
+
 /* Jetpack infinite scroll
 --------------------------------------------- */
+
 /* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
-  display: none;
+	display: none;
 }
 
 /* Re-display the Theme Footer when Infinite Scroll has reached its end. */
 .infinity-end.neverending .site-footer {
-  display: block;
+	display: block;
 }
 
 /*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/
+
 /* Accessibility
 --------------------------------------------- */
+
 /*
  * Text meant only for screen readers.
  *
@@ -3790,37 +3979,37 @@ svg.badges__mark {
  * Pinning them removes the calculation, and with it the bug.
  */
 .screen-reader-text {
-  border: 0;
-  clip-path: inset(50%);
-  height: 1px;
-  left: 0;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute !important;
-  top: 0;
-  white-space: nowrap;
-  width: 1px;
+	border: 0;
+	clip-path: inset(50%);
+	height: 1px;
+	left: 0;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	top: 0;
+	white-space: nowrap;
+	width: 1px;
 }
 
 .screen-reader-text:focus {
-  background-color: var(--paper);
-  border: 1px solid var(--blue);
-  clip-path: none;
-  color: var(--blue);
-  display: block;
-  font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
-  font-size: 0.8rem;
-  height: auto;
-  left: 1rem;
-  letter-spacing: 0.12em;
-  line-height: normal;
-  padding: 0.9em 1.4em;
-  text-decoration: none;
-  text-transform: uppercase;
-  top: 1rem;
-  width: auto;
-  z-index: 100000;
+	background-color: var(--paper);
+	border: 1px solid var(--blue);
+	clip-path: none;
+	color: var(--blue);
+	display: block;
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.8rem;
+	height: auto;
+	left: 1rem;
+	letter-spacing: 0.12em;
+	line-height: normal;
+	padding: 0.9em 1.4em;
+	text-decoration: none;
+	text-transform: uppercase;
+	top: 1rem;
+	width: auto;
+	z-index: 100000;
 }
 
 /*
@@ -3828,74 +4017,79 @@ svg.badges__mark {
  * compositor would put round a correction.
  */
 :focus-visible {
-  outline: 2px solid var(--blue);
-  outline-offset: 2px;
+	outline: 2px solid var(--blue);
+	outline-offset: 2px;
 }
 
 /* Do not let the skip link's target hide under the fixed reading rule. */
 #primary {
-  scroll-margin-top: 1.5rem;
+	scroll-margin-top: 1.5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-  }
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+	}
 }
+
 /* Alignments
 --------------------------------------------- */
 .alignleft {
-  display: inline;
-  float: left;
-  margin-bottom: 1em;
-  margin-right: 1.5em;
-  max-width: 50%;
+	display: inline;
+	float: left;
+	margin-bottom: 1em;
+	margin-right: 1.5em;
+	max-width: 50%;
 }
 
 .alignright {
-  display: inline;
-  float: right;
-  margin-bottom: 1em;
-  margin-left: 1.5em;
-  max-width: 50%;
+	display: inline;
+	float: right;
+	margin-bottom: 1em;
+	margin-left: 1.5em;
+	max-width: 50%;
 }
 
 .aligncenter {
-  clear: both;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 @media (max-width: 37.4375em) {
-  .alignleft,
-  .alignright {
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-  }
+
+	.alignleft,
+	.alignright {
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 100%;
+	}
 }
+
 .clear::after,
 .entry-content::after,
 .comment-content::after,
 .site-content::after {
-  clear: both;
-  content: "";
-  display: table;
+	clear: both;
+	content: "";
+	display: table;
 }
 
 .hidden {
-  display: none;
+	display: none;
 }
 
 /* Print
 --------------------------------------------- */
+
 /*
  * Auf Papier — the print stylesheet
  * ---------------------------------
@@ -3904,80 +4098,92 @@ svg.badges__mark {
  * printed after the link, because on paper a link is only a promise.
  */
 @media print {
-  :root {
-    --paper: #fff;
-    --paper-warm: #fff;
-    --paper-deep: #fff;
-    --paper-edge: #bbb;
-    --ink: #000;
-    --ink-soft: #333;
-    --ink-faint: #555;
-    --blue: #112e60;
-    --rule: #999;
-    --rule-soft: #ccc;
-    --rule-blue: #112e60;
-  }
-  body::before,
-  body::after {
-    display: none;
-  }
-  .main-navigation,
-  .masthead-utility,
-  .reading-rule,
-  .post-navigation,
-  .pagination,
-  .posts-navigation,
-  .comment-respond,
-  .colophon,
-  .edition-toggle,
-  .search-form,
-  .skip-link,
-  .issue__rail {
-    display: none !important;
-  }
-  body {
-    background: #fff;
-    font-size: 11pt;
-    line-height: 1.45;
-  }
-  .site {
-    max-width: none;
-    padding: 0;
-  }
-  .site-logo {
-    width: 12cm;
-  }
-  .entry-content,
-  .entry-header,
-  .entry-footer {
-    max-width: none;
-  }
-  .entry-title {
-    font-size: 24pt;
-  }
-  /* Never break a headline off from its first lines. */
-  h1,
-  h2,
-  h3,
-  .entry-title,
-  .kicker {
-    break-after: avoid;
-    page-break-after: avoid;
-  }
-  blockquote,
-  figure,
-  table,
-  img {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-  .entry-content a[href^=http]::after {
-    color: #555;
-    content: " ⟨" attr(href) "⟩";
-    font-size: 8pt;
-    word-break: break-all;
-  }
-  @page {
-    margin: 2cm;
-  }
+
+	:root {
+		--paper: #fff;
+		--paper-warm: #fff;
+		--paper-deep: #fff;
+		--paper-edge: #bbb;
+		--ink: #000;
+		--ink-soft: #333;
+		--ink-faint: #555;
+		--blue: #112e60;
+		--rule: #999;
+		--rule-soft: #ccc;
+		--rule-blue: #112e60;
+	}
+
+	body::before,
+	body::after {
+		display: none;
+	}
+
+	.main-navigation,
+	.masthead-utility,
+	.reading-rule,
+	.post-navigation,
+	.pagination,
+	.posts-navigation,
+	.comment-respond,
+	.colophon,
+	.edition-toggle,
+	.search-form,
+	.skip-link,
+	.issue__rail {
+		display: none !important;
+	}
+
+	body {
+		background: #fff;
+		font-size: 11pt;
+		line-height: 1.45;
+	}
+
+	.site {
+		max-width: none;
+		padding: 0;
+	}
+
+	.site-logo {
+		width: 12cm;
+	}
+
+	.entry-content,
+	.entry-header,
+	.entry-footer {
+		max-width: none;
+	}
+
+	.entry-title {
+		font-size: 24pt;
+	}
+
+	/* Never break a headline off from its first lines. */
+	h1,
+	h2,
+	h3,
+	.entry-title,
+	.kicker {
+		break-after: avoid;
+		page-break-after: avoid;
+	}
+
+	blockquote,
+	figure,
+	table,
+	img {
+		break-inside: avoid;
+		page-break-inside: avoid;
+	}
+
+	.entry-content a[href^="http"]::after {
+		color: #555;
+		content: " ⟨" attr(href) "⟩";
+		font-size: 8pt;
+		word-break: break-all;
+	}
+
+	@page {
+		margin: 2cm;
+	}
 }

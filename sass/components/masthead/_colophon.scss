@@ -348,27 +348,38 @@
  * shrink. The colophon sets images inline-block with a right margin, for the
  * blogroll favicons; these are not those.
  *
- * Both were cut for a white page. Multiplying them into the ivory drops the
- * white rectangle around them so they sit on the stock instead of on a bright
- * patch of their own — but only in the day edition: against the dark paper
- * multiply would swallow them whole.
+ * The mole is a vector on a transparent ground and needs nothing done to it.
+ * The Grimme badge is a GIF cut against white, so it is multiplied into the
+ * ivory, which drops the white rectangle and sits it on the stock instead of
+ * on a bright patch of its own.
  */
 img.badges__mark {
+	/*
+	 * The base stylesheet tints every img with a whisper of warm stock, which
+	 * sits a photograph on the paper instead of on top of it. A badge on a
+	 * transparent ground is not a photograph, and the tint shows straight
+	 * through it as a rectangle.
+	 */
+	background: none;
 	display: block;
 	height: auto;
 	margin: 0;
 	max-height: 4.4rem;
-	mix-blend-mode: multiply;
 	width: auto;
 }
 
+.badges__mark--raster {
+	mix-blend-mode: multiply;
+}
+
 /*
- * At night the multiply would swallow them, so it comes off — but then the
- * white each bitmap was cut against shows as a hard rectangle on the dark
+ * At night the multiply would swallow the raster badge, so it comes off — but
+ * then the white it was cut against shows as a hard rectangle on the dark
  * paper, which reads as a mistake. Given a little padding and the ivory behind
  * it, the same rectangle reads as what it is: a clipping pasted onto the page.
+ * The vector badge needs none of this and is left alone.
  */
-:root[data-edition="nacht"] img.badges__mark {
+:root[data-edition="nacht"] .badges__mark--raster {
 	background: #{$paper};
 	mix-blend-mode: normal;
 	padding: 0.4rem;
