@@ -15,15 +15,58 @@
 	@include rule-double(4px);
 }
 
+/*
+ * The grid
+ * --------
+ * Multi-column rather than CSS grid, and deliberately so. Widget lists differ
+ * wildly in length here — fifty-four yearbook pages next to a blogroll of
+ * thirty next to "No comments." — and a grid stretches every cell in a row to
+ * match its tallest neighbour, which leaves craters. Multi-column balances the
+ * blocks across the columns instead, packing them the way a compositor fills
+ * a page, and it throws in `column-rule` for free: a real hairline between
+ * columns, which is the device the whole theme is built on.
+ */
 .colophon {
-	display: grid;
-	gap: clamp(1.6rem, 4vw, 3rem);
-	padding: clamp(1.8rem, 4vw, 2.8rem) 0;
-
-	@include at($bp__quart) {
-		grid-template-columns: repeat(3, 1fr);
-	}
+	/*
+	 * The column width is set so that a 390px phone still resolves to two
+	 * columns: 353px of content less a 17.6px gap leaves 167px each, and the
+	 * browser needs the declared width to be under that to fit two. One column
+	 * on a phone turns a long widget set into thousands of pixels of
+	 * scrolling; two halves it at no real cost to legibility. Four is the cap,
+	 * so the desktop footer does not shred into narrow slivers.
+	 */
+	column-gap: clamp(1.1rem, 3vw, 2.75rem);
+	column-rule: 1px solid var(--rule);
+	columns: 9.5rem 4;
+	margin-top: clamp(1.4rem, 3vw, 2.2rem);
+	padding-bottom: clamp(1.5rem, 3vw, 2.2rem);
 }
+
+.colophon > * {
+	/*
+	 * Blocks may run on into the next column. Forbidding it sounds tidier,
+	 * but a fifty-four-item list that cannot break sets the floor for every
+	 * column in the footer, and the whole thing grows to two thousand pixels
+	 * to accommodate one widget. A printed index runs on; so does this.
+	 */
+	break-inside: auto;
+	margin: 0 0 clamp(1.5rem, 3vw, 2.2rem);
+	min-width: 0;
+}
+
+/* What must not break: a heading away from its list, or a line away from
+   itself. */
+.colophon__block > .widget-title,
+.colophon__title {
+	break-after: avoid;
+}
+
+.colophon__block li,
+.colophon__serie {
+	break-inside: avoid;
+}
+
+/* --- Inside a cell ------------------------------------------------------- */
 
 .colophon__block > .widget-title,
 .colophon__title {
@@ -31,7 +74,7 @@
 
 	border-bottom: 1px solid var(--rule);
 	color: var(--blue);
-	margin: 0 0 0.8rem;
+	margin: 0 0 0.75rem;
 	padding-bottom: 0.4rem;
 }
 
@@ -41,14 +84,29 @@
 	padding: 0;
 }
 
+/*
+ * No rule under every item. In the rail a ruled list is a register of a dozen
+ * things; down here, across a hundred and twenty, it is corduroy.
+ */
 .colophon__block li {
-	margin: 0 0 0.35rem;
+	border: 0;
+	line-height: 1.4;
+	margin: 0 0 0.34rem;
+	padding: 0;
+}
+
+.colophon__block li:last-child {
+	margin-bottom: 0;
 }
 
 .colophon__block a {
 	color: var(--ink-soft);
-	font-size: 0.92rem;
+	font-size: 0.86rem;
 	text-decoration: none;
+
+	@include at($bp__quart) {
+		font-size: 0.9rem;
+	}
 }
 
 .colophon__block a:hover,
@@ -56,10 +114,87 @@
 	color: var(--blue);
 }
 
-.colophon__note {
+.colophon__block p {
 	color: var(--ink-soft);
-	font-size: 0.92rem;
-	line-height: 1.55;
+	font-size: 0.9rem;
+	line-height: 1.5;
+	margin: 0 0 0.6rem;
+}
+
+/* Registers keep their leaders down here, in a single column. */
+.colophon__block .rubrik-index {
+	columns: 1;
+}
+
+.colophon__block .rubrik-index a {
+	font-size: 0.9rem;
+}
+
+/* Widgets that render a select — the category and archive dropdowns — fill
+   their column rather than sitting at the browser's default width. */
+.colophon__block select {
+	margin-top: 0.2rem;
+	width: 100%;
+}
+
+.colophon__block .search-form {
+	max-width: none;
+}
+
+/*
+ * Some widgets emit their own headings inside the block — the links widget
+ * prints one per blogroll category. Set them a step below the block title.
+ */
+.colophon__block h3,
+.colophon__block h4 {
+	@include kicker(0.68rem, 0.12em);
+
+	color: var(--ink-faint);
+	margin: 1.1rem 0 0.45rem;
+}
+
+.colophon__block > h3:first-child,
+.colophon__block > h4:first-child {
+	margin-top: 0;
+}
+
+/* The links widget renders favicons inline with the link text. */
+.colophon__block img {
+	display: inline-block;
+	margin-right: 0.35em;
+	vertical-align: -0.15em;
+	width: auto;
+}
+
+/* --- The yearbook series ------------------------------------------------- */
+
+.colophon__serie + .colophon__serie {
+	margin-top: 0.9rem;
+}
+
+.colophon__serie-title {
+	@include kicker(0.68rem, 0.12em);
+
+	color: var(--ink-faint);
+	margin: 0 0 0.35rem;
+}
+
+.colophon__years {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.15rem 0.5rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.colophon__years li {
+	margin: 0;
+}
+
+.colophon__years a {
+	font-variant-numeric: lining-nums;
+	white-space: nowrap;
 }
 
 /* The imprint line proper. */

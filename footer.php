@@ -2,6 +2,12 @@
 /**
  * Das Impressum — the colophon
  *
+ * A large ruled grid at the foot of every page: each widget becomes one cell,
+ * and the hairlines between them are drawn the way the columns of the page
+ * above are drawn. When no widgets are placed, the theme sets the grid itself
+ * out of the material the archive already has — the masthead of contributors,
+ * the run of yearbooks, and the imprint.
+ *
  * @package Umblätterer
  */
 
@@ -13,75 +19,47 @@
 		<div class="site-footer__closing" role="presentation"></div>
 
 		<div class="colophon">
-			<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
-				<?php dynamic_sidebar( 'footer-1' ); ?>
-			<?php else : ?>
+			<?php
+			if ( is_active_sidebar( 'sidebar-1' ) ) :
+				dynamic_sidebar( 'sidebar-1' );
+			else :
+				get_template_part( 'template-parts/colophon', 'default' );
+			endif;
 
-				<div class="colophon__block">
+			/*
+			 * The rubric register belongs beside the content, so it only appears
+			 * down here on the templates that have no rail — a single piece, or a
+			 * page — where a reader would otherwise be left with no way into the
+			 * other sixteen hundred.
+			 */
+			if ( ! umblaetterer_has_rail() ) :
+				?>
+				<section class="widget colophon__block">
 					<h2 class="colophon__title"><?php esc_html_e( 'Die Rubriken', 'umblaetterer' ); ?></h2>
-					<ul>
-						<?php foreach ( umblaetterer_rubriken( 8 ) as $umblaetterer_term ) : ?>
+					<ul class="rubrik-index">
+						<?php foreach ( umblaetterer_rubriken( 18 ) as $umblaetterer_term ) : ?>
 							<li>
-								<a href="<?php echo esc_url( get_category_link( $umblaetterer_term ) ); ?>">
-									<?php echo esc_html( $umblaetterer_term->name ); ?>
-								</a>
+								<span class="rubrik-index__row">
+									<a href="<?php echo esc_url( get_category_link( $umblaetterer_term ) ); ?>">
+										<?php echo esc_html( $umblaetterer_term->name ); ?>
+									</a>
+									<span class="index-list__leader" aria-hidden="true"></span>
+									<span class="rubrik-index__count"><?php echo esc_html( number_format_i18n( $umblaetterer_term->count ) ); ?></span>
+								</span>
 							</li>
 						<?php endforeach; ?>
 					</ul>
-				</div>
+				</section>
+				<?php
+			endif;
+			?>
 
-				<div class="colophon__block">
-					<h2 class="colophon__title"><?php esc_html_e( 'Die Jahrgänge', 'umblaetterer' ); ?></h2>
-					<ul>
-						<?php wp_get_archives( array( 'type' => 'yearly', 'limit' => 9 ) ); ?>
-					</ul>
-				</div>
-
-				<div class="colophon__block">
-					<h2 class="colophon__title"><?php esc_html_e( 'In eigener Sache', 'umblaetterer' ); ?></h2>
-					<?php
-					if ( has_nav_menu( 'menu-2' ) ) {
-						wp_nav_menu(
-							array(
-								'theme_location' => 'menu-2',
-								'depth'          => 1,
-								'container'      => false,
-							)
-						);
-					} else {
-						?>
-						<ul>
-							<?php
-							wp_list_pages(
-								array(
-									'title_li' => '',
-									'include'  => implode(
-										',',
-										array_filter(
-											array_map(
-												static function ( $slug ) {
-													$page = get_page_by_path( $slug );
-													return $page ? $page->ID : null;
-												},
-												array( 'about', 'impressum', 'geloeschte-rubriken' )
-											)
-										)
-									),
-								)
-							);
-							?>
-							<li>
-								<a href="<?php echo esc_url( get_feed_link() ); ?>">
-									<?php esc_html_e( 'RSS-Feed', 'umblaetterer' ); ?>
-								</a>
-							</li>
-						</ul>
-						<?php
-					}
-					?>
-				</div>
-
-			<?php endif; ?>
+			<section class="widget colophon__block">
+				<h2 class="colophon__title"><?php esc_html_e( 'Die Jahrgänge', 'umblaetterer' ); ?></h2>
+				<ul class="rubrik-index">
+					<?php umblaetterer_jahrgaenge(); ?>
+				</ul>
+			</section>
 		</div>
 
 		<div class="site-info">
@@ -89,7 +67,7 @@
 			<span>
 				<?php
 				printf(
-					/* translators: %s: site name. */
+					/* translators: 1: current year, 2: site name. */
 					esc_html__( '© %1$s %2$s', 'umblaetterer' ),
 					esc_html( wp_date( 'Y' ) ),
 					esc_html( get_bloginfo( 'name' ) )

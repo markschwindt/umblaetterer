@@ -76,28 +76,25 @@ add_action( 'after_setup_theme', 'umblaetterer_content_width', 0 );
 
 /**
  * Register widget areas.
+ *
+ * One area, and it is the foot of the page. The rail beside the listings is
+ * not a widget area: it carries the one register the archive is actually
+ * navigated by — the rubrics — and that is generated from the taxonomy rather
+ * than arranged by hand. Everything else a publication wants to hang off the
+ * bottom of its pages, the run of volumes included, goes into the grid below.
+ *
+ * The id stays 'sidebar-1' so that widgets already placed under the previous
+ * theme keep their assignment and simply reappear in the new position.
  */
 function umblaetterer_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Seitenspalte', 'umblaetterer' ),
+			'name'          => esc_html__( 'Fußleiste', 'umblaetterer' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'The rail beside archive listings.', 'umblaetterer' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Impressum', 'umblaetterer' ),
-			'id'            => 'footer-1',
-			'description'   => esc_html__( 'Three columns in the colophon at the foot of every page.', 'umblaetterer' ),
+			'description'   => esc_html__( 'Each widget becomes one ruled cell in the grid at the foot of every page. Short lists sit best here; a widget with a very long list is given extra width automatically.', 'umblaetterer' ),
 			'before_widget' => '<section id="%1$s" class="widget colophon__block %2$s">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
+			'before_title'  => '<h2 class="colophon__title">',
 			'after_title'   => '</h2>',
 		)
 	);
@@ -462,6 +459,22 @@ function umblaetterer_rubriken( $number = 24 ) {
 	);
 
 	return is_wp_error( $terms ) ? array() : $terms;
+}
+
+/**
+ * Whether the current template puts the rail beside its content.
+ *
+ * The rubric register lives in the rail on the front page and on listings. On
+ * a single piece there is no rail, so the foot of the page has to carry it
+ * instead — otherwise a reader who arrives on an article from a search engine
+ * is given no way into the other sixteen hundred.
+ *
+ * @return bool
+ */
+function umblaetterer_has_rail() {
+	return is_home() && 1 === max( 1, (int) get_query_var( 'paged' ) )
+		|| is_archive()
+		|| is_search();
 }
 
 /**

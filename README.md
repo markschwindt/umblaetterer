@@ -34,7 +34,8 @@ All three are self-hosted from `assets/fonts` under the SIL Open Font License. N
 | `single.php` | One column at a 36rem measure; *Umblättern* navigation; *Zuschriften* set as a correspondence column |
 | `archive.php`, `search.php` | Registers with dot leaders — with 514 posts in *Buchbuch*, a feed would be unusable and a table of contents is a reference work |
 | `404.php` | *Diese Seite fehlt im Blatt* |
-| `template-parts/rail-rubriken.php` | The rubric and volume registers that flank the listings |
+| `template-parts/rail-rubriken.php` | The rubric register that flanks the listings |
+| `footer.php`, `template-parts/colophon-default.php` | The colophon: a large balanced grid of widgets at the foot of every page |
 
 The companion column beside the lead prefers the lead's own standing column. But the rubric is chosen for being *rare* — the more specific term is the more informative kicker — and a rare rubric sometimes holds exactly one piece. So it falls back to the oldest trick in the trade: **Vor zehn Jahren**, what stood in this paper ten years ago.
 
@@ -68,6 +69,16 @@ npm run lint:scss
 npm run lint:js
 npm run bundle           # ../umblaetterer.zip
 ```
+
+## Where things sit
+
+The theme has **one widget area**, `Fußleiste`, and it is the foot of the page. The rail beside the listings is not a widget area on purpose: it carries the one register this archive is actually navigated by — the 105 rubrics — and that is generated from the taxonomy rather than arranged by hand. Everything else, the run of volumes included, sits in the colophon.
+
+The colophon is laid out with **multi-column, not CSS grid**. Widget lists here differ wildly in length (fifty-four yearbook pages beside a blogroll of thirty beside "No comments."), and a grid stretches every cell in a row to match its tallest neighbour, which leaves craters. Multi-column balances the blocks instead and throws in `column-rule` for free — a real hairline between columns, which is the device the whole theme is built on. Blocks are allowed to run on into the next column, as an index does in print; forbidding it lets one long widget set the height of the entire footer.
+
+The column width is tuned so a 390px phone still resolves to two columns, and capped at four so the desktop footer does not shred into slivers.
+
+When no widgets are placed, `template-parts/colophon-default.php` sets the grid from what the archive already knows about itself: the contributors and their counts, the three yearbook series collapsed to rows of years, and the imprint. The volumes are always in the colophon; on a single piece — where there is no rail — the rubrics join them there, so a reader arriving from a search engine is not left without a way into the other sixteen hundred.
 
 ### Notes for whoever comes next
 
