@@ -87,6 +87,7 @@ When no widgets are placed, `template-parts/colophon-default.php` sets the grid 
 - **The issue number** in the dateline bar is the count of published posts, cached for a day and flushed on publish.
 - **Dates** are written out by `umblaetterer_datum()` rather than `date_i18n()`, which would depend on the install's locale being German.
 - **Reading time** counts letter-runs with a Unicode regex; `str_word_count()` splits German words at every umlaut and inflates the figure by a third.
+- **`.screen-reader-text` carries `top: 0; left: 0`, and must keep them.** They look redundant next to `position: absolute` — they are not. Without them the box has no specified position and the browser computes a *static* position instead, which WebKit gets wrong inside a multi-column fragmentainer. The hidden `<label>`s WordPress emits for the category and archive dropdown widgets sit in the multi-column colophon, and Safari placed them ~1,700px past the end of the document; being absolute rather than fixed, they dragged the scrollable area with them and the page scrolled far beyond its own footer. Chrome is unaffected, so this will not show up in a Chrome-only check.
 - **Teasers** drop a leading block quotation before cutting. The house style opens pieces with a pulled quotation, and a teaser made of somebody else's words tells the reader nothing about the piece.
 
 ## Credits

@@ -1,12 +1,28 @@
-/* Text meant only for screen readers. */
+/*
+ * Text meant only for screen readers.
+ *
+ * The offsets are not decoration. Without `top` and `left` the box has no
+ * specified position, so the browser has to work out its *static* position —
+ * and WebKit resolves that wrongly for an absolutely positioned element inside
+ * a multi-column fragmentainer. The two hidden <label>s that WordPress emits
+ * for the category and archive dropdown widgets sit inside the multi-column
+ * colophon, and Safari was placing them some 1,700px below the end of the
+ * document. Being absolutely positioned rather than fixed, they dragged the
+ * scrollable area down with them, and the page scrolled far past its own
+ * footer into empty paper.
+ *
+ * Pinning them removes the calculation, and with it the bug.
+ */
 .screen-reader-text {
 	border: 0;
 	clip-path: inset(50%);
 	height: 1px;
+	left: 0;
 	margin: -1px;
 	overflow: hidden;
 	padding: 0;
 	position: absolute !important;
+	top: 0;
 	white-space: nowrap;
 	width: 1px;
 }
