@@ -44,12 +44,17 @@
 
 .colophon > * {
 	/*
-	 * Blocks may run on into the next column. Forbidding it sounds tidier,
-	 * but a fifty-four-item list that cannot break sets the floor for every
-	 * column in the footer, and the whole thing grows to two thousand pixels
-	 * to accommodate one widget. A printed index runs on; so does this.
+	 * No block is split across a column boundary. A widget cut in half reads
+	 * as two half-finished widgets, and the reader has no way to tell that the
+	 * orphaned tail belongs to the heading three columns back.
+	 *
+	 * The cost is that the tallest block sets the floor for the column height:
+	 * a widget with a very long list will make the whole footer as tall as
+	 * itself. That is the right trade — but if the footer ever looks cavernous,
+	 * this is why, and the fix is to shorten the offending widget rather than
+	 * to let it fragment again.
 	 */
-	break-inside: auto;
+	break-inside: avoid;
 	margin: 0 0 clamp(1.5rem, 3vw, 2.2rem);
 	min-width: 0;
 }
@@ -97,6 +102,47 @@
 
 .colophon__block li:last-child {
 	margin-bottom: 0;
+}
+
+/*
+ * A very long list is set in sub-columns inside its own block.
+ *
+ * This is what keeps the footer filled. Blocks may not break across the outer
+ * columns, so the tallest block sets the column height — and the number of
+ * columns actually used is the total content divided by that height. One
+ * fifty-four-item list, left in a single file, stood 1,681px tall and pushed
+ * the whole footer into three columns with the fourth left empty. Folded into
+ * sub-columns the same list is little more than half as tall, the balancer has
+ * room to use all four, and not a single block is broken.
+ *
+ * The threshold is read off the list itself rather than hardcoded per widget,
+ * so it keeps working for whatever is added here later.
+ */
+.colophon__block ul:has(li:nth-child(20)) {
+	column-gap: 1rem;
+	column-width: 7rem;
+}
+
+/*
+ * A list too long to sit in one column at all runs the full width instead.
+ *
+ * Blocks may not break, so the tallest sets the column height, and the columns
+ * actually used are the total content over that height. One list of fifty-four
+ * page titles was still 1,489px after folding — taller than a quarter of the
+ * footer — so the balancer could only ever use three of the four columns.
+ *
+ * `column-span: all` takes that one block out of the column flow and gives it
+ * the whole measure, where its own sub-columns finally have room to be read.
+ * It is not broken: it is one block, entire, across the top. What remains
+ * balances across all four columns beneath it, which is the point.
+ */
+.colophon > :has(li:nth-child(40)) {
+	column-span: all;
+}
+
+.colophon > :has(li:nth-child(40)) ul {
+	column-gap: 1.6rem;
+	column-width: 11rem;
 }
 
 .colophon__block a {
@@ -195,6 +241,98 @@
 .colophon__years a {
 	font-variant-numeric: lining-nums;
 	white-space: nowrap;
+}
+
+/*
+ * Die Hausmarken
+ * --------------
+ * The strip of house marks between the colophon and the imprint: the awards,
+ * the Bluesky account, the Google Earth tour. A newspaper set this kind of
+ * matter in a ruled band at the foot of the page, so that is what it gets —
+ * items divided by the same hairline the columns above use, hung from a
+ * pseudo-element so the rule falls between items and never at either end.
+ */
+.hausmarken {
+	align-items: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	/*
+	 * Each item casts a hairline up and to its left, and the container clips
+	 * the ones that fall off its edges. That draws a rule between items and
+	 * between rows wherever the flex line happens to wrap — four across, two
+	 * and two, or one below the other — without a breakpoint having to guess
+	 * where the wrap will land. A media query cannot know; this does not have
+	 * to. The top row's rule opens the band, so the container needs no border
+	 * of its own.
+	 */
+	overflow: hidden;
+}
+
+.hausmarken__item {
+	align-items: center;
+	box-shadow:
+		-1px 0 0 var(--rule),
+		0 -1px 0 var(--rule);
+	display: flex;
+	/* No max-width: the items must fill the line exactly, or the leftmost one
+	   does not start at the container's edge and its rule escapes the clip. */
+	flex: 1 1 11rem;
+	flex-direction: column;
+	gap: 0.65rem;
+	justify-content: center;
+	padding: 1.5rem 1.1rem;
+	text-align: center;
+	text-decoration: none;
+}
+
+.hausmarken__label {
+	@include kicker(0.68rem, 0.18em, 600);
+
+	color: var(--blue);
+}
+
+.hausmarken__text {
+	color: var(--ink-soft);
+	font-size: 0.88rem;
+	line-height: 1.4;
+	text-wrap: balance;
+}
+
+.hausmarken__item:hover .hausmarken__text,
+.hausmarken__item:focus .hausmarken__text {
+	color: var(--blue);
+}
+
+/*
+ * The badges are small bitmaps from 2010 and 2025 and will not survive being
+ * scaled up, so they are capped at their natural height and allowed only to
+ * shrink. The colophon sets images inline-block with a right margin, for the
+ * blogroll favicons; these are not those.
+ *
+ * Both were cut for a white page. Multiplying them into the ivory drops the
+ * white rectangle around them so they sit on the stock instead of on a bright
+ * patch of their own — but only in the day edition: against the dark paper
+ * multiply would swallow them whole.
+ */
+.hausmarken__badge {
+	display: block;
+	height: auto;
+	margin: 0;
+	max-height: 4.4rem;
+	mix-blend-mode: multiply;
+	width: auto;
+}
+
+/*
+ * At night the multiply would swallow them, so it comes off — but then the
+ * white each bitmap was cut against shows as a hard rectangle on the dark
+ * paper, which reads as a mistake. Given a little padding and the ivory behind
+ * it, the same rectangle reads as what it is: a clipping pasted onto the page.
+ */
+:root[data-edition="nacht"] .hausmarken__badge {
+	background: #{$paper};
+	mix-blend-mode: normal;
+	padding: 0.4rem;
 }
 
 /* The imprint line proper. */
