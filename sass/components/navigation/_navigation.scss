@@ -37,7 +37,7 @@
 }
 
 /* The separating hairline, hung between items rather than after them. */
-.main-navigation li + li::before {
+.main-navigation li+li::before {
 	background: var(--rule);
 	content: "";
 	height: 0.85em;
@@ -54,9 +54,9 @@
 }
 
 /* The current rubric is underscored in navy, as a compositor would mark it. */
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-ancestor > a {
+.main-navigation .current-menu-item>a,
+.main-navigation .current_page_item>a,
+.main-navigation .current-menu-ancestor>a {
 	box-shadow: 0 -3px 0 var(--blue) inset;
 	color: var(--blue);
 }
@@ -82,14 +82,14 @@
 	z-index: 50;
 }
 
-.main-navigation li:hover > ul,
-.main-navigation li:focus-within > ul {
+.main-navigation li:hover>ul,
+.main-navigation li:focus-within>ul {
 	opacity: 1;
 	pointer-events: auto;
 	transform: translateY(0);
 }
 
-.main-navigation ul ul li + li::before {
+.main-navigation ul ul li+li::before {
 	display: none;
 }
 
@@ -127,22 +127,22 @@
 	}
 
 	.main-navigation .menu,
-	.main-navigation > div > ul {
+	.main-navigation>div>ul {
 		display: none;
 		flex-direction: column;
 		padding-bottom: 0.6rem;
 	}
 
 	.main-navigation.toggled .menu,
-	.main-navigation.toggled > div > ul {
+	.main-navigation.toggled>div>ul {
 		display: flex;
 	}
 
-	.main-navigation li + li::before {
+	.main-navigation li+li::before {
 		display: none;
 	}
 
-	.main-navigation li + li {
+	.main-navigation li+li {
 		border-top: 1px solid var(--rule-soft);
 	}
 
@@ -194,7 +194,29 @@
 	border: 1px solid var(--rule);
 	color: var(--ink-soft);
 	flex: none;
-	padding: 0.42em 0.85em;
+	padding: 1em 2em;
+}
+
+/*
+ * On a phone the search takes the whole line and the edition switch centres on
+ * its own beneath it.
+ *
+ * Giving the search a full basis is what makes the centring reliable: left to
+ * wrap on its own the switch would sometimes share the line and sometimes not,
+ * depending on how much room the field had left, and the auto margins would
+ * centre it in the remainder rather than in the page. Forcing the break means
+ * it is always alone on its line, and always in the middle of it.
+ */
+@include until($bp__oktav) {
+
+	.masthead-utility .search-form {
+		flex-basis: 100%;
+		max-width: none;
+	}
+
+	.edition-toggle {
+		margin-inline: auto;
+	}
 }
 
 .edition-toggle:hover,

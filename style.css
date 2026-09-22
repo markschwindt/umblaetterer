@@ -2184,9 +2184,28 @@ svg.badges__mark {
   border: 1px solid var(--rule);
   color: var(--ink-soft);
   flex: none;
-  padding: 0.42em 0.85em;
+  padding: 1em 2em;
 }
 
+/*
+ * On a phone the search takes the whole line and the edition switch centres on
+ * its own beneath it.
+ *
+ * Giving the search a full basis is what makes the centring reliable: left to
+ * wrap on its own the switch would sometimes share the line and sometimes not,
+ * depending on how much room the field had left, and the auto margins would
+ * centre it in the remainder rather than in the page. Forcing the break means
+ * it is always alone on its line, and always in the middle of it.
+ */
+@media (max-width: 37.4375em) {
+  .masthead-utility .search-form {
+    flex-basis: 100%;
+    max-width: none;
+  }
+  .edition-toggle {
+    margin-inline: auto;
+  }
+}
 .edition-toggle:hover,
 .edition-toggle:focus {
   background: var(--blue);
@@ -2221,7 +2240,7 @@ svg.badges__mark {
 
 .search-form .search-submit {
   flex: none;
-  padding: 0.62em 1.1em;
+  padding: 1em 2em;
 }
 
 .search-form label {
