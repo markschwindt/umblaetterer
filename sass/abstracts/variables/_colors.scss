@@ -8,56 +8,56 @@
 //
 
 // --- The ivory stock -------------------------------------------------------
-$paper:            #f4efe1; // the sheet
-$paper-warm:       #efe8d6; // a shade deeper — wells, quotes, the dateline bar
-$paper-deep:       #e7dfc9; // deepest tone still recognisably paper
-$paper-edge:       #d9cfb4; // where the stack casts a shadow
+$paper: #f4efe1; // the sheet
+$paper-warm: #efe8d6; // a shade deeper — wells, quotes, the dateline bar
+$paper-deep: #e7dfc9; // deepest tone still recognisably paper
+$paper-edge: #d9cfb4; // where the stack casts a shadow
 
 // --- First ink: the masthead navy -----------------------------------------
-$blue:             #112e60; // straight from Umblaetterer.svg
-$blue-deep:        #0a1c3d; // pressed twice
-$blue-mid:         #35507f;
-$blue-pale:        #8496b4;
+$blue: #112e60; // straight from Umblaetterer.svg
+$blue-deep: #0a1c3d; // pressed twice
+$blue-mid: #35507f;
+$blue-pale: #8496b4;
 
 // --- The body ink ----------------------------------------------------------
 // Not black: warm, slightly under-inked, the way letterpress sits on rag paper.
-$ink:              #1d1a14;
-$ink-soft:         #4e4839;
-$ink-faint:        #6f6854; // 4.9:1 on the ivory — AA for the small caps
+$ink: #1d1a14;
+$ink-soft: #4e4839;
+$ink-faint: #6f6854; // 4.9:1 on the ivory — AA for the small caps
 
 // --- Second ink: the corrector's pencil ------------------------------------
 // Used perhaps four times in the whole theme. That is the point.
-$red:              #a3302a;
+$red: #a3302a;
 
 // --- Night edition ("Nachtausgabe") ---------------------------------------
-$night:            #11141b;
-$night-warm:       #171b24;
-$night-deep:       #1d222d;
-$night-ink:        #e7e0cd;
-$night-ink-soft:   #a7a08c;
-$night-ink-faint:  #948d79; // 5.6:1 on the night stock
-$night-blue:       #93aede;
-$night-blue-deep:  #b2c5e8; // the night edition's solid fills
-$night-red:        #d98078;
+$night: #11141b;
+$night-warm: #171b24;
+$night-deep: #1d222d;
+$night-ink: #ebffd2;
+$night-ink-soft: #d3d688;
+$night-ink-faint: #799482; // 5.6:1 on the night stock
+$night-blue: #96eebc;
+$night-blue-deep: #96eebc; // the night edition's solid fills
+$night-red: #d98078;
 
 // Legacy Underscores variables, kept so the inherited partials still compile.
-$color__background-body:   $paper;
+$color__background-body: $paper;
 $color__background-screen: $paper-warm;
-$color__background-hr:     $paper-edge;
+$color__background-hr: $paper-edge;
 $color__background-button: $paper-warm;
-$color__background-pre:    $paper-warm;
-$color__background-ins:    rgba(163, 48, 42, 0.12);
+$color__background-pre: $paper-warm;
+$color__background-ins: rgba(163, 48, 42, 0.12);
 
-$color__text-screen:       $blue;
-$color__text-input:        $ink-soft;
-$color__text-input-focus:  $ink;
-$color__link:              $blue;
-$color__link-visited:      $blue-mid;
-$color__link-hover:        $red;
-$color__text-main:         $ink;
+$color__text-screen: $blue;
+$color__text-input: $ink-soft;
+$color__text-input-focus: $ink;
+$color__link: $blue;
+$color__link-visited: $blue-mid;
+$color__link-hover: $red;
+$color__text-main: $ink;
 
-$color__border-button:       $paper-edge;
+$color__border-button: $paper-edge;
 $color__border-button-hover: $blue-pale;
 $color__border-button-focus: $blue;
-$color__border-input:        $paper-edge;
-$color__border-abbr:         $ink-faint;
+$color__border-input: $paper-edge;
+$color__border-abbr: $ink-faint;
