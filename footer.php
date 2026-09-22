@@ -125,9 +125,9 @@
 			 * the same award twice inside one link.
 			 */
 			?>
-			<img class="badges__mark badges__mark--raster"
-				src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/grimme-nominiert-2010.gif'); ?>"
-				width="120" height="85" loading="lazy" decoding="async" alt="">
+			<img class="badges__mark badges__mark--vector"
+				src="<?php echo esc_url(get_template_directory_uri() . '/assets/grimme-online-awards.svg'); ?>"
+				width="97" height="109" loading="lazy" decoding="async" alt="">
 			<span class="badges__text">
 				<?php esc_html_e('Grimme Online Award', 'umblaetterer'); ?><br>
 				<?php esc_html_e('Nominee 2010', 'umblaetterer'); ?>

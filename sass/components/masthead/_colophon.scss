@@ -343,15 +343,11 @@
 }
 
 /*
- * The badges are small bitmaps from 2010 and 2025 and will not survive being
- * scaled up, so they are capped at their natural height and allowed only to
- * shrink. The colophon sets images inline-block with a right margin, for the
- * blogroll favicons; these are not those.
- *
- * The mole is a vector on a transparent ground and needs nothing done to it.
- * The Grimme badge is a GIF cut against white, so it is multiplied into the
- * ivory, which drops the white rectangle and sits it on the stock instead of
- * on a bright patch of its own.
+ * Both badges are vectors on a transparent ground: nothing has to be done to
+ * sit them on the paper, and they scale cleanly. They are capped at a height
+ * rather than a width, so the portrait mole and the portrait Grimme mark carry
+ * the same weight in the row. The colophon sets images inline-block with a
+ * right margin, for the blogroll favicons; these are not those.
  */
 img.badges__mark {
 	display: block;
@@ -359,23 +355,6 @@ img.badges__mark {
 	margin: 0;
 	max-height: 4.4rem;
 	width: auto;
-}
-
-.badges__mark--raster {
-	mix-blend-mode: multiply;
-}
-
-/*
- * At night the multiply would swallow the raster badge, so it comes off — but
- * then the white it was cut against shows as a hard rectangle on the dark
- * paper, which reads as a mistake. Given a little padding and the ivory behind
- * it, the same rectangle reads as what it is: a clipping pasted onto the page.
- * The vector badge needs none of this and is left alone.
- */
-:root[data-edition="nacht"] .badges__mark--raster {
-	background: #{$paper};
-	mix-blend-mode: normal;
-	padding: 0.4rem;
 }
 
 /*

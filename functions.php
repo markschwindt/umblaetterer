@@ -8,7 +8,7 @@
  */
 
 if ( ! defined( 'UMBLAETTERER_VERSION' ) ) {
-	define( 'UMBLAETTERER_VERSION', '2.1.2' );
+	define( 'UMBLAETTERER_VERSION', '2.1.3' );
 }
 
 /**
