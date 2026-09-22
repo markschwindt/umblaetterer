@@ -36,13 +36,13 @@
 	padding: 0;
 }
 
-.index-list > li {
+.index-list>li {
 	border-bottom: 1px solid var(--rule-soft);
 	margin: 0;
 	padding: 0.72rem 0;
 }
 
-.index-list > li:last-child {
+.index-list>li:last-child {
 	border-bottom: 0;
 }
 
@@ -55,14 +55,15 @@
 
 .index-list__title {
 	font-family: $font__display;
-	font-size: 1.12rem;
+	font-size: 2.12rem;
+	font-weight: 600;
 	line-height: 1.22;
 	min-width: 0;
 	overflow-wrap: break-word;
 }
 
 .index-list__title a {
-	color: var(--ink);
+	color: var(--blue);
 	text-decoration: none;
 }
 
@@ -122,7 +123,7 @@
 	}
 }
 
-.rubrik-index > li {
+.rubrik-index>li {
 	break-inside: avoid;
 	margin: 0 0 0.42rem;
 }
@@ -134,7 +135,7 @@
 	min-width: 0;
 }
 
-.rubrik-index__row > a {
+.rubrik-index__row>a {
 	min-width: 0;
 	overflow-wrap: break-word;
 }
