@@ -3,8 +3,9 @@
 //
 // Three faces, each doing one job, none doing two.
 //
-//   Old Standard TT — a "modern" (Didone) cut modelled on the typesetting of
-//                     the late 19th / early 20th century press. Headlines only.
+//   Noto Serif      — a sturdy transitional with low stroke contrast, drawn
+//                     to hold up at any size on any screen. Variable on weight
+//                     from 100 to 900. Headlines only.
 //   Spectral        — the reading face. Sturdy on screen, good German
 //                     diacritics, survives justification.
 //   Jost            — a Futura revival; Paul Renner drew Futura in Frankfurt in
@@ -13,7 +14,7 @@
 //
 
 // stylelint-disable value-keyword-case
-$font__display: "Old Standard TT", "Times New Roman", times, serif;
+$font__display: "Noto Serif", "Times New Roman", times, serif;
 $font__body:    spectral, "Iowan Old Style", "Palatino Linotype", georgia, serif;
 $font__sans:    jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
 $font__code:    SFMono-Regular, menlo, monaco, consolas, monospace;

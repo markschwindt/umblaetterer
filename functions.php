@@ -147,7 +147,7 @@ add_action( 'wp_enqueue_scripts', 'umblaetterer_scripts' );
 function umblaetterer_preload_fonts() {
 	$fonts = array(
 		'assets/fonts/spectral-400-normal-latin.woff2',
-		'assets/fonts/oldstandard-400-normal-latin.woff2',
+		'assets/fonts/notoserif-var-normal-latin.woff2',
 	);
 
 	foreach ( $fonts as $font ) {

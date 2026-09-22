@@ -1,9 +1,14 @@
 /*
  * Headlines
  * ---------
- * Old Standard TT is a Didone: thin hairlines, abrupt serifs, high contrast.
- * It wants size and it wants tight leading. Given both, it reads as 1928.
- * Given neither, it reads as a word-processor.
+ * Noto Serif is a transitional with low stroke contrast and sturdy, bracketed
+ * serifs — a working text face rather than one of the Didones the period press
+ * set its headlines in. It is far more forgiving than a high-contrast face: it
+ * survives small sizes and coarse screens without its hairlines breaking up,
+ * and it gives the page a plainer, more contemporary voice.
+ *
+ * There is no optical-size axis, so one drawing serves 18px and 176px alike.
+ * Weight runs the full 100–900.
  */
 
 h1,

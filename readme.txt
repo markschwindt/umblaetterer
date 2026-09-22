@@ -35,8 +35,8 @@ https://necolas.github.io/normalize.css/
 (C) 2012-2018 Nicolas Gallagher and Jonathan Neal
 License: MIT
 
-Old Standard TT by Alexey Kryukov
-https://fonts.google.com/specimen/Old+Standard+TT
+Noto Serif by Google
+https://fonts.google.com/specimen/Noto+Serif
 License: SIL Open Font License 1.1
 
 Spectral by Production Type

@@ -16,7 +16,7 @@ That turns out to suit the archive rather than fight it. There are 1,600 posts h
 
 | | | |
 |---|---|---|
-| **Old Standard TT** | headlines | a Didone modelled on the typesetting of the late-19th / early-20th-century press |
+| **Noto Serif** | headlines | a sturdy transitional with low stroke contrast, variable on weight (100–900) |
 | **Spectral** | running text | sturdy on screen, good German diacritics, survives justification |
 | **Jost\*** | rubrics, datelines, navigation | a Futura revival; Renner drew Futura in Frankfurt in 1927 |
 
