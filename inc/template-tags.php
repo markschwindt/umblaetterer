@@ -153,19 +153,30 @@ if ( ! function_exists( 'umblaetterer_index_entry' ) ) :
 		$rubrik = $args['rubrik'] ? umblaetterer_rubrik() : null;
 		?>
 		<li>
+			<?php
+			/*
+			 * The dateline sits outside the row, not inside it. Inside, it was
+			 * a flex item whose position depended on how much room the title
+			 * left — ranged right on a short title, dropped below and still
+			 * ranged right when the leader wrapped with it, left only when the
+			 * leader stayed behind. Out here it is a block, and a block begins
+			 * at the left margin whatever the title does.
+			 */
+			?>
 			<div class="index-list__row">
 				<span class="index-list__title">
 					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 				</span>
 				<span class="index-list__leader" aria-hidden="true"></span>
-				<span class="index-list__meta">
-					<?php if ( $args['author'] ) : ?>
-						<?php echo esc_html( get_the_author() ); ?> ·
-					<?php endif; ?>
-					<time datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>">
-						<?php echo esc_html( umblaetterer_datum( 'short', get_the_date( 'U' ) ) ); ?>
-					</time>
-				</span>
+			</div>
+
+			<div class="index-list__meta">
+				<?php if ( $args['author'] ) : ?>
+					<?php echo esc_html( get_the_author() ); ?> ·
+				<?php endif; ?>
+				<time datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>">
+					<?php echo esc_html( umblaetterer_datum( 'short', get_the_date( 'U' ) ) ); ?>
+				</time>
 			</div>
 
 			<?php if ( $rubrik ) : ?>

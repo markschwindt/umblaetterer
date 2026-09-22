@@ -46,10 +46,15 @@
 	border-bottom: 0;
 }
 
+/*
+ * Title and leader only, and they never wrap apart: the leader shrinks to
+ * nothing rather than dropping to a line of its own, where it would draw a
+ * dotted rule straight across the entry.
+ */
 .index-list__row {
 	align-items: baseline;
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	gap: 0.45rem;
 }
 
@@ -74,21 +79,41 @@
 
 /* The leader. A dotted rule that grows to fill whatever is left of the line —
    which is why it must not shrink below zero and must never wrap. */
+/*
+ * The leader must never wrap. Given a basis it has to honour, it drops to a
+ * line of its own whenever the title's last line ends too near the margin —
+ * and there it grows to the full width and draws a dotted rule straight across
+ * the entry. A basis of zero that may shrink to nothing keeps it on the
+ * title's line always: it fills whatever is left, and where nothing is left it
+ * simply disappears.
+ */
 .index-list__leader {
 	border-bottom: 1px dotted var(--paper-edge);
-	flex: 1 1 1.5rem;
-	min-width: 1.5rem;
+	flex: 1 1 0;
+	min-width: 0;
 	position: relative;
 	top: -0.22em;
 }
 
+/*
+ * The dateline always takes its own line, hard against the left margin.
+ *
+ * Left to the flex algorithm it landed wherever the title happened to leave
+ * room: on the same line and ranged right when the title was short enough, on
+ * its own line but still pushed right when the leader wrapped with it, at the
+ * left only when the leader stayed behind. Three positions, chosen by how many
+ * characters were in the headline — which is to say, at random.
+ *
+ * Lifting it out of the flex row settles it: a block begins at the left
+ * margin, always, whatever the title does above it. The leader stays up on the
+ * title's line and runs the dots out to the margin.
+ */
 .index-list__meta {
 	@include kicker(0.68rem, 0.1em);
 
 	color: var(--ink-faint);
-	flex: none;
 	font-variant-numeric: lining-nums;
-	white-space: nowrap;
+	margin-top: 0.3rem;
 }
 
 .index-list__sub {

@@ -71,7 +71,7 @@
 	font-size: 4.76em;
 	font-weight: 400;
 	line-height: 0.82;
-	padding-top: .9rem;
+	padding-top: .42rem;
 	padding-right: 1rem;
 
 	@media only screen and (max-width: 30rem) {
@@ -236,6 +236,17 @@
 	@include at($bp__folio) {
 		grid-template-columns: minmax(0, 1.85fr) minmax(0, 1fr);
 	}
+}
+
+/*
+ * A grid track is at least as wide as its content's min-content, and a
+ * single-column grid has no `minmax(0, …)` to say otherwise — so on a narrow
+ * phone the longest headline in the register pushed the track, and the page,
+ * past the viewport. `min-width: 0` lets the track shrink and the titles wrap
+ * instead.
+ */
+.issue__lower > * {
+	min-width: 0;
 }
 
 .issue__rail>*+* {
