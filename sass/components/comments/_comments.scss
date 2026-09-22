@@ -123,7 +123,7 @@
 	color: var(--red);
 }
 
-.bypostauthor > .comment-body .fn::after {
+.bypostauthor>.comment-body .fn::after {
 	color: var(--blue);
 	content: " ❖";
 }
@@ -201,10 +201,11 @@
 /* Akismet and friends append a privacy note after the form. It is a footnote,
    so it is set like one rather than like body copy. */
 .comments-area .akismet_comment_form_privacy_notice,
-.comments-area > p:last-child:not([class]),
+.comments-area>p:last-child:not([class]),
 .no-comments,
 .comment-form .logged-in-as {
 	@include kicker(0.68rem, 0.1em, 500, none);
 
 	color: var(--ink-faint);
+	margin-top: 1rem;
 }

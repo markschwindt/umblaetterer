@@ -3332,6 +3332,7 @@ label {
   line-height: 1.2;
   text-transform: none;
   color: var(--ink-faint);
+  margin-top: 1rem;
 }
 
 /* Media
