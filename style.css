@@ -1020,7 +1020,7 @@ hr {
 	height: 1px;
 }
 
-.rule--fleuron > span {
+.rule--fleuron>span {
 	font-family: "Noto Serif", "Times New Roman", times, serif;
 	font-size: 1.1rem;
 	line-height: 1;
@@ -1037,11 +1037,11 @@ ul {
 }
 
 /* A square bullet, hung in the margin, sitting on the x-height. */
-.entry-content ul > li {
+.entry-content ul>li {
 	position: relative;
 }
 
-.entry-content ul > li::before {
+.entry-content ul>li::before {
 	background: var(--blue);
 	content: "";
 	height: 0.3em;
@@ -1055,8 +1055,8 @@ ol {
 	list-style: decimal;
 }
 
-li > ul,
-li > ol {
+li>ul,
+li>ol {
 	margin-bottom: 0;
 	margin-left: 0.6em;
 	margin-top: 0.4em;
@@ -1600,7 +1600,7 @@ label {
 	padding-bottom: clamp(1.5rem, 3vw, 2.2rem);
 }
 
-.colophon > * {
+.colophon>* {
 
 	/*
    * No block is split across a column boundary. A widget cut in half reads
@@ -1620,7 +1620,7 @@ label {
 
 /* What must not break: a heading away from its list, or a line away from
    itself. */
-.colophon__block > .widget-title,
+.colophon__block>.widget-title,
 .colophon__title {
 	break-after: avoid;
 }
@@ -1631,7 +1631,7 @@ label {
 }
 
 /* --- Inside a cell ------------------------------------------------------- */
-.colophon__block > .widget-title,
+.colophon__block>.widget-title,
 .colophon__title {
 	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
 	font-size: 0.7rem;
@@ -1699,7 +1699,7 @@ label {
  * It is not broken: it is one block, entire, across the top. What remains
  * balances across all four columns beneath it, which is the point.
  */
-.colophon > :has(li:nth-child(40)) {
+.colophon> :has(li:nth-child(40)) {
 
 	/* Ruled off from the four columns beneath it, so the band reads as its own
      register rather than as a widget that happens to be very wide. */
@@ -1709,7 +1709,7 @@ label {
 	padding-bottom: clamp(1.1rem, 2.5vw, 1.6rem);
 }
 
-.colophon > :has(li:nth-child(40)) ul {
+.colophon> :has(li:nth-child(40)) ul {
 
 	/* Four sub-columns at most. The width alone fits five or six across the
      full measure, but the band then reads as a finer grain than the four
@@ -1783,8 +1783,8 @@ label {
 	margin: 1.1rem 0 0.45rem;
 }
 
-.colophon__block > h3:first-child,
-.colophon__block > h4:first-child {
+.colophon__block>h3:first-child,
+.colophon__block>h4:first-child {
 	margin-top: 0;
 }
 
@@ -1797,7 +1797,7 @@ label {
 }
 
 /* --- The yearbook series ------------------------------------------------- */
-.colophon__serie + .colophon__serie {
+.colophon__serie+.colophon__serie {
 	margin-top: 0.9rem;
 }
 
@@ -2041,7 +2041,7 @@ svg.badges__mark {
 }
 
 /* The separating hairline, hung between items rather than after them. */
-.main-navigation li + li::before {
+.main-navigation li+li::before {
 	background: var(--rule);
 	content: "";
 	height: 0.85em;
@@ -2058,9 +2058,9 @@ svg.badges__mark {
 }
 
 /* The current rubric is underscored in navy, as a compositor would mark it. */
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-ancestor > a {
+.main-navigation .current-menu-item>a,
+.main-navigation .current_page_item>a,
+.main-navigation .current-menu-ancestor>a {
 	box-shadow: 0 -3px 0 var(--blue) inset;
 	color: var(--blue);
 }
@@ -2084,14 +2084,14 @@ svg.badges__mark {
 	z-index: 50;
 }
 
-.main-navigation li:hover > ul,
-.main-navigation li:focus-within > ul {
+.main-navigation li:hover>ul,
+.main-navigation li:focus-within>ul {
 	opacity: 1;
 	pointer-events: auto;
 	transform: translateY(0);
 }
 
-.main-navigation ul ul li + li::before {
+.main-navigation ul ul li+li::before {
 	display: none;
 }
 
@@ -2129,22 +2129,22 @@ svg.badges__mark {
 	}
 
 	.main-navigation .menu,
-	.main-navigation > div > ul {
+	.main-navigation>div>ul {
 		display: none;
 		flex-direction: column;
 		padding-bottom: 0.6rem;
 	}
 
 	.main-navigation.toggled .menu,
-	.main-navigation.toggled > div > ul {
+	.main-navigation.toggled>div>ul {
 		display: flex;
 	}
 
-	.main-navigation li + li::before {
+	.main-navigation li+li::before {
 		display: none;
 	}
 
-	.main-navigation li + li {
+	.main-navigation li+li {
 		border-top: 1px solid var(--rule-soft);
 	}
 
@@ -2453,7 +2453,7 @@ svg.badges__mark {
 
 /* The drop cap. Three lines deep, in the display face, in navy — the single
    most recognisable gesture in the whole of printed journalism. */
-.lead__standfirst > p:first-of-type::first-letter,
+.lead__standfirst>p:first-of-type::first-letter,
 .dropcap::first-letter {
 	color: var(--blue);
 	float: left;
@@ -2461,15 +2461,15 @@ svg.badges__mark {
 	font-size: 4.76em;
 	font-weight: 400;
 	line-height: 0.82;
-	padding-top: 0.9rem;
+	padding-top: 0.42rem;
 	padding-right: 1rem;
 }
 
 @media only screen and (max-width: 30rem) {
 
-	.lead__standfirst > p:first-of-type::first-letter,
+	.lead__standfirst>p:first-of-type::first-letter,
 	.dropcap::first-letter {
-		font-size: 4em;
+		font-size: 3.3em;
 	}
 }
 
@@ -2528,11 +2528,11 @@ svg.badges__mark {
 	grid-template-columns: 1fr;
 }
 
-.column-set > * {
+.column-set>* {
 	padding: clamp(1.4rem, 3vw, 2rem) 0;
 }
 
-.column-set > * + * {
+.column-set>*+* {
 	border-top: 1px solid var(--rule);
 }
 
@@ -2543,31 +2543,31 @@ svg.badges__mark {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	.column-set > * {
+	.column-set>* {
 		padding: 0 clamp(1rem, 2.4vw, 1.8rem);
 	}
 
-	.column-set > * + * {
+	.column-set>*+* {
 		border-left: 1px solid var(--rule);
 		border-top: 0;
 	}
 
-	.column-set > *:first-child {
+	.column-set>*:first-child {
 		padding-left: 0;
 	}
 
-	.column-set > *:last-child {
+	.column-set>*:last-child {
 		padding-right: 0;
 	}
 
 	/* With two per row, the third item starts a new row and must lose the
      inherited left rule and regain a top one. */
-	.column-set--3 > *:nth-child(odd) {
+	.column-set--3>*:nth-child(odd) {
 		border-left: 0;
 		padding-left: 0;
 	}
 
-	.column-set--3 > *:nth-child(n+3) {
+	.column-set--3>*:nth-child(n+3) {
 		border-top: 1px solid var(--rule);
 		padding-top: clamp(1.2rem, 2.5vw, 1.8rem);
 	}
@@ -2579,14 +2579,14 @@ svg.badges__mark {
 		grid-template-columns: repeat(3, 1fr);
 	}
 
-	.column-set--3 > *:nth-child(n) {
+	.column-set--3>*:nth-child(n) {
 		border-left: 1px solid var(--rule);
 		border-top: 0;
 		padding-left: clamp(1rem, 2.4vw, 1.8rem);
 		padding-top: 0;
 	}
 
-	.column-set--3 > *:first-child {
+	.column-set--3>*:first-child {
 		border-left: 0;
 		padding-left: 0;
 	}
@@ -2651,7 +2651,7 @@ svg.badges__mark {
 	}
 }
 
-.issue__rail > * + * {
+.issue__rail>*+* {
 	margin-top: clamp(2rem, 4vw, 2.8rem);
 }
 
@@ -2705,13 +2705,13 @@ svg.badges__mark {
 	padding: 0;
 }
 
-.index-list > li {
+.index-list>li {
 	border-bottom: 1px solid var(--rule-soft);
 	margin: 0;
 	padding: 0.72rem 0;
 }
 
-.index-list > li:last-child {
+.index-list>li:last-child {
 	border-bottom: 0;
 }
 
@@ -2805,7 +2805,7 @@ svg.badges__mark {
 	}
 }
 
-.rubrik-index > li {
+.rubrik-index>li {
 	break-inside: avoid;
 	margin: 0 0 0.42rem;
 }
@@ -2817,7 +2817,7 @@ svg.badges__mark {
 	min-width: 0;
 }
 
-.rubrik-index__row > a {
+.rubrik-index__row>a {
 	min-width: 0;
 	overflow-wrap: break-word;
 }
@@ -2942,7 +2942,7 @@ svg.badges__mark {
 
 /* Drop cap on the opening paragraph of a single post. Deliberately not
    applied in listings, where it would be decoration rather than typography. */
-.single .entry-content > p:first-of-type::first-letter {
+.single .entry-content>p:first-of-type::first-letter {
 	color: var(--blue);
 	float: left;
 	font-family: "Noto Serif", "Times New Roman", times, serif;
@@ -2954,8 +2954,8 @@ svg.badges__mark {
 /* …but not when the post opens with a block quote or an image, which several
    hundred of these do. :first-of-type already handles that, and this guards
    the case where wpautop wraps a lone image in a paragraph. */
-.single .entry-content > p:first-of-type:has(img)::first-letter,
-.single .entry-content > p:first-of-type:has(> a > img)::first-letter {
+.single .entry-content>p:first-of-type:has(img)::first-letter,
+.single .entry-content>p:first-of-type:has(> a > img)::first-letter {
 	color: inherit;
 	float: none;
 	font-family: inherit;
@@ -2964,15 +2964,15 @@ svg.badges__mark {
 	margin: 0;
 }
 
-.entry-content > h2,
-.entry-content > h3,
-.entry-content > h4 {
+.entry-content>h2,
+.entry-content>h3,
+.entry-content>h4 {
 	margin-top: 2em;
 	text-align: left;
 	text-wrap: balance;
 }
 
-.entry-content > h2 {
+.entry-content>h2 {
 	border-top: 1px solid var(--rule);
 	padding-top: 0.9em;
 }
@@ -2985,19 +2985,19 @@ svg.badges__mark {
 }
 
 /* Wide elements may breach the measure — images, tables, embeds. */
-.entry-content > figure,
-.entry-content > table,
-.entry-content > .wp-caption,
-.entry-content > .wide {
+.entry-content>figure,
+.entry-content>table,
+.entry-content>.wp-caption,
+.entry-content>.wide {
 	max-width: min(100%, 52rem);
 	width: 100%;
 }
 
 @media (min-width: 36rem) {
 
-	.entry-content > figure,
-	.entry-content > .wp-caption,
-	.entry-content > .wide {
+	.entry-content>figure,
+	.entry-content>.wp-caption,
+	.entry-content>.wide {
 		margin-left: 50%;
 		transform: translateX(-50%);
 	}
@@ -3070,7 +3070,7 @@ svg.badges__mark {
 	padding-left: 1.8em;
 }
 
-.page .entry-content ol > li::marker {
+.page .entry-content ol>li::marker {
 	color: var(--blue);
 	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
 	font-size: 0.82em;
@@ -3551,7 +3551,7 @@ svg.badges__mark {
 	color: var(--red);
 }
 
-.bypostauthor > .comment-body .fn::after {
+.bypostauthor>.comment-body .fn::after {
 	color: var(--blue);
 	content: " ❖";
 }
@@ -3643,7 +3643,7 @@ svg.badges__mark {
 /* Akismet and friends append a privacy note after the form. It is a footnote,
    so it is set like one rather than like body copy. */
 .comments-area .akismet_comment_form_privacy_notice,
-.comments-area > p:last-child:not([class]),
+.comments-area>p:last-child:not([class]),
 .no-comments,
 .comment-form .logged-in-as {
 	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
