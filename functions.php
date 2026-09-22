@@ -251,6 +251,42 @@ function umblaetterer_favicon() {
 
 	printf( '<link rel="icon" href="%s" type="image/svg+xml">' . "\n", esc_url( $url ) );
 
+	/*
+	 * A raster fallback, and the one Safari actually needs.
+	 *
+	 * An SVG icon covers the tab, but nothing else: Safari's Favourites and
+	 * Start Page tiles, iOS home screens and most "add to bookmarks" surfaces
+	 * only read `apple-touch-icon`, and older browsers only read a PNG or an
+	 * .ico. With neither present they fall back to requesting /favicon.ico from
+	 * the site root — which WordPress does not serve — and then to whatever
+	 * they can scrape, which is how a WordPress mark ends up standing in for
+	 * the masthead.
+	 *
+	 * The touch icon carries the paper as its ground, because Safari and iOS
+	 * composite these onto their own backdrop and a transparent one comes out
+	 * black.
+	 */
+	$umblaetterer_icons = array(
+		array( 'apple-touch-icon', 'assets/apple-touch-icon.png', '180x180', '' ),
+		array( 'icon', 'assets/favicon-32.png', '32x32', ' type="image/png"' ),
+	);
+
+	foreach ( $umblaetterer_icons as $umblaetterer_icon ) {
+		list( $rel, $file, $sizes, $type ) = $umblaetterer_icon;
+
+		if ( ! file_exists( get_template_directory() . '/' . $file ) ) {
+			continue;
+		}
+
+		printf(
+			'<link rel="%1$s" sizes="%2$s"%3$s href="%4$s">' . "\n",
+			esc_attr( $rel ),
+			esc_attr( $sizes ),
+			$type, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- fixed literal.
+			esc_url( add_query_arg( 'ver', UMBLAETTERER_VERSION, get_template_directory_uri() . '/' . $file ) )
+		);
+	}
+
 	// Safari's pinned tabs take a separate, single-colour mask.
 	printf( '<link rel="mask-icon" href="%s" color="#112e60">' . "\n", esc_url( $url ) );
 }
