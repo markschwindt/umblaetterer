@@ -61,58 +61,61 @@ $umblaetterer_n     = 0;
 					if ( 1 === $umblaetterer_n ) :
 						?>
 
-						<article <?php post_class( 'lead' ); ?>>
-							<?php umblaetterer_kicker( array( 'flag' => true, 'class' => 'kicker--large' ) ); ?>
+						<?php
+						/*
+						 * Beside the lead: either the standing column it belongs to, or —
+						 * when that column holds nothing else — what stood in this paper
+						 * ten years ago. A feuilleton is read by rubric and by memory,
+						 * not by date.
+						 *
+						 * Resolved before the article opens, because whether there is a
+						 * companion decides whether the lead is set in two columns.
+						 */
+						$umblaetterer_companion = umblaetterer_lead_companion( get_the_ID() );
+						?>
 
-							<h2 class="lead__title">
-								<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-							</h2>
+						<article <?php post_class( $umblaetterer_companion['posts'] ? 'lead' : 'lead lead--solo' ); ?>>
 
-							<?php umblaetterer_dateline( array( 'reading' => true, 'comments' => true ) ); ?>
+							<div class="lead__main">
+								<?php umblaetterer_kicker( array( 'flag' => true, 'class' => 'kicker--large' ) ); ?>
 
-							<div class="lead__body">
+								<h2 class="lead__title">
+									<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+								</h2>
+
+								<?php umblaetterer_dateline( array( 'reading' => true, 'comments' => true ) ); ?>
+
 								<div class="lead__standfirst">
 									<p><?php echo esc_html( umblaetterer_teaser( 58 ) ); ?></p>
-									<p>
-										<a href="<?php the_permalink(); ?>" class="more-link">
-											<?php esc_html_e( 'Weiterblättern →', 'umblaetterer' ); ?>
-										</a>
-									</p>
 								</div>
 
-								<?php
-								/*
-								 * Beside the lead: either the standing column it belongs to,
-								 * or — when that column holds nothing else — what stood in
-								 * this paper ten years ago. A feuilleton is read by rubric
-								 * and by memory, not by date.
-								 */
-								$umblaetterer_companion = umblaetterer_lead_companion( get_the_ID() );
-
-								if ( $umblaetterer_companion['posts'] ) :
-									?>
-									<aside class="lead__aside">
-										<div class="section-head">
-											<h3 class="section-head__title"><?php echo esc_html( $umblaetterer_companion['title'] ); ?></h3>
-											<?php if ( $umblaetterer_companion['note'] ) : ?>
-												<span class="section-head__note"><?php echo esc_html( $umblaetterer_companion['note'] ); ?></span>
-											<?php endif; ?>
-										</div>
-
-										<ul class="index-list">
-											<?php
-											foreach ( $umblaetterer_companion['posts'] as $umblaetterer_kin_post ) :
-												setup_postdata( $GLOBALS['post'] = $umblaetterer_kin_post ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
-												umblaetterer_index_entry( array( 'rubrik' => true ) );
-											endforeach;
-											wp_reset_postdata();
-											?>
-										</ul>
-									</aside>
-									<?php
-								endif;
-								?>
+								<p class="lead__more">
+									<a href="<?php the_permalink(); ?>" class="more-link">
+										<?php esc_html_e( 'Weiterblättern →', 'umblaetterer' ); ?>
+									</a>
+								</p>
 							</div>
+
+							<?php if ( $umblaetterer_companion['posts'] ) : ?>
+								<aside class="lead__aside">
+									<div class="section-head">
+										<h3 class="section-head__title"><?php echo esc_html( $umblaetterer_companion['title'] ); ?></h3>
+										<?php if ( $umblaetterer_companion['note'] ) : ?>
+											<span class="section-head__note"><?php echo esc_html( $umblaetterer_companion['note'] ); ?></span>
+										<?php endif; ?>
+									</div>
+
+									<ul class="index-list">
+										<?php
+										foreach ( $umblaetterer_companion['posts'] as $umblaetterer_kin_post ) :
+											setup_postdata( $GLOBALS['post'] = $umblaetterer_kin_post ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
+											umblaetterer_index_entry( array( 'rubrik' => true ) );
+										endforeach;
+										wp_reset_postdata();
+										?>
+									</ul>
+								</aside>
+							<?php endif; ?>
 						</article>
 
 						<div class="rule--double rule--double-thin" role="presentation"></div>

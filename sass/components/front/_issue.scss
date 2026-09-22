@@ -15,16 +15,30 @@
 
 /* --- Der Aufmacher: the lead ------------------------------------------- */
 
+/*
+ * The lead is set in two columns on a wide page: the piece itself on the left,
+ * the companion register on the right, divided by a single hairline that runs
+ * the whole height of the block. The rule is what makes it read as a
+ * broadsheet rather than as a heading with something tacked underneath — so
+ * the aside is a sibling of the entire preview, not a child of its last
+ * paragraph, and it stretches to the height of the piece beside it.
+ *
+ * Everything here is written narrow-first; the two-column arrangement is the
+ * last thing in the section, so that nothing declared afterwards can quietly
+ * undo it. (A media query adds no specificity: a later rule of equal weight
+ * wins regardless of the breakpoint.)
+ */
 .lead {
 	padding-bottom: clamp(2rem, 4vw, 3.2rem);
 }
 
 .lead__title {
-	font-size: clamp(2.4rem, 1.1rem + 5.4vw, 5.25rem);
+	font-size: clamp(2.4rem, 1rem + 4.6vw, 4.5rem);
 	letter-spacing: -0.018em;
 	line-height: 0.98;
-	margin: 0.35rem 0 .8rem;
-	max-width: 22ch;
+	/* Tight leading drops the descenders of the last line low; the dateline
+	   needs clearance from those, not from the baseline. */
+	margin: 0.35rem 0 0.75rem;
 	text-wrap: balance;
 }
 
@@ -38,21 +52,12 @@
 	color: var(--ink);
 }
 
-.lead__body {
-	display: grid;
-	gap: clamp(1.4rem, 3vw, 2.6rem);
-	margin-top: clamp(1.4rem, 3vw, 2.2rem);
-
-	@include at($bp__folio) {
-		grid-template-columns: 1fr 1fr;
-	}
-}
-
 .lead__standfirst {
 	@include running-text;
 
 	font-size: 1.08em;
 	line-height: 1.55;
+	margin-top: clamp(1.2rem, 2.5vw, 1.8rem);
 }
 
 /* The drop cap. Three lines deep, in the display face, in navy — the single
@@ -70,10 +75,44 @@
 }
 
 .lead__aside {
-	@include running-text;
-
 	color: var(--ink-soft);
 	font-size: 0.97em;
+	margin-top: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+@include at($bp__folio) {
+
+	.lead {
+		display: grid;
+		gap: 0;
+		/* The piece gets the larger share; a register needs less measure than
+		   a headline does. */
+		grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+	}
+
+	.lead__main {
+		padding-right: clamp(1.4rem, 3vw, 2.5rem);
+	}
+
+	/*
+	 * Grid items stretch by default, so this rule runs the full height of the
+	 * row whichever column is taller. The margin has to go, or the rule starts
+	 * below the kicker instead of level with it.
+	 */
+	.lead__aside {
+		border-left: 1px solid var(--rule);
+		margin-top: 0;
+		padding-left: clamp(1.4rem, 3vw, 2.5rem);
+	}
+
+	/* No companion, no second column. */
+	.lead--solo {
+		display: block;
+	}
+
+	.lead--solo .lead__main {
+		padding-right: 0;
+	}
 }
 
 /* --- Die Spalten: the column set ---------------------------------------- */
