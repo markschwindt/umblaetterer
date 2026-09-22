@@ -55,26 +55,21 @@ body::before {
 
 /* The warm shadow a stacked sheet casts towards its edges. */
 body::after {
-	background:
-		radial-gradient(
-			120% 80% at 50% 0,
-			transparent 55%,
-			#{rgba($paper-edge, 0.5)} 100%
-		);
+	background: radial-gradient(120% 80% at 50% 0,
+		transparent 55%,
+		#{rgba($paper-edge, 0.5)} 100%);
 	content: "";
 	inset: 0;
 	pointer-events: none;
 	position: fixed;
 	z-index: 9998;
+	opacity: 42%;
 }
 
 :root[data-edition="nacht"] body::after {
-	background:
-		radial-gradient(
-			120% 80% at 50% 0,
-			transparent 50%,
-			#{rgba(#000, 0.45)} 100%
-		);
+	background: radial-gradient(120% 80% at 50% 0,
+		transparent 50%,
+		#{rgba(#000, 0.45)} 100%);
 }
 
 ::selection {
