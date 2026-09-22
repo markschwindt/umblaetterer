@@ -40,6 +40,27 @@
 	padding-top: 0.8rem;
 }
 
+/*
+ * On a phone the whole head ranges left.
+ *
+ * A centred headline needs slack on both sides to read as centred; at 390px
+ * there is none, and a three-line title comes out ragged on both edges with
+ * nothing to hold it. The kicker and the dateline follow it — the alignment
+ * has to be one decision for the whole block, or the head reads as three
+ * pieces that failed to agree.
+ */
+@include until($bp__oktav) {
+
+	.entry-header {
+		text-align: left;
+	}
+
+	.entry-header .kicker,
+	.entry-header .dateline-line {
+		justify-content: flex-start;
+	}
+}
+
 /* --- The body ----------------------------------------------------------- */
 
 .entry-content {
