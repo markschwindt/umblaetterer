@@ -2,8 +2,19 @@
 <svg id="Layer_3" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.21 46.32">
   <defs>
     <style>
+      /* The masthead navy on a light browser chrome. */
       .cls-1 {
         fill: #112e60;
+      }
+
+      /* On a dark chrome the navy all but disappears, so the monogram is
+         printed in the paper colour instead — ink and stock swapped, which is
+         what the night edition of the site does too. The query is answered by
+         the browser's own colour scheme, not the page's. */
+      @media (prefers-color-scheme: dark) {
+        .cls-1 {
+          fill: #f4efe1;
+        }
       }
     </style>
   </defs>
