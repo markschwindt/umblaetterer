@@ -252,7 +252,7 @@ if ( ! function_exists( 'umblaetterer_wordmark' ) ) :
 			return;
 		}
 
-		$path = get_template_directory() . '/assets/Umblaetterer.svg';
+		$path = get_template_directory() . '/assets/' . UMBLAETTERER_WORDMARK;
 
 		if ( ! file_exists( $path ) ) {
 			printf(

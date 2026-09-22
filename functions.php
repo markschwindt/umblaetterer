@@ -8,7 +8,22 @@
  */
 
 if ( ! defined( 'UMBLAETTERER_VERSION' ) ) {
-	define( 'UMBLAETTERER_VERSION', '2.0.0' );
+	define( 'UMBLAETTERER_VERSION', '2.1.0' );
+}
+
+/**
+ * The blackletter wordmark, inlined into the masthead by
+ * umblaetterer_wordmark(). Both live in assets/.
+ */
+if ( ! defined( 'UMBLAETTERER_WORDMARK' ) ) {
+	define( 'UMBLAETTERER_WORDMARK', 'Der-Umblaetterer.svg' );
+}
+
+/**
+ * The "U" monogram cut from the wordmark, served as the browser icon.
+ */
+if ( ! defined( 'UMBLAETTERER_FAVICON' ) ) {
+	define( 'UMBLAETTERER_FAVICON', 'favicon.svg' );
 }
 
 /**
@@ -143,6 +158,39 @@ function umblaetterer_preload_fonts() {
 	}
 }
 add_action( 'wp_head', 'umblaetterer_preload_fonts', 1 );
+
+/**
+ * The browser icon.
+ *
+ * WordPress emits nothing at all unless a Site Icon has been uploaded in the
+ * Customizer, so the theme supplies its own: the blackletter "U" cut from the
+ * masthead, as a vector, which stays sharp at every size a tab, a bookmark bar
+ * or a pinned tab asks for. A Site Icon, if one is ever set, wins — that is
+ * the editor's decision, not the theme's.
+ */
+function umblaetterer_favicon() {
+	if ( has_site_icon() ) {
+		return;
+	}
+
+	$path = get_template_directory() . '/assets/' . UMBLAETTERER_FAVICON;
+
+	if ( ! file_exists( $path ) ) {
+		return;
+	}
+
+	$url = add_query_arg(
+		'ver',
+		UMBLAETTERER_VERSION,
+		get_template_directory_uri() . '/assets/' . UMBLAETTERER_FAVICON
+	);
+
+	printf( '<link rel="icon" href="%s" type="image/svg+xml">' . "\n", esc_url( $url ) );
+
+	// Safari's pinned tabs take a separate, single-colour mask.
+	printf( '<link rel="mask-icon" href="%s" color="#112e60">' . "\n", esc_url( $url ) );
+}
+add_action( 'wp_head', 'umblaetterer_favicon', 2 );
 
 /**
  * Paint the browser chrome in the paper colour, so the page does not end at a

@@ -43,14 +43,20 @@
 	color: var(--blue);
 }
 
-/* The wordmark. It is set to a share of the page rather than a fixed size, so
-   it behaves like a masthead: always the full measure, never merely large. */
+/*
+ * The wordmark. It is set to a share of the page rather than a fixed size, so
+ * it behaves like a masthead: always the full measure, never merely large.
+ *
+ * "Der Umblätterer" is a long, wide lockup — roughly 7.4:1 — so a width that
+ * suited a shorter mark leaves it optically light. The cap is set from the
+ * height the masthead wants, not from the width.
+ */
 .site-logo {
 	display: block;
 	fill: currentColor;
 	height: auto;
 	margin: 0 auto;
-	width: min(100%, 44rem);
+	width: min(100%, 54rem);
 }
 
 .site-logo--fallback {
