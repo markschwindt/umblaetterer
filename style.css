@@ -2349,7 +2349,7 @@ svg.badges__mark {
   line-height: 0.98;
   /* Tight leading drops the descenders of the last line low; the dateline
      needs clearance from those, not from the baseline. */
-  margin: 0.35rem 0 0.75rem;
+  margin: 0.35rem 0 1.5rem;
   text-wrap: balance;
   font-weight: 500;
 }
