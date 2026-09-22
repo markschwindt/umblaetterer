@@ -35,6 +35,9 @@
 	 * scrolling; two halves it at no real cost to legibility. Four is the cap,
 	 * so the desktop footer does not shred into narrow slivers.
 	 */
+	/* Closes the colophon off from the badges beneath it. The line used to sit
+	   on the band; it lives here now so that .badges carries no border. */
+	border-bottom: 1px solid var(--rule);
 	column-gap: clamp(1.1rem, 3vw, 2.75rem);
 	column-rule: 1px solid var(--rule);
 	columns: 9.5rem 4;
@@ -152,8 +155,40 @@
 	   width stays as the lower bound, so narrow viewports still fold the list
 	   down to three, two or one. */
 	column-count: 4;
-	column-gap: 1.6rem;
+	/*
+	 * The gap is the colophon's own, not a value of its own choosing, and that
+	 * is the whole trick: same width, same count, same gap means the band's
+	 * sub-column rules fall on exactly the same axes as the four column rules
+	 * beneath it. A gap of its own — 1.6rem against the colophon's 2.75rem at
+	 * this width — puts them five to thirteen pixels out, which reads as a
+	 * mistake rather than as a second register.
+	 */
+	column-gap: clamp(1.1rem, 3vw, 2.75rem);
+	column-rule: 1px solid var(--rule);
 	column-width: 11rem;
+}
+
+/* On a phone the width alone folds the band into a single file — fifty-four
+   titles, one under the other. Two columns halve that. The count is stated
+   outright rather than left to the width, so it holds at any phone size, and
+   the gap tightens to buy the two columns their measure back. */
+@include until($bp__oktav) {
+
+	.colophon> :has(li:nth-child(40)) ul {
+		column-count: 2;
+		/* Inherit the colophon's gap here too, so the single rule stays on
+		   axis with the two columns below. */
+		column-width: auto;
+	}
+
+	/* Two forced columns on a 320px screen leave about 130px each, and
+	   "Fritz-J.-Raddatz-Festwochen" is wider than that on its own. Without
+	   somewhere to break, it pushes the whole page sideways. Hyphenation takes
+	   the German titles apart properly; break-word catches whatever is left. */
+	.colophon> :has(li:nth-child(40)) li {
+		hyphens: auto;
+		overflow-wrap: break-word;
+	}
 }
 
 .colophon__block a {
@@ -263,36 +298,23 @@
  * items divided by the same hairline the columns above use, hung from a
  * pseudo-element so the rule falls between items and never at either end.
  */
+/*
+ * No rules inside the band. The badges are four separate things standing side
+ * by side, not a table, and the space between them says so well enough. The
+ * line that divides this band from the colophon above is drawn from the
+ * colophon's side, so nothing here carries a border at all.
+ */
 .badges {
 	align-items: stretch;
-	/*
-	 * The band's own opening rule. The items' top shadows are clipped away by
-	 * the overflow below — they fall outside the padding box — so this is the
-	 * only line here, and it separates the badges from the colophon above in
-	 * the same hairline the imprint uses beneath them.
-	 */
-	border-top: 1px solid var(--rule);
 	display: flex;
 	flex-wrap: wrap;
-	/*
-	 * Each item casts a hairline up and to its left, and the container clips
-	 * the ones that fall off its edges. That draws a rule between items and
-	 * between rows wherever the flex line happens to wrap — four across, two
-	 * and two, or one below the other — without a breakpoint having to guess
-	 * where the wrap will land. A media query cannot know; this does not
-	 * have to.
-	 */
-	overflow: hidden;
 }
 
 .badges__item {
 	align-items: center;
-	box-shadow:
-		-1px 0 0 var(--rule),
-		0 -1px 0 var(--rule);
 	display: flex;
-	/* No max-width: the items must fill the line exactly, or the leftmost one
-	   does not start at the container's edge and its rule escapes the clip. */
+	/* They still share the line equally rather than taking a max-width, so the
+	   four sit evenly whether the row holds four, two or one. */
 	flex: 1 1 11rem;
 	flex-direction: column;
 	gap: 0.65rem;
