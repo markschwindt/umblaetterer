@@ -23,19 +23,19 @@
 	font-size: clamp(2.4rem, 1.1rem + 5.4vw, 5.25rem);
 	letter-spacing: -0.018em;
 	line-height: 0.98;
-	margin: 0.35rem 0 0;
+	margin: 0.35rem 0 .8rem;
 	max-width: 22ch;
 	text-wrap: balance;
 }
 
 .lead__title a {
-	color: var(--ink);
+	color: var(--blue);
 	text-decoration: none;
 }
 
 .lead__title a:hover,
 .lead__title a:focus {
-	color: var(--blue);
+	color: var(--ink);
 }
 
 .lead__body {
@@ -57,16 +57,16 @@
 
 /* The drop cap. Three lines deep, in the display face, in navy — the single
    most recognisable gesture in the whole of printed journalism. */
-.lead__standfirst > p:first-of-type::first-letter,
+.lead__standfirst>p:first-of-type::first-letter,
 .dropcap::first-letter {
 	color: var(--blue);
 	float: left;
 	font-family: $font__display;
-	font-size: 3.55em;
+	font-size: 4.76em;
 	font-weight: 400;
 	line-height: 0.82;
-	margin: 0.06em 0.08em 0 0;
-	padding: 0;
+	padding-top: .9rem;
+	padding-right: 1rem
 }
 
 .lead__aside {
@@ -89,11 +89,11 @@
 	grid-template-columns: 1fr;
 }
 
-.column-set > * {
+.column-set>* {
 	padding: clamp(1.4rem, 3vw, 2rem) 0;
 }
 
-.column-set > * + * {
+.column-set>*+* {
 	border-top: 1px solid var(--rule);
 }
 
@@ -104,31 +104,31 @@
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	.column-set > * {
+	.column-set>* {
 		padding: 0 clamp(1rem, 2.4vw, 1.8rem);
 	}
 
-	.column-set > * + * {
+	.column-set>*+* {
 		border-left: 1px solid var(--rule);
 		border-top: 0;
 	}
 
-	.column-set > *:first-child {
+	.column-set>*:first-child {
 		padding-left: 0;
 	}
 
-	.column-set > *:last-child {
+	.column-set>*:last-child {
 		padding-right: 0;
 	}
 
 	/* With two per row, the third item starts a new row and must lose the
 	   inherited left rule and regain a top one. */
-	.column-set--3 > *:nth-child(odd) {
+	.column-set--3>*:nth-child(odd) {
 		border-left: 0;
 		padding-left: 0;
 	}
 
-	.column-set--3 > *:nth-child(n+3) {
+	.column-set--3>*:nth-child(n+3) {
 		border-top: 1px solid var(--rule);
 		padding-top: clamp(1.2rem, 2.5vw, 1.8rem);
 	}
@@ -140,14 +140,14 @@
 		grid-template-columns: repeat(3, 1fr);
 	}
 
-	.column-set--3 > *:nth-child(n) {
+	.column-set--3>*:nth-child(n) {
 		border-left: 1px solid var(--rule);
 		border-top: 0;
 		padding-left: clamp(1rem, 2.4vw, 1.8rem);
 		padding-top: 0;
 	}
 
-	.column-set--3 > *:first-child {
+	.column-set--3>*:first-child {
 		border-left: 0;
 		padding-left: 0;
 	}
@@ -162,22 +162,23 @@
 }
 
 .brief__title a {
-	color: var(--ink);
+	color: var(--blue);
 	text-decoration: none;
 }
 
 .brief__title a:hover,
 .brief__title a:focus {
-	color: var(--blue);
+	color: var(--ink);
 }
 
 .brief__teaser {
 	@include running-text;
 
-	color: var(--ink-soft);
+	color: var(--ink);
 	font-size: 0.94em;
 	line-height: 1.5;
 	margin: 0;
+	hyphens: auto;
 }
 
 /* --- Der Umbruch: the lower half ---------------------------------------- */
@@ -192,6 +193,6 @@
 	}
 }
 
-.issue__rail > * + * {
+.issue__rail>*+* {
 	margin-top: clamp(2rem, 4vw, 2.8rem);
 }

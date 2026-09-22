@@ -17,6 +17,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.5rem;
+	margin: 1rem 0;
 }
 
 .kicker a {
@@ -51,6 +52,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.45rem 0.7rem;
+	margin-bottom: .5rem;
 }
 
 .dateline-line a {
@@ -75,17 +77,18 @@
 }
 
 .dateline-line .sep {
-	color: var(--paper-edge);
+	color: var(--ink);
 }
 
 /*
- * "Neu" — the second ink's first outing. Only ever on the most recent piece,
- * and only on the front page.
+ * "Neu" — a solid slug of the masthead navy, pressed one shade darker, with
+ * the paper knocked out of it. Only ever on the most recent piece, and only
+ * on the front page.
  */
 .flag-new {
 	@include kicker(0.7rem, 0.14em);
 
-	background: var(--red);
+	background: var(--blue-deep);
 	color: var(--paper);
 	padding: 0.25em 0.5em 0.2em;
 }

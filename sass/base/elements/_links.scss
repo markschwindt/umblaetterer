@@ -19,8 +19,8 @@ a {
 
 a:hover,
 a:focus {
-	color: var(--red);
-	text-decoration-color: currentColor;
+	color: var(--ink);
+	text-decoration-color: var(--blue);
 }
 
 a:focus-visible {
@@ -37,6 +37,10 @@ a:focus-visible {
 	text-decoration-skip-ink: auto;
 	text-decoration-thickness: 1px;
 	text-underline-offset: 0.16em;
+}
+
+.entry-content p {
+	hyphens: auto;
 }
 
 .entry-content a:hover,
