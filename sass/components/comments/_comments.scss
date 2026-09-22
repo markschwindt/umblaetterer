@@ -1,7 +1,210 @@
-.comment-content a {
-	word-wrap: break-word;
+/*
+ * Zuschriften — letters to the editor
+ * -----------------------------------
+ * Not a comment thread: a correspondence column. Set smaller than the article,
+ * on the deeper stock, with the correspondent's name in the dateline style.
+ */
+
+.comments-area {
+	@include measure(44rem);
+
+	margin-top: clamp(3rem, 6vw, 4.5rem);
 }
 
-.bypostauthor {
+.comments-title,
+.comment-reply-title {
+	@include kicker(0.76rem, 0.19em, 600);
+
+	border-bottom: 2px solid var(--blue);
+	color: var(--blue);
+	margin: 0 0 1.4rem;
+	padding-bottom: 0.45rem;
+}
+
+.comment-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.comment-list .children {
+	list-style: none;
+	margin: 0;
+	padding-left: clamp(1rem, 4vw, 2.2rem);
+	position: relative;
+}
+
+/* A reply hangs off a vertical rule, like a bracketed aside. */
+.comment-list .children::before {
+	background: var(--rule-soft);
+	bottom: 1.5rem;
+	content: "";
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 1px;
+}
+
+.comment-body {
+	border-bottom: 1px solid var(--rule-soft);
+	padding: 1.4rem 0;
+}
+
+.comment-meta {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+	margin-bottom: 0.7rem;
+}
+
+.comment-author {
+	align-items: center;
+	display: flex;
+	gap: 0.6rem;
+}
+
+.comment-author img {
+	border-radius: 50%;
+	filter: grayscale(1) contrast(0.92);
+	flex: none;
+	height: 2rem;
+	width: 2rem;
+}
+
+.comment-author .fn {
+	@include kicker(0.68rem, 0.12em, 600);
+
+	color: var(--ink);
+}
+
+.comment-author .says {
+	display: none;
+}
+
+.comment-metadata {
+	@include kicker(0.68rem, 0.1em);
+
+	color: var(--ink-faint);
+}
+
+.comment-metadata a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.comment-metadata a:hover {
+	color: var(--blue);
+}
+
+.comment-content {
+	font-size: 0.98rem;
+	hyphens: auto;
+	line-height: 1.58;
+}
+
+.comment-content p {
+	margin-bottom: 0.9em;
+}
+
+.reply {
+	margin-top: 0.7rem;
+}
+
+.comment-reply-link {
+	@include kicker(0.68rem, 0.12em);
+
+	color: var(--blue);
+	text-decoration: none;
+}
+
+.comment-reply-link:hover,
+.comment-reply-link:focus {
+	color: var(--red);
+}
+
+.bypostauthor > .comment-body .fn::after {
+	color: var(--blue);
+	content: " ❖";
+}
+
+.comment-awaiting-moderation {
+	@include kicker(0.68rem);
+
+	color: var(--red);
 	display: block;
+	margin-bottom: 0.6rem;
+}
+
+/* --- The form ----------------------------------------------------------- */
+
+.comment-respond {
+	background: var(--paper-warm);
+	margin-top: 2.5rem;
+	padding: clamp(1.2rem, 3vw, 2rem);
+}
+
+.comment-form {
+	display: grid;
+	gap: 1.1rem;
+}
+
+.comment-form .comment-form-comment {
+	margin: 0;
+}
+
+.comment-form p {
+	margin: 0;
+}
+
+@include at($bp__oktav) {
+
+	.comment-form {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.comment-form .comment-form-comment,
+	.comment-form .comment-notes,
+	.comment-form .form-submit,
+	.comment-form .comment-form-cookies-consent {
+		grid-column: 1 / -1;
+	}
+}
+
+.comment-notes,
+.comment-form .form-submit {
+	margin: 0;
+}
+
+.comment-notes {
+	@include kicker(0.68rem, 0.1em, 500, none);
+
+	color: var(--ink-faint);
+}
+
+.comment-form-cookies-consent {
+	align-items: baseline;
+	display: flex;
+	gap: 0.5rem;
+}
+
+.comment-form-cookies-consent label {
+	@include kicker(0.68rem, 0.08em, 500, none);
+
+	margin: 0;
+}
+
+.comment-form input[type="checkbox"] {
+	accent-color: $blue;
+}
+
+/* Akismet and friends append a privacy note after the form. It is a footnote,
+   so it is set like one rather than like body copy. */
+.comments-area .akismet_comment_form_privacy_notice,
+.comments-area > p:last-child:not([class]),
+.no-comments,
+.comment-form .logged-in-as {
+	@include kicker(0.68rem, 0.1em, 500, none);
+
+	color: var(--ink-faint);
 }

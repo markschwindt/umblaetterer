@@ -1,0 +1,155 @@
+/*
+ * Umblättern — pagination
+ * -----------------------
+ * The site is called "the one who turns pages". The navigation between posts
+ * has, for eighteen years, been an unremarked pun waiting to be set properly.
+ */
+
+.post-navigation,
+.posts-navigation {
+	@include measure(50rem);
+
+	margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.post-navigation .nav-links {
+	border-top: 2px solid var(--blue);
+	display: grid;
+	gap: 0;
+	grid-template-columns: 1fr;
+}
+
+@include at($bp__quart) {
+
+	.post-navigation .nav-links {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.post-navigation .nav-next {
+		border-left: 1px solid var(--rule);
+		padding-left: 1.6rem;
+		text-align: right;
+	}
+
+	.post-navigation .nav-previous {
+		padding-right: 1.6rem;
+	}
+}
+
+.post-navigation .nav-previous,
+.post-navigation .nav-next {
+	padding: 1.2rem 0;
+}
+
+@include until($bp__quart) {
+
+	.post-navigation .nav-next {
+		border-top: 1px solid var(--rule);
+	}
+}
+
+.post-navigation a {
+	color: var(--ink);
+	display: block;
+	text-decoration: none;
+}
+
+.post-navigation .nav-subtitle {
+	@include kicker(0.68rem, 0.16em);
+
+	color: var(--blue);
+	display: block;
+	margin-bottom: 0.45rem;
+}
+
+.post-navigation .nav-title {
+	display: block;
+	font-family: $font__display;
+	font-size: 1.15rem;
+	line-height: 1.2;
+}
+
+.post-navigation a:hover .nav-title,
+.post-navigation a:focus .nav-title {
+	color: var(--blue);
+}
+
+/* --- Archive paging ------------------------------------------------------ */
+
+.pagination {
+	border-top: 2px solid var(--blue);
+	margin-top: clamp(2.5rem, 5vw, 4rem);
+	padding-top: 1.1rem;
+}
+
+.pagination .nav-links {
+	align-items: baseline;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.3rem;
+	justify-content: center;
+}
+
+.pagination .page-numbers {
+	@include kicker(0.7rem, 0.1em);
+
+	color: var(--ink-soft);
+	display: block;
+	font-variant-numeric: lining-nums;
+	min-width: 2.2rem;
+	padding: 0.6em 0.5em;
+	text-align: center;
+	text-decoration: none;
+}
+
+.pagination a.page-numbers:hover,
+.pagination a.page-numbers:focus {
+	background: var(--paper-warm);
+	color: var(--blue);
+}
+
+.pagination .page-numbers.current {
+	background: var(--blue);
+	color: var(--paper);
+}
+
+.pagination .page-numbers.dots {
+	color: var(--paper-edge);
+	min-width: 0;
+}
+
+.pagination .prev,
+.pagination .next {
+	letter-spacing: 0.14em;
+}
+
+/* The simple previous/next on listing pages. */
+.posts-navigation .nav-links {
+	border-top: 2px solid var(--blue);
+	display: flex;
+	justify-content: space-between;
+	padding-top: 1.1rem;
+}
+
+.posts-navigation a {
+	@include kicker(0.7rem, 0.14em);
+
+	color: var(--blue);
+	text-decoration: none;
+}
+
+.posts-navigation a:hover,
+.posts-navigation a:focus {
+	color: var(--red);
+}
+
+.page-links {
+	@include kicker(0.68rem);
+
+	margin: 2.5rem auto 0;
+	max-width: var(--measure);
+}
+
+.page-links a {
+	padding: 0 0.35em;
+}

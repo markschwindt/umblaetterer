@@ -1,23 +1,34 @@
+/*
+ * Galleries — a contact sheet, with a hairline grid between the plates.
+ */
+
 .gallery {
-	margin-bottom: 1.5em;
 	display: grid;
-	grid-gap: 1.5em;
+	gap: 1.4em;
+	grid-template-columns: repeat(2, 1fr);
+	margin: 2.4em 0;
 }
 
-.gallery-item {
-	display: inline-block;
-	text-align: center;
-	width: 100%;
+.gallery-columns-1 {
+	grid-template-columns: 1fr;
 }
 
-// Loops to enumerate the classes for gallery columns.
-@for $i from 2 through 9 {
+@include at($bp__oktav) {
 
-	.gallery-columns-#{$i} {
-		grid-template-columns: repeat($i, 1fr);
+	@for $i from 3 through 9 {
+
+		.gallery-columns-#{$i} {
+			grid-template-columns: repeat($i, 1fr);
+		}
 	}
 }
 
-.gallery-caption {
-	display: block;
+.gallery-item {
+	margin: 0;
+	text-align: left;
+	width: 100%;
+}
+
+.gallery-item img {
+	width: 100%;
 }

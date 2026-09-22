@@ -1,6 +1,29 @@
+/* Masthead & colophon
+--------------------------------------------- */
+@import "masthead/masthead";
+@import "masthead/colophon";
+
 /* Navigation
 --------------------------------------------- */
 @import "navigation/navigation";
+
+/* Forms
+--------------------------------------------- */
+@import "forms/search";
+
+/* The front page
+--------------------------------------------- */
+@import "front/kicker";
+@import "front/issue";
+
+/* Registers & indices
+--------------------------------------------- */
+@import "index/index-list";
+
+/* The article
+--------------------------------------------- */
+@import "article/article";
+@import "article/pagination";
 
 /* Posts and pages
 --------------------------------------------- */

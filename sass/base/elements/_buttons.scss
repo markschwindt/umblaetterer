@@ -1,21 +1,56 @@
+/*
+ * Buttons
+ * -------
+ * A button on ivory is a stamp: navy ink, caps, letterspaced, no rounding,
+ * and it presses down a hair when you push it.
+ */
+
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
-	border: 1px solid;
-	border-color: $color__border-button;
-	border-radius: 3px;
-	background: $color__background-button;
-	color: rgba(0, 0, 0, 0.8);
-	line-height: 1;
-	padding: 0.6em 1em 0.4em;
+input[type="submit"],
+.button {
+	@include kicker(0.72rem);
 
-	&:hover {
-		border-color: $color__border-button-hover;
-	}
+	background-color: var(--blue);
+	border: 1px solid var(--blue);
+	border-radius: 0;
+	color: var(--paper);
+	cursor: pointer;
+	display: inline-block;
+	padding: 0.72em 1.4em;
+	text-decoration: none;
+	transition:
+		background-color 0.15s ease,
+		color 0.15s ease,
+		transform 0.1s ease;
+}
 
-	&:active,
-	&:focus {
-		border-color: $color__border-button-focus;
-	}
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+.button:hover,
+button:focus,
+.button:focus {
+	background-color: var(--blue-deep);
+	color: var(--paper);
+}
+
+button:active,
+input[type="submit"]:active,
+.button:active {
+	transform: translateY(1px);
+}
+
+/* The quieter variant: ink on paper, outlined. */
+.button--ghost {
+	background-color: transparent;
+	color: var(--blue);
+}
+
+.button--ghost:hover,
+.button--ghost:focus {
+	background-color: var(--blue);
+	color: var(--paper);
 }

@@ -1,0 +1,100 @@
+/*
+ * Das Impressum — the colophon
+ * ----------------------------
+ * The last thing on the page is the imprint, set the way a book's colophon is
+ * set: small, centred, factual, under a thick-over-thin rule that closes the
+ * sheet the same way the masthead opened it.
+ */
+
+.site-footer {
+	margin-top: clamp(2.5rem, 5vw, 4rem);
+	padding-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.site-footer__closing {
+	@include rule-double(4px);
+}
+
+.colophon {
+	display: grid;
+	gap: clamp(1.6rem, 4vw, 3rem);
+	padding: clamp(1.8rem, 4vw, 2.8rem) 0;
+
+	@include at($bp__quart) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.colophon__block > .widget-title,
+.colophon__title {
+	@include kicker(0.7rem, 0.18em, 600);
+
+	border-bottom: 1px solid var(--rule);
+	color: var(--blue);
+	margin: 0 0 0.8rem;
+	padding-bottom: 0.4rem;
+}
+
+.colophon__block ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.colophon__block li {
+	margin: 0 0 0.35rem;
+}
+
+.colophon__block a {
+	color: var(--ink-soft);
+	font-size: 0.92rem;
+	text-decoration: none;
+}
+
+.colophon__block a:hover,
+.colophon__block a:focus {
+	color: var(--blue);
+}
+
+.colophon__note {
+	color: var(--ink-soft);
+	font-size: 0.92rem;
+	line-height: 1.55;
+}
+
+/* The imprint line proper. */
+.site-info {
+	@include kicker(0.68rem, 0.13em);
+
+	align-items: baseline;
+	border-top: 1px solid var(--rule);
+	color: var(--ink-faint);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem 0.9rem;
+	justify-content: center;
+	padding-top: 1.1rem;
+	text-align: center;
+}
+
+.site-info a {
+	color: var(--ink-soft);
+	text-decoration: none;
+}
+
+.site-info a:hover,
+.site-info a:focus {
+	color: var(--blue);
+}
+
+.site-info .sep {
+	color: var(--paper-edge);
+}
+
+/* A printer's mark: the fleuron sitting in the very last line, the way a
+   pressman's device sat at the foot of the page. */
+.site-info__mark {
+	color: var(--blue);
+	font-family: $font__display;
+	font-size: 0.95rem;
+}

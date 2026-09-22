@@ -1,8 +1,9 @@
 <?php
 /**
- * The sidebar containing the main widget area
+ * The sidebar
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * Kept for the template hierarchy's sake; the rail is composed inline by the
+ * templates that want it, via template-parts/rail-rubriken.php.
  *
  * @package Umblätterer
  */

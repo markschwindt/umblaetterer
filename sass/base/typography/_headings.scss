@@ -1,8 +1,55 @@
+/*
+ * Headlines
+ * ---------
+ * Old Standard TT is a Didone: thin hairlines, abrupt serifs, high contrast.
+ * It wants size and it wants tight leading. Given both, it reads as 1928.
+ * Given neither, it reads as a word-processor.
+ */
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	clear: both;
+	color: var(--ink);
+	font-family: $font__display;
+	font-weight: 400;
+	letter-spacing: -0.01em;
+	line-height: 1.1;
+	margin: 0 0 0.5em;
+	text-wrap: balance;
+}
+
+h1 {
+	font-size: clamp(2rem, 1.3rem + 3.2vw, 3.25rem);
+	line-height: 1.02;
+}
+
+h2 {
+	font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.35rem);
+	line-height: 1.08;
+}
+
+h3 {
+	font-size: clamp(1.3rem, 1.1rem + 0.9vw, 1.7rem);
+}
+
+h4 {
+	font-size: 1.2rem;
+}
+
+/* Below h4 the display face has nothing left to say, so the sans takes over
+   and behaves like a sub-rubric. */
+h5,
+h6 {
+	@include kicker(0.78rem, $tracking__caps-tight, 600);
+
+	color: var(--blue);
+	margin-bottom: 0.8em;
+}
+
+h6 {
+	color: var(--ink-soft);
+	font-size: 0.72rem;
 }

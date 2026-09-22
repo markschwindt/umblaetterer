@@ -1,8 +1,6 @@
 <?php
 /**
- * The template for displaying 404 pages (not found)
- *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
+ * Eine fehlende Seite — 404
  *
  * @package Umblätterer
  */
@@ -13,48 +11,44 @@ get_header();
 	<main id="primary" class="site-main">
 
 		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'umblaetterer' ); ?></h1>
-			</header><!-- .page-header -->
+			<p class="page-header__kicker"><?php esc_html_e( 'Herausgerissen', 'umblaetterer' ); ?></p>
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'umblaetterer' ); ?></p>
+			<p class="error-404__number" aria-hidden="true">404</p>
 
+			<h1 class="page-title"><?php esc_html_e( 'Diese Seite fehlt im Blatt', 'umblaetterer' ); ?></h1>
+
+			<div class="error-404__note">
+				<p><?php esc_html_e( 'Was hier stehen sollte, ist nicht mehr da — umgeblättert, umbenannt oder nie gesetzt. Das Archiv reicht bis Mai 2007 zurück; die Suche findet darin fast alles.', 'umblaetterer' ); ?></p>
+			</div>
+
+			<?php get_search_form(); ?>
+
+			<div class="error-404__suggestions">
+				<div class="section-head">
+					<h2 class="section-head__title"><?php esc_html_e( 'Zuletzt erschienen', 'umblaetterer' ); ?></h2>
+				</div>
+
+				<ul class="index-list">
 					<?php
-					get_search_form();
+					$umblaetterer_recent = new WP_Query(
+						array(
+							'posts_per_page'      => 6,
+							'ignore_sticky_posts' => true,
+						)
+					);
 
-					the_widget( 'WP_Widget_Recent_Posts' );
+					while ( $umblaetterer_recent->have_posts() ) :
+						$umblaetterer_recent->the_post();
+						umblaetterer_index_entry();
+					endwhile;
+
+					wp_reset_postdata();
 					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'umblaetterer' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$umblaetterer_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'umblaetterer' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$umblaetterer_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
+				</ul>
+			</div>
 		</section><!-- .error-404 -->
 
-	</main><!-- #main -->
+	</main><!-- #primary -->
 
 <?php
 get_footer();

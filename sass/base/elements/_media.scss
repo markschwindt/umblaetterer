@@ -1,15 +1,69 @@
-/* Make sure embeds and iframes fit their containers. */
+/*
+ * Images
+ * ------
+ * Two decades of pasted-in markup live in this database: inline widths,
+ * float attributes, centred divs. These rules have to hold all of it without
+ * ever letting anything breach the column.
+ */
+
+img,
+svg,
+video {
+	height: auto;
+	max-width: 100%;
+}
+
+img {
+	display: block;
+	/* Halftone-era photographs were never crisp. A whisper of warmth sits them
+	   on the ivory instead of on top of it. */
+	background-color: var(--paper-warm);
+}
+
+/* Legacy content sets width="" on images; let it scale down but not up. */
+.entry-content img[width],
+.entry-content img[height] {
+	height: auto;
+	max-width: 100%;
+}
+
+figure {
+	margin: 2.2em 0;
+}
+
 embed,
 iframe,
 object {
 	max-width: 100%;
 }
 
-img {
-	height: auto; // Make sure images are scaled correctly.
-	max-width: 100%; // Adhere to container width.
+/* oEmbeds and raw iframes — keep video inside the column. */
+.entry-content iframe {
+	aspect-ratio: 16 / 9;
+	border: 0;
+	display: block;
+	height: auto;
+	width: 100%;
 }
 
-figure {
-	margin: 1em 0; // Extra wide images within figure tags don't overflow the content area.
+.wp-caption,
+figure.wp-caption {
+	margin-bottom: 2em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text,
+figcaption {
+	@include kicker(0.7rem, 0.05em, 500, none, 1.45);
+
+	border-top: 1px solid var(--rule);
+	color: var(--ink-soft);
+	margin: 0.7em 0 0;
+	padding-top: 0.55em;
 }

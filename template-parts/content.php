@@ -1,32 +1,31 @@
 <?php
 /**
- * Template part for displaying posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * The body of a single post
  *
  * @package Umblätterer
  */
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
+
 	<header class="entry-header">
 		<?php
-		if ( is_singular() ) :
+		if ( is_singular() ) {
+			umblaetterer_kicker( array( 'class' => 'kicker--large' ) );
 			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
+			umblaetterer_dateline(
+				array(
+					'reading'  => true,
+					'comments' => true,
+				)
+			);
+		} else {
+			umblaetterer_kicker();
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				umblaetterer_posted_on();
-				umblaetterer_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
+			umblaetterer_dateline();
+		}
+		?>
 	</header><!-- .entry-header -->
 
 	<?php umblaetterer_post_thumbnail(); ?>
@@ -36,13 +35,9 @@
 		the_content(
 			sprintf(
 				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'umblaetterer' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
+					/* translators: %s: Name of current post. Only visible to screen readers. */
+					__( 'Weiterblättern <span class="screen-reader-text">zu „%s"</span> →', 'umblaetterer' ),
+					array( 'span' => array( 'class' => array() ) )
 				),
 				wp_kses_post( get_the_title() )
 			)
@@ -50,12 +45,16 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'umblaetterer' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Fortsetzung:', 'umblaetterer' ) . ' ',
 				'after'  => '</div>',
 			)
 		);
 		?>
 	</div><!-- .entry-content -->
+
+	<?php if ( is_singular() ) : ?>
+		<p class="entry-end" aria-hidden="true">❧</p>
+	<?php endif; ?>
 
 	<footer class="entry-footer">
 		<?php umblaetterer_entry_footer(); ?>

@@ -1,0 +1,197 @@
+/*
+ * Die Ausgabe — the front page
+ * ----------------------------
+ * There are no photographs in twenty years of this archive, and no excerpts
+ * either. So the front page is built the way a 1920s page was built, out of
+ * nothing but type and rules: one Aufmacher across the top, a set of ruled
+ * columns beneath it, then an index.
+ *
+ * This turns out not to be a constraint. It is the brief.
+ */
+
+.issue {
+	padding: clamp(2rem, 5vw, 4rem) 0 0;
+}
+
+/* --- Der Aufmacher: the lead ------------------------------------------- */
+
+.lead {
+	padding-bottom: clamp(2rem, 4vw, 3.2rem);
+}
+
+.lead__title {
+	font-size: clamp(2.4rem, 1.1rem + 5.4vw, 5.25rem);
+	letter-spacing: -0.018em;
+	line-height: 0.98;
+	margin: 0.35rem 0 0;
+	max-width: 22ch;
+	text-wrap: balance;
+}
+
+.lead__title a {
+	color: var(--ink);
+	text-decoration: none;
+}
+
+.lead__title a:hover,
+.lead__title a:focus {
+	color: var(--blue);
+}
+
+.lead__body {
+	display: grid;
+	gap: clamp(1.4rem, 3vw, 2.6rem);
+	margin-top: clamp(1.4rem, 3vw, 2.2rem);
+
+	@include at($bp__folio) {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.lead__standfirst {
+	@include running-text;
+
+	font-size: 1.08em;
+	line-height: 1.55;
+}
+
+/* The drop cap. Three lines deep, in the display face, in navy — the single
+   most recognisable gesture in the whole of printed journalism. */
+.lead__standfirst > p:first-of-type::first-letter,
+.dropcap::first-letter {
+	color: var(--blue);
+	float: left;
+	font-family: $font__display;
+	font-size: 3.55em;
+	font-weight: 400;
+	line-height: 0.82;
+	margin: 0.06em 0.08em 0 0;
+	padding: 0;
+}
+
+.lead__aside {
+	@include running-text;
+
+	color: var(--ink-soft);
+	font-size: 0.97em;
+}
+
+/* --- Die Spalten: the column set ---------------------------------------- */
+
+/*
+ * Real column rules. The hairline sits *between* the columns, which means the
+ * gap has to be zero and the padding has to be on the items — the same way a
+ * compositor spaces around a brass rule.
+ */
+.column-set {
+	display: grid;
+	gap: 0;
+	grid-template-columns: 1fr;
+}
+
+.column-set > * {
+	padding: clamp(1.4rem, 3vw, 2rem) 0;
+}
+
+.column-set > * + * {
+	border-top: 1px solid var(--rule);
+}
+
+@include at($bp__quart) {
+
+	.column-set--3,
+	.column-set--2 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.column-set > * {
+		padding: 0 clamp(1rem, 2.4vw, 1.8rem);
+	}
+
+	.column-set > * + * {
+		border-left: 1px solid var(--rule);
+		border-top: 0;
+	}
+
+	.column-set > *:first-child {
+		padding-left: 0;
+	}
+
+	.column-set > *:last-child {
+		padding-right: 0;
+	}
+
+	/* With two per row, the third item starts a new row and must lose the
+	   inherited left rule and regain a top one. */
+	.column-set--3 > *:nth-child(odd) {
+		border-left: 0;
+		padding-left: 0;
+	}
+
+	.column-set--3 > *:nth-child(n+3) {
+		border-top: 1px solid var(--rule);
+		padding-top: clamp(1.2rem, 2.5vw, 1.8rem);
+	}
+}
+
+@include at($bp__folio) {
+
+	.column-set--3 {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.column-set--3 > *:nth-child(n) {
+		border-left: 1px solid var(--rule);
+		border-top: 0;
+		padding-left: clamp(1rem, 2.4vw, 1.8rem);
+		padding-top: 0;
+	}
+
+	.column-set--3 > *:first-child {
+		border-left: 0;
+		padding-left: 0;
+	}
+}
+
+/* --- Die Meldung: one story in a column ---------------------------------- */
+
+.brief__title {
+	font-size: clamp(1.25rem, 1.05rem + 0.75vw, 1.6rem);
+	line-height: 1.12;
+	margin: 0.35rem 0 0.6rem;
+}
+
+.brief__title a {
+	color: var(--ink);
+	text-decoration: none;
+}
+
+.brief__title a:hover,
+.brief__title a:focus {
+	color: var(--blue);
+}
+
+.brief__teaser {
+	@include running-text;
+
+	color: var(--ink-soft);
+	font-size: 0.94em;
+	line-height: 1.5;
+	margin: 0;
+}
+
+/* --- Der Umbruch: the lower half ---------------------------------------- */
+
+.issue__lower {
+	display: grid;
+	gap: clamp(2rem, 4vw, 3.5rem);
+	padding: clamp(1.4rem, 3vw, 2.2rem) 0 0;
+
+	@include at($bp__folio) {
+		grid-template-columns: minmax(0, 1.85fr) minmax(0, 1fr);
+	}
+}
+
+.issue__rail > * + * {
+	margin-top: clamp(2rem, 4vw, 2.8rem);
+}

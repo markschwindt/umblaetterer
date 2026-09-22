@@ -1,11 +1,76 @@
-// Center block
-@mixin center-block {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+//
+// Mixins — the compositor's standing rules
+//
+
+/// Small caps set in the sans, the way a rubric or a dateline is set.
+///
+/// Weight, case and leading are parameters rather than things a call site
+/// re-declares afterwards: a block that sets font-weight twice is a block
+/// whose author has lost track of what the mixin does.
+@mixin kicker(
+	$size: 0.72rem,
+	$tracking: $tracking__caps,
+	$weight: 500,
+	$transform: uppercase,
+	$leading: 1.2
+) {
+	font-family: $font__sans;
+	font-size: $size;
+	font-style: normal;
+	font-weight: $weight;
+	letter-spacing: $tracking;
+	line-height: $leading;
+	text-transform: $transform;
 }
 
-// Column width with margin
-@mixin column-width($numberColumns: 3) {
-	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+/// Running text: justified, hyphenated, with proper old-style figures.
+/// German needs hyphenation or justification tears holes in the column.
+@mixin running-text {
+	font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+	hyphens: auto;
+	hyphenate-limit-chars: 6 3 3;
+	text-align: justify;
+	text-wrap: pretty;
+
+	/* Below about forty characters a column cannot be justified without
+	   tearing rivers through it, however good the hyphenation. Ragged right
+	   is the honest setting on a phone. */
+	@media (max-width: 37.4375em) {
+		text-align: left;
+	}
+}
+
+/// A headline in the display face.
+@mixin display($min, $max, $leading: 1.04) {
+	font-family: $font__display;
+	font-size: clamp(#{$min}, #{($min + $max) * 0.5} + 1.2vw, #{$max});
+	font-weight: 400;
+	letter-spacing: -0.012em;
+	line-height: $leading;
+}
+
+/// The thick-over-thin rule pair that opens and closes a newspaper page.
+@mixin rule-double($weight: 4px) {
+	border-bottom: 1px solid var(--blue);
+	border-top: #{$weight} solid var(--blue);
+	height: 4px;
+}
+
+/// Centre a block within the type area.
+@mixin measure($width: $size__measure) {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $width;
+}
+
+@mixin at($bp) {
+	@media (min-width: $bp) {
+		@content;
+	}
+}
+
+@mixin until($bp) {
+	@media (max-width: #{$bp - 0.0625em}) {
+		@content;
+	}
 }

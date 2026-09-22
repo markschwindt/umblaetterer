@@ -1,0 +1,44 @@
+/*
+ * Search — "Im Archiv blättern"
+ */
+
+.search-form {
+	align-items: flex-end;
+	display: flex;
+	gap: 0.75rem;
+	max-width: 30rem;
+	min-width: 0;
+}
+
+/*
+ * A flex item's default min-width is auto, which for a text input is its
+ * intrinsic size — around 170px that refuses to shrink. On a 360px phone that
+ * alone pushes the masthead past the viewport, so every link in the chain has
+ * to be told it may give way.
+ */
+.search-form .search-field {
+	flex: 1 1 4rem;
+	font-size: 1.05rem;
+	min-width: 0;
+}
+
+.search-form .search-submit {
+	flex: none;
+	padding: 0.62em 1.1em;
+}
+
+.search-form label {
+	flex: 1 1 4rem;
+	margin: 0;
+	min-width: 0;
+}
+
+/* The search that lives in the masthead bar: one ruled line, nothing more. */
+.masthead-search {
+	margin: 0;
+	max-width: none;
+}
+
+.masthead-search .search-field {
+	font-size: 0.95rem;
+}

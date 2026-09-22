@@ -1,22 +1,47 @@
+/*
+ * Links
+ * -----
+ * In print, a citation is distinguished by weight or by a rule beneath it —
+ * never by a different colour of ink, because a second ink cost money.
+ * So: the link is the body ink with a navy rule under it, and it is the rule
+ * that reacts, not the word.
+ */
+
 a {
-	color: $color__link;
+	color: var(--blue);
+	text-decoration-color: var(--rule-blue);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.18em;
+	transition:
+		color 0.15s ease,
+		text-decoration-color 0.15s ease;
+}
 
-	&:visited {
-		color: $color__link-visited;
-	}
+a:hover,
+a:focus {
+	color: var(--red);
+	text-decoration-color: currentColor;
+}
 
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color__link-hover;
-	}
+a:focus-visible {
+	border-radius: 1px;
+	outline: 2px solid var(--blue);
+	outline-offset: 2px;
+}
 
-	&:focus {
-		outline: thin dotted;
-	}
+/* Inside running copy the underline belongs to the paper, not to the ink. */
+.entry-content a {
+	color: inherit;
+	text-decoration: underline;
+	text-decoration-color: var(--rule-blue);
+	text-decoration-skip-ink: auto;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.16em;
+}
 
-	&:hover,
-	&:active {
-		outline: 0;
-	}
+.entry-content a:hover,
+.entry-content a:focus {
+	color: var(--blue);
+	text-decoration-color: var(--blue);
+	text-decoration-thickness: 2px;
 }

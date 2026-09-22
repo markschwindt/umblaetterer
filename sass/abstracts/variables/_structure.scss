@@ -1,2 +1,16 @@
-$size__site-main: 100%;
+//
+// Structure — the page furniture of a broadsheet
+//
+
+$size__spread:  76rem;  // full page width, edge to edge of the sheet
+$size__page:    62rem;  // the type area
+$size__measure: 36rem;  // one column of running text, ~68 characters
+
+$size__site-main:    100%;
 $size__site-sidebar: 25%;
+
+// Breakpoints, named after the paper formats they roughly correspond to.
+$bp__oktav:    37.5em; // 600px  — a small book page
+$bp__quart:    48em;   // 768px
+$bp__folio:    62em;   // 992px
+$bp__bogen:    75em;   // 1200px

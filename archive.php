@@ -1,8 +1,10 @@
 <?php
 /**
- * The template for displaying archive pages
+ * Das Register — an archive
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * Rubrics, years and authors are all presented the same way: as a table of
+ * contents. "Buchbuch" holds 514 posts; a feed of 514 cards would be unusable,
+ * a register of 514 titles is a reference work.
  *
  * @package Umblätterer
  */
@@ -15,37 +17,66 @@ get_header();
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
+				<p class="page-header__kicker"><?php echo esc_html( umblaetterer_archive_kicker() ); ?></p>
+
 				<?php
 				the_archive_title( '<h1 class="page-title">', '</h1>' );
 				the_archive_description( '<div class="archive-description">', '</div>' );
+
+				global $wp_query;
 				?>
+
+				<p class="page-header__count">
+					<?php
+					printf(
+						/* translators: %s: number of posts found. */
+						esc_html( _n( '%s Beitrag', '%s Beiträge', (int) $wp_query->found_posts, 'umblaetterer' ) ),
+						esc_html( number_format_i18n( $wp_query->found_posts ) )
+					);
+					?>
+				</p>
 			</header><!-- .page-header -->
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			<div class="issue__lower">
+				<section class="archive-index">
+					<ul class="index-list">
+						<?php
+						while ( have_posts() ) :
+							the_post();
+							umblaetterer_index_entry(
+								array(
+									'author' => true,
+									'rubrik' => ! is_category(),
+								)
+							);
+						endwhile;
+						?>
+					</ul>
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+					<?php
+					the_posts_pagination(
+						array(
+							'mid_size'           => 2,
+							'prev_text'          => esc_html__( '← Zurück', 'umblaetterer' ),
+							'next_text'          => esc_html__( 'Weiter →', 'umblaetterer' ),
+							'screen_reader_text' => esc_html__( 'Seiten', 'umblaetterer' ),
+						)
+					);
+					?>
+				</section>
 
-			endwhile;
+				<aside class="issue__rail">
+					<?php get_template_part( 'template-parts/rail', 'rubriken' ); ?>
+				</aside>
+			</div>
 
-			the_posts_navigation();
+		<?php else : ?>
 
-		else :
+			<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-			get_template_part( 'template-parts/content', 'none' );
+		<?php endif; ?>
 
-		endif;
-		?>
-
-	</main><!-- #main -->
+	</main><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

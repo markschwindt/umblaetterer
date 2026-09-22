@@ -1,0 +1,362 @@
+@charset "UTF-8";
+
+/*
+ * Editor styles
+ * -------------
+ * The writing surface gets the same paper, the same ink and the same three
+ * faces as the published page. A piece written on white in the browser's
+ * default face and published on ivory in Spectral has been designed twice,
+ * and the second design is a surprise to whoever wrote it.
+ */
+
+/*
+ * The sheet
+ * ---------
+ * Everything below is one piece of ivory stock. The custom properties are
+ * declared here rather than in Sass so that the night edition can repaint the
+ * whole theme by redefining eleven values.
+ */
+:root {
+	--paper: #f4efe1;
+	--paper-warm: #efe8d6;
+	--paper-deep: #e7dfc9;
+	--paper-edge: #d9cfb4;
+	--ink: #1d1a14;
+	--ink-soft: #4e4839;
+	--ink-faint: #6f6854;
+	--blue: #112e60;
+	--blue-deep: #0a1c3d;
+	--blue-mid: #35507f;
+	--blue-pale: #8496b4;
+	--red: #a3302a;
+
+	/* Rules are ink diluted, never grey: grey rules read as screen furniture. */
+	--rule: rgba(29, 26, 20, 0.2);
+	--rule-soft: rgba(29, 26, 20, 0.11);
+	--rule-blue: rgba(17, 46, 96, 0.28);
+	--grain-opacity: 0.4;
+	--grain-blend: multiply;
+	--gutter: clamp(1.15rem, 4vw, 3rem);
+	--spread: 76rem;
+	--page: 62rem;
+	--measure: 36rem;
+	color-scheme: light;
+}
+
+/*
+ * The night edition. The press ran a second shift; the ink stays navy but the
+ * paper is gone, so the navy has to come up to meet the reader.
+ *
+ * It is never inferred from the reader's system. The paper is the point of
+ * this theme, so the ivory is what everybody gets until they ask for
+ * something else — a dark desktop is not a request for a dark newspaper.
+ */
+:root[data-edition="nacht"] {
+	--paper: #11141b;
+	--paper-warm: #171b24;
+	--paper-deep: #1d222d;
+	--paper-edge: rgba(231, 224, 205, 0.18);
+	--ink: #e7e0cd;
+	--ink-soft: #a7a08c;
+	--ink-faint: #948d79;
+	--blue: #93aede;
+	--blue-deep: rgb(178.2510638298, 197.4382978723, 231.5489361702);
+	--blue-mid: #93aede;
+	--blue-pale: rgba(147, 174, 222, 0.55);
+	--red: #d98078;
+	--rule: rgba(231, 224, 205, 0.22);
+	--rule-soft: rgba(231, 224, 205, 0.12);
+	--rule-blue: rgba(147, 174, 222, 0.34);
+	--grain-opacity: 0.22;
+	--grain-blend: overlay;
+	color-scheme: dark;
+}
+
+/* spectral 400 italic — latin-ext */
+@font-face {
+	font-family: spectral;
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(../fonts/spectral-400-italic-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* spectral 400 italic — latin */
+@font-face {
+	font-family: spectral;
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(../fonts/spectral-400-italic-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* spectral 600 italic — latin-ext */
+@font-face {
+	font-family: spectral;
+	font-style: italic;
+	font-weight: 600;
+	font-display: swap;
+	src: url(../fonts/spectral-600-italic-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* spectral 600 italic — latin */
+@font-face {
+	font-family: spectral;
+	font-style: italic;
+	font-weight: 600;
+	font-display: swap;
+	src: url(../fonts/spectral-600-italic-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* spectral 400 normal — latin-ext */
+@font-face {
+	font-family: spectral;
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(../fonts/spectral-400-normal-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* spectral 400 normal — latin */
+@font-face {
+	font-family: spectral;
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(../fonts/spectral-400-normal-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* spectral 500 normal — latin-ext */
+@font-face {
+	font-family: spectral;
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url(../fonts/spectral-500-normal-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* spectral 500 normal — latin */
+@font-face {
+	font-family: spectral;
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url(../fonts/spectral-500-normal-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* spectral 600 normal — latin-ext */
+@font-face {
+	font-family: spectral;
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url(../fonts/spectral-600-normal-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* spectral 600 normal — latin */
+@font-face {
+	font-family: spectral;
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url(../fonts/spectral-600-normal-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* spectral 700 normal — latin-ext */
+@font-face {
+	font-family: spectral;
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(../fonts/spectral-700-normal-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* spectral 700 normal — latin */
+@font-face {
+	font-family: spectral;
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(../fonts/spectral-700-normal-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* oldstandard 400 italic — latin-ext */
+@font-face {
+	font-family: "Old Standard TT";
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(../fonts/oldstandard-400-italic-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* oldstandard 400 italic — latin */
+@font-face {
+	font-family: "Old Standard TT";
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(../fonts/oldstandard-400-italic-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* oldstandard 400 normal — latin-ext */
+@font-face {
+	font-family: "Old Standard TT";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(../fonts/oldstandard-400-normal-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* oldstandard 400 normal — latin */
+@font-face {
+	font-family: "Old Standard TT";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(../fonts/oldstandard-400-normal-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* oldstandard 700 normal — latin-ext */
+@font-face {
+	font-family: "Old Standard TT";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(../fonts/oldstandard-700-normal-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* oldstandard 700 normal — latin */
+@font-face {
+	font-family: "Old Standard TT";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(../fonts/oldstandard-700-normal-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* jost 400 italic — latin-ext */
+@font-face {
+	font-family: jost;
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(../fonts/jost-400-italic-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* jost 400 italic — latin */
+@font-face {
+	font-family: jost;
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(../fonts/jost-400-italic-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* jost 300-700 normal — latin-ext */
+@font-face {
+	font-family: jost;
+	font-style: normal;
+	font-weight: 300 700;
+	font-display: swap;
+	src: url(../fonts/jost-300-700-normal-latin-ext.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* jost 300-700 normal — latin */
+@font-face {
+	font-family: jost;
+	font-style: normal;
+	font-weight: 300 700;
+	font-display: swap;
+	src: url(../fonts/jost-300-700-normal-latin.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.editor-styles-wrapper,
+.block-editor-writing-flow {
+	background-color: var(--paper);
+	color: var(--ink);
+	font-family: spectral, "Iowan Old Style", "Palatino Linotype", georgia, serif;
+	font-size: 1.125rem;
+	font-variant-numeric: oldstyle-num;
+	line-height: 1.62;
+}
+
+.editor-styles-wrapper p {
+	margin: 0 0 1.35em;
+}
+
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4 {
+	font-family: "Old Standard TT", "Times New Roman", times, serif;
+	font-weight: 400;
+	letter-spacing: -0.01em;
+	line-height: 1.1;
+}
+
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.78rem;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--blue);
+}
+
+.editor-styles-wrapper .editor-post-title__input,
+.editor-styles-wrapper h1.wp-block-post-title {
+	font-family: "Old Standard TT", "Times New Roman", times, serif;
+	font-size: clamp(2rem, 1.1rem + 2.4vw, 3rem);
+	font-weight: 400;
+	letter-spacing: -0.016em;
+	line-height: 1.04;
+}
+
+.editor-styles-wrapper a {
+	color: var(--blue);
+	text-decoration-color: var(--rule-blue);
+	text-underline-offset: 0.16em;
+}
+
+.editor-styles-wrapper blockquote {
+	border-left: 2px solid var(--rule-blue);
+	color: var(--ink-soft);
+	font-size: 0.95em;
+	margin: 2em 0;
+	padding: 0.15em 0 0.15em 1.5em;
+}
+
+.editor-styles-wrapper ul > li::marker,
+.editor-styles-wrapper ol > li::marker {
+	color: var(--blue);
+}
+
+.editor-styles-wrapper code,
+.editor-styles-wrapper pre {
+	font-family: SFMono-Regular, menlo, monaco, consolas, monospace;
+}

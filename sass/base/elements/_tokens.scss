@@ -1,0 +1,78 @@
+/*
+ * The sheet
+ * ---------
+ * Everything below is one piece of ivory stock. The custom properties are
+ * declared here rather than in Sass so that the night edition can repaint the
+ * whole theme by redefining eleven values.
+ */
+
+:root {
+	--paper: #{$paper};
+	--paper-warm: #{$paper-warm};
+	--paper-deep: #{$paper-deep};
+	--paper-edge: #{$paper-edge};
+
+	--ink: #{$ink};
+	--ink-soft: #{$ink-soft};
+	--ink-faint: #{$ink-faint};
+
+	--blue: #{$blue};
+	--blue-deep: #{$blue-deep};
+	--blue-mid: #{$blue-mid};
+	--blue-pale: #{$blue-pale};
+	--red: #{$red};
+
+	/* Rules are ink diluted, never grey: grey rules read as screen furniture. */
+	--rule: #{rgba($ink, 0.2)};
+	--rule-soft: #{rgba($ink, 0.11)};
+	--rule-blue: #{rgba($blue, 0.28)};
+
+	--grain-opacity: 0.4;
+	--grain-blend: multiply;
+
+	--gutter: clamp(1.15rem, 4vw, 3rem);
+	--spread: #{$size__spread};
+	--page: #{$size__page};
+	--measure: #{$size__measure};
+
+	color-scheme: light;
+}
+
+/*
+ * The night edition. The press ran a second shift; the ink stays navy but the
+ * paper is gone, so the navy has to come up to meet the reader.
+ *
+ * It is never inferred from the reader's system. The paper is the point of
+ * this theme, so the ivory is what everybody gets until they ask for
+ * something else — a dark desktop is not a request for a dark newspaper.
+ */
+@mixin night-palette {
+	--paper: #{$night};
+	--paper-warm: #{$night-warm};
+	--paper-deep: #{$night-deep};
+	--paper-edge: #{rgba($night-ink, 0.18)};
+
+	--ink: #{$night-ink};
+	--ink-soft: #{$night-ink-soft};
+	--ink-faint: #{$night-ink-faint};
+
+	--blue: #{$night-blue};
+	--blue-deep: #{lighten($night-blue, 8%)};
+	--blue-mid: #{$night-blue};
+	--blue-pale: #{rgba($night-blue, 0.55)};
+	--red: #{$night-red};
+
+	--rule: #{rgba($night-ink, 0.22)};
+	--rule-soft: #{rgba($night-ink, 0.12)};
+	--rule-blue: #{rgba($night-blue, 0.34)};
+
+	--grain-opacity: 0.22;
+	--grain-blend: overlay;
+
+	color-scheme: dark;
+}
+
+:root[data-edition="nacht"] {
+
+	@include night-palette;
+}

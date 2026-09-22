@@ -1,0 +1,99 @@
+/*
+ * Auf Papier — the print stylesheet
+ * ---------------------------------
+ * A theme that spends its whole life imitating paper had better behave when it
+ * finally reaches some. Furniture goes; the article stays; link targets are
+ * printed after the link, because on paper a link is only a promise.
+ */
+
+@media print {
+
+	:root {
+		--paper: #fff;
+		--paper-warm: #fff;
+		--paper-deep: #fff;
+		--paper-edge: #bbb;
+		--ink: #000;
+		--ink-soft: #333;
+		--ink-faint: #555;
+		--blue: #{$blue};
+		--rule: #999;
+		--rule-soft: #ccc;
+		--rule-blue: #{$blue};
+	}
+
+	body::before,
+	body::after {
+		display: none;
+	}
+
+	.main-navigation,
+	.masthead-utility,
+	.reading-rule,
+	.post-navigation,
+	.pagination,
+	.posts-navigation,
+	.comment-respond,
+	.widget-area,
+	.colophon,
+	.edition-toggle,
+	.search-form,
+	.skip-link,
+	.issue__rail {
+		display: none !important;
+	}
+
+	body {
+		background: #fff;
+		font-size: 11pt;
+		line-height: 1.45;
+	}
+
+	.site {
+		max-width: none;
+		padding: 0;
+	}
+
+	.site-logo {
+		width: 12cm;
+	}
+
+	.entry-content,
+	.entry-header,
+	.entry-footer {
+		max-width: none;
+	}
+
+	.entry-title {
+		font-size: 24pt;
+	}
+
+	/* Never break a headline off from its first lines. */
+	h1,
+	h2,
+	h3,
+	.entry-title,
+	.kicker {
+		break-after: avoid;
+		page-break-after: avoid;
+	}
+
+	blockquote,
+	figure,
+	table,
+	img {
+		break-inside: avoid;
+		page-break-inside: avoid;
+	}
+
+	.entry-content a[href^="http"]::after {
+		color: #555;
+		content: " ⟨" attr(href) "⟩";
+		font-size: 8pt;
+		word-break: break-all;
+	}
+
+	@page {
+		margin: 2cm;
+	}
+}

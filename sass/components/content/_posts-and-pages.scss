@@ -1,23 +1,106 @@
-.sticky {
-	display: block;
+/*
+ * Archive and listing furniture
+ */
+
+.page-header {
+	border-bottom: 2px solid var(--blue);
+	margin-bottom: clamp(1rem, 2vw, 1.5rem);
+	padding: clamp(2rem, 5vw, 3.5rem) 0 0.6rem;
 }
 
-.post,
-.page {
-	margin: 0 0 1.5em;
+.page-header__kicker {
+	@include kicker(0.7rem, 0.18em);
+
+	color: var(--ink-faint);
+	margin-bottom: 0.6rem;
 }
 
-.updated:not(.published) {
-	display: none;
+.page-title {
+	font-size: clamp(1.9rem, 1.2rem + 2.8vw, 3.1rem);
+	line-height: 1.04;
+	margin: 0 0 0.35rem;
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
+.page-title span {
+	color: var(--blue);
+	font-style: italic;
 }
 
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+.archive-description {
+	@include running-text;
+
+	color: var(--ink-soft);
+	font-size: 0.98rem;
+	margin: 0.9rem 0 0.9rem;
+	max-width: 42rem;
+	text-align: left;
+}
+
+.page-header__count {
+	@include kicker(0.68rem, 0.12em);
+
+	color: var(--ink-faint);
+	font-variant-numeric: lining-nums;
+	padding-bottom: 0.4rem;
+}
+
+/* The archive body: a register, because 500 posts in "Buchbuch" is a register
+   and nothing else. */
+.archive-index {
+	padding-bottom: 1rem;
+}
+
+/* --- Nothing found ------------------------------------------------------- */
+
+.no-results,
+.error-404 {
+	@include measure(44rem);
+
+	padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+	text-align: center;
+}
+
+.no-results .search-form,
+.error-404 .search-form {
+	margin: 2rem auto 0;
+}
+
+.error-404__number {
+	color: var(--blue);
+	font-family: $font__display;
+	font-size: clamp(5rem, 16vw, 11rem);
+	line-height: 0.85;
+	margin: 0;
+}
+
+.error-404__note {
+	@include running-text;
+
+	color: var(--ink-soft);
+	margin: 1.5rem auto 0;
+	max-width: 32rem;
+	text-align: center;
+}
+
+.error-404__suggestions {
+	margin-top: 3rem;
+	text-align: left;
+}
+
+/* --- Sticky --------------------------------------------------------------- */
+
+.sticky .kicker::after {
+	color: var(--red);
+	content: "❖";
+}
+
+/* --- Password-protected ------------------------------------------------ */
+
+.post-password-form {
+	@include measure;
+
+	align-items: flex-end;
+	display: flex;
+	gap: 0.8rem;
+	flex-wrap: wrap;
 }

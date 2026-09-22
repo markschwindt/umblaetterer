@@ -1,3 +1,9 @@
+/*
+ * Fields
+ * ------
+ * Ruled lines on a form, not boxes: the underline is the line you write on.
+ */
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -5,29 +11,55 @@ input[type="password"],
 input[type="search"],
 input[type="number"],
 input[type="tel"],
-input[type="range"],
 input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
 textarea {
-	color: $color__text-input;
-	border: 1px solid $color__border-input;
-	border-radius: 3px;
-	padding: 3px;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	border: 0;
+	border-bottom: 1px solid var(--rule);
+	border-radius: 0;
+	color: var(--ink);
+	font-family: $font__body;
+	font-size: 1rem;
+	padding: 0.5em 0.1em;
+	transition: border-color 0.15s ease;
+	width: 100%;
+}
 
-	&:focus {
-		color: $color__text-input-focus;
-	}
+input:focus,
+textarea:focus {
+	border-bottom-color: var(--blue);
+	outline: 0;
+}
+
+input::placeholder,
+textarea::placeholder {
+	color: var(--ink-faint);
+	font-style: italic;
+	opacity: 1;
+}
+
+textarea {
+	line-height: 1.55;
+	resize: vertical;
 }
 
 select {
-	border: 1px solid $color__border-input;
+	background-color: transparent;
+	border: 1px solid var(--rule);
+	border-radius: 0;
+	color: var(--ink);
+	font-family: $font__sans;
+	font-size: 0.85rem;
+	max-width: 100%;
+	padding: 0.5em;
 }
 
-textarea {
-	width: 100%;
+label {
+	@include kicker(0.68rem);
+
+	color: var(--ink-soft);
+	display: block;
+	margin-bottom: 0.3em;
 }

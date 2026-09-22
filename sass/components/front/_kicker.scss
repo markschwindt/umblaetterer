@@ -1,0 +1,91 @@
+/*
+ * Rubrik & Zeile — kickers and datelines
+ * --------------------------------------
+ * The small type that tells you what a piece is and who wrote it. Every one
+ * of these is set in the sans, in caps, letterspaced, and none of them is ever
+ * more than one line.
+ */
+
+/* The rubric above a headline. This site has 105 of them — "Buchbuch",
+   "Kaffeehaus des Monats", "Vossianische Antonomasie" — which is exactly the
+   standing-column structure a feuilleton had. They deserve the top slot. */
+.kicker {
+	@include kicker(0.68rem, 0.17em);
+
+	align-items: baseline;
+	color: var(--blue);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.kicker a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.kicker a:hover,
+.kicker a:focus {
+	color: var(--red);
+	text-decoration: underline;
+	text-underline-offset: 0.25em;
+}
+
+.kicker--large {
+	font-size: 0.76rem;
+}
+
+/* A rubric separated by a lozenge, as in a printed index. */
+.kicker__sep {
+	color: var(--ink-faint);
+}
+
+/*
+ * The dateline: author, date, length. Small, quiet, sitting under a hairline.
+ */
+.dateline-line {
+	@include kicker(0.7rem, 0.11em);
+
+	align-items: baseline;
+	color: var(--ink-faint);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.45rem 0.7rem;
+}
+
+.dateline-line a {
+	color: var(--ink-soft);
+	text-decoration: none;
+}
+
+.dateline-line a:hover,
+.dateline-line a:focus {
+	color: var(--blue);
+}
+
+/* The author's name is the one thing in the dateline that is not a fact about
+   the file, so it gets the ink. */
+.dateline-line .byline {
+	color: var(--ink-soft);
+	font-weight: 600;
+}
+
+.dateline-line time {
+	font-variant-numeric: lining-nums;
+}
+
+.dateline-line .sep {
+	color: var(--paper-edge);
+}
+
+/*
+ * "Neu" — the second ink's first outing. Only ever on the most recent piece,
+ * and only on the front page.
+ */
+.flag-new {
+	@include kicker(0.7rem, 0.14em);
+
+	background: var(--red);
+	color: var(--paper);
+	padding: 0.25em 0.5em 0.2em;
+}

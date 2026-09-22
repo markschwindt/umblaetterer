@@ -1,0 +1,187 @@
+/*
+ * Der Artikel — the reading page
+ * ------------------------------
+ * One column, one measure, and as little between the reader and the sentence
+ * as possible. These are 3,000-word German essays; everything here exists to
+ * make the twentieth paragraph as easy to enter as the first.
+ */
+
+.site-main {
+	padding-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.entry {
+	padding-top: clamp(2rem, 5vw, 3.5rem);
+}
+
+.entry-header {
+	@include measure(44rem);
+
+	margin-bottom: clamp(1.6rem, 3vw, 2.4rem);
+	text-align: center;
+}
+
+.entry-title {
+	font-size: clamp(2rem, 1.1rem + 3.6vw, 3.6rem);
+	letter-spacing: -0.016em;
+	line-height: 1.02;
+	margin: 0.5rem 0 0;
+	text-wrap: balance;
+}
+
+.entry-header .kicker,
+.entry-header .dateline-line {
+	justify-content: center;
+}
+
+.entry-header .dateline-line {
+	border-top: 1px solid var(--rule);
+	margin-top: 1.4rem;
+	padding-top: 0.8rem;
+}
+
+/* --- The body ----------------------------------------------------------- */
+
+.entry-content {
+	@include measure;
+	@include running-text;
+
+	font-size: 1.06rem;
+	line-height: 1.68;
+
+	@include at($bp__oktav) {
+		font-size: 1.135rem;
+	}
+}
+
+/* Drop cap on the opening paragraph of a single post. Deliberately not
+   applied in listings, where it would be decoration rather than typography. */
+.single .entry-content > p:first-of-type::first-letter {
+	color: var(--blue);
+	float: left;
+	font-family: $font__display;
+	font-size: 3.7em;
+	line-height: 0.8;
+	margin: 0.07em 0.09em 0 0;
+}
+
+/* …but not when the post opens with a block quote or an image, which several
+   hundred of these do. :first-of-type already handles that, and this guards
+   the case where wpautop wraps a lone image in a paragraph. */
+.single .entry-content > p:first-of-type:has(img)::first-letter,
+.single .entry-content > p:first-of-type:has(> a > img)::first-letter {
+	color: inherit;
+	float: none;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	margin: 0;
+}
+
+.entry-content > h2,
+.entry-content > h3,
+.entry-content > h4 {
+	margin-top: 2em;
+	text-align: left;
+	text-wrap: balance;
+}
+
+.entry-content > h2 {
+	border-top: 1px solid var(--rule);
+	padding-top: 0.9em;
+}
+
+/* Legacy markup: two decades of inline styles live in this content. A centred
+   div is a centred div, and justification must not fight it. */
+.entry-content div[style*="center"],
+.entry-content div[style*="right"] {
+	hyphens: none;
+}
+
+/* Wide elements may breach the measure — images, tables, embeds. */
+.entry-content > figure,
+.entry-content > table,
+.entry-content > .wp-caption,
+.entry-content > .wide {
+	max-width: min(100%, 52rem);
+	width: 100%;
+}
+
+@media (min-width: $size__measure) {
+
+	.entry-content > figure,
+	.entry-content > .wp-caption,
+	.entry-content > .wide {
+		margin-left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+/* The fleuron that closes a piece. */
+.entry-end {
+	color: var(--blue);
+	font-family: $font__display;
+	font-size: 1.35rem;
+	line-height: 1;
+	margin: 2.6rem auto 0;
+	max-width: var(--measure);
+	text-align: center;
+}
+
+/* --- The footer of a piece ---------------------------------------------- */
+
+.entry-footer {
+	@include measure(44rem);
+
+	border-top: 1px solid var(--rule);
+	margin-top: clamp(2.2rem, 4vw, 3rem);
+	padding-top: 1.1rem;
+}
+
+.entry-footer .kicker {
+	justify-content: center;
+}
+
+.entry-taxonomy {
+	@include kicker(0.7rem, 0.13em);
+
+	align-items: baseline;
+	color: var(--ink-faint);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem 0.6rem;
+	justify-content: center;
+}
+
+.entry-taxonomy a {
+	color: var(--blue);
+	text-decoration: none;
+}
+
+.entry-taxonomy a:hover,
+.entry-taxonomy a:focus {
+	color: var(--red);
+	text-decoration: underline;
+	text-underline-offset: 0.25em;
+}
+
+.entry-taxonomy__label {
+	color: var(--ink-faint);
+}
+
+/* --- Pages (About, Impressum, the Best-of lists) ------------------------ */
+
+.page .entry-content {
+	hyphens: auto;
+}
+
+/* The Best-of and Kinojahr pages are long ranked lists; give them room. */
+.page .entry-content ol {
+	padding-left: 1.8em;
+}
+
+.page .entry-content ol > li::marker {
+	color: var(--blue);
+	font-family: $font__sans;
+	font-size: 0.82em;
+}

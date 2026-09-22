@@ -1,17 +1,31 @@
+/*
+ * Captions — set as a Bildunterschrift: ruled off above, ragged, never
+ * centred (centred captions only ever look centred when they are one line,
+ * and these never are).
+ */
+
 .wp-caption {
-	margin-bottom: 1.5em;
+	margin: 2.2em 0;
 	max-width: 100%;
-
-	img[class*="wp-image-"] {
-
-		@include center-block;
-	}
-
-	.wp-caption-text {
-		margin: 0.8075em 0;
-	}
 }
 
-.wp-caption-text {
-	text-align: center;
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+}
+
+.wp-caption-text,
+.gallery-caption {
+	@include kicker(0.7rem, 0.04em, 500, none, 1.45);
+
+	border-top: 1px solid var(--rule);
+	color: var(--ink-soft);
+	display: block;
+	hyphens: auto;
+	margin: 0.7em 0 0;
+	padding-top: 0.55em;
+	text-align: left;
 }

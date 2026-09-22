@@ -1,8 +1,6 @@
 <?php
 /**
- * The template for displaying search results pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
+ * Im Archiv gefunden — search results
  *
  * @package Umblätterer
  */
@@ -12,42 +10,68 @@ get_header();
 
 	<main id="primary" class="site-main">
 
+		<header class="page-header">
+			<p class="page-header__kicker"><?php esc_html_e( 'Im Archiv gesucht', 'umblaetterer' ); ?></p>
+
+			<h1 class="page-title">
+				<span><?php echo esc_html( get_search_query() ); ?></span>
+			</h1>
+
+			<?php global $wp_query; ?>
+
+			<p class="page-header__count">
+				<?php
+				printf(
+					/* translators: %s: number of results. */
+					esc_html( _n( '%s Fundstelle', '%s Fundstellen', (int) $wp_query->found_posts, 'umblaetterer' ) ),
+					esc_html( number_format_i18n( $wp_query->found_posts ) )
+				);
+				?>
+			</p>
+		</header><!-- .page-header -->
+
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title">
+			<div class="issue__lower">
+				<section class="archive-index">
+					<ul class="index-list">
+						<?php
+						while ( have_posts() ) :
+							the_post();
+							umblaetterer_index_entry(
+								array(
+									'author' => true,
+									'teaser' => true,
+								)
+							);
+						endwhile;
+						?>
+					</ul>
+
 					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'umblaetterer' ), '<span>' . get_search_query() . '</span>' );
+					the_posts_pagination(
+						array(
+							'mid_size'           => 2,
+							'prev_text'          => esc_html__( '← Zurück', 'umblaetterer' ),
+							'next_text'          => esc_html__( 'Weiter →', 'umblaetterer' ),
+							'screen_reader_text' => esc_html__( 'Seiten', 'umblaetterer' ),
+						)
+					);
 					?>
-				</h1>
-			</header><!-- .page-header -->
+				</section>
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+				<aside class="issue__rail">
+					<?php get_template_part( 'template-parts/rail', 'rubriken' ); ?>
+				</aside>
+			</div>
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+		<?php else : ?>
 
-			endwhile;
+			<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-			the_posts_navigation();
+		<?php endif; ?>
 
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-	</main><!-- #main -->
+	</main><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

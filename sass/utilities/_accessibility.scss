@@ -1,38 +1,58 @@
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
 	clip-path: inset(50%);
 	height: 1px;
 	margin: -1px;
 	overflow: hidden;
 	padding: 0;
 	position: absolute !important;
+	white-space: nowrap;
 	width: 1px;
-	word-wrap: normal !important; // Many screen reader and browser combinations announce broken words as they would appear visually.
-
-	&:focus {
-		background-color: $color__background-screen;
-		border-radius: 3px;
-		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-		clip: auto !important;
-		clip-path: none;
-		color: $color__text-screen;
-		display: block;
-		font-size: 0.875rem;
-		font-weight: 700;
-		height: auto;
-		left: 5px;
-		line-height: normal;
-		padding: 15px 23px 14px;
-		text-decoration: none;
-		top: 5px;
-		width: auto;
-		z-index: 100000; // Above WP toolbar.
-	}
 }
 
-/* Do not show the outline on the skip link target. */
-#primary[tabindex="-1"]:focus {
-	outline: 0;
+.screen-reader-text:focus {
+	background-color: var(--paper);
+	border: 1px solid var(--blue);
+	clip-path: none;
+	color: var(--blue);
+	display: block;
+	font-family: $font__sans;
+	font-size: 0.8rem;
+	height: auto;
+	left: 1rem;
+	letter-spacing: 0.12em;
+	line-height: normal;
+	padding: 0.9em 1.4em;
+	text-decoration: none;
+	text-transform: uppercase;
+	top: 1rem;
+	width: auto;
+	z-index: 100000;
+}
+
+/*
+ * One focus ring for everything. Navy, offset, square — the same mark a
+ * compositor would put round a correction.
+ */
+:focus-visible {
+	outline: 2px solid var(--blue);
+	outline-offset: 2px;
+}
+
+/* Do not let the skip link's target hide under the fixed reading rule. */
+#primary {
+	scroll-margin-top: 1.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+	}
 }

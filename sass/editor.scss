@@ -1,0 +1,80 @@
+/*
+ * Editor styles
+ * -------------
+ * The writing surface gets the same paper, the same ink and the same three
+ * faces as the published page. A piece written on white in the browser's
+ * default face and published on ivory in Spectral has been designed twice,
+ * and the second design is a surprise to whoever wrote it.
+ */
+
+// This sheet is served from assets/css/, one level deeper than style.css.
+$font-path: "../fonts/";
+
+@import "abstracts/abstracts";
+@import "base/elements/tokens";
+@import "base/typography/fonts";
+
+.editor-styles-wrapper,
+.block-editor-writing-flow {
+	background-color: var(--paper);
+	color: var(--ink);
+	font-family: $font__body;
+	font-size: 1.125rem;
+	font-variant-numeric: oldstyle-num;
+	line-height: $font__line-height-body;
+}
+
+.editor-styles-wrapper p {
+	margin: 0 0 1.35em;
+}
+
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4 {
+	font-family: $font__display;
+	font-weight: 400;
+	letter-spacing: -0.01em;
+	line-height: 1.1;
+}
+
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+	@include kicker(0.78rem, $tracking__caps-tight, 600);
+
+	color: var(--blue);
+}
+
+// The title field is the headline; it should look like the headline.
+.editor-styles-wrapper .editor-post-title__input,
+.editor-styles-wrapper h1.wp-block-post-title {
+	font-family: $font__display;
+	font-size: clamp(2rem, 1.1rem + 2.4vw, 3rem);
+	font-weight: 400;
+	letter-spacing: -0.016em;
+	line-height: 1.04;
+}
+
+.editor-styles-wrapper a {
+	color: var(--blue);
+	text-decoration-color: var(--rule-blue);
+	text-underline-offset: 0.16em;
+}
+
+.editor-styles-wrapper blockquote {
+	border-left: 2px solid var(--rule-blue);
+	color: var(--ink-soft);
+	font-size: 0.95em;
+	margin: 2em 0;
+	padding: 0.15em 0 0.15em 1.5em;
+}
+
+.editor-styles-wrapper ul > li::marker,
+.editor-styles-wrapper ol > li::marker {
+	color: var(--blue);
+}
+
+.editor-styles-wrapper code,
+.editor-styles-wrapper pre {
+	font-family: $font__code;
+}

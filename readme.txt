@@ -1,20 +1,18 @@
 === Umblätterer ===
 
-Contributors: automattic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Contributors: markschwindt
+Requires at least: 6.0
+Tested up to: 6.9
+Requires PHP: 7.4
+Stable tag: 2.0.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Requires at least: 4.5
-Tested up to: 5.4
-Requires PHP: 5.6
-Stable tag: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
-
-A starter theme called Umblätterer.
+Ein Feuilleton auf Papier. A typographic theme set in two inks on ivory stock, after the German press of the twentieth century.
 
 == Description ==
 
-Original custom theme for the Umblaetterer
+A newspaper page built out of type and rules: a blackletter masthead between a thick-over-thin rule pair, a dateline bar carrying the issue number, standing columns as rubrics, justified and hyphenated running text, drop caps, dot-leader registers, and a day and night edition. Type is self-hosted; no third-party font requests.
 
 == Installation ==
 
@@ -22,18 +20,31 @@ Original custom theme for the Umblaetterer
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-== Frequently Asked Questions ==
+== Copyright ==
 
-= Does this theme support any plugins? =
+Umblätterer WordPress Theme, (C) 2026 Mark Schwindt
+Umblätterer is distributed under the terms of the GNU GPL v2 or later.
 
-Umblätterer includes support for WooCommerce and for Infinite Scroll in Jetpack.
+Underscores
+https://underscores.me/
+(C) 2012-2020 Automattic, Inc.
+License: GPLv2 or later
 
-== Changelog ==
+normalize.css
+https://necolas.github.io/normalize.css/
+(C) 2012-2018 Nicolas Gallagher and Jonathan Neal
+License: MIT
 
-= 1.0 - May 12 2015 =
-* Initial release
+Old Standard TT by Alexey Kryukov
+https://fonts.google.com/specimen/Old+Standard+TT
+License: SIL Open Font License 1.1
 
-== Credits ==
+Spectral by Production Type
+https://fonts.google.com/specimen/Spectral
+License: SIL Open Font License 1.1
 
-* Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2018 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+Jost* by Owen Earl, after Paul Renner
+https://fonts.google.com/specimen/Jost
+License: SIL Open Font License 1.1
+
+Umblaetterer.svg wordmark, (C) Der Umblätterer. All rights reserved.

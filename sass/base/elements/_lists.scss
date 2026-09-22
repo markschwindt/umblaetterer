@@ -1,10 +1,26 @@
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 1.5em;
+	padding-left: 1.4em;
 }
 
 ul {
-	list-style: disc;
+	list-style: none;
+}
+
+/* A square bullet, hung in the margin, sitting on the x-height. */
+.entry-content ul > li {
+	position: relative;
+}
+
+.entry-content ul > li::before {
+	background: var(--blue);
+	content: "";
+	height: 0.3em;
+	left: -1.05em;
+	position: absolute;
+	top: 0.7em;
+	width: 0.3em;
 }
 
 ol {
@@ -14,13 +30,18 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-left: 0.6em;
+	margin-top: 0.4em;
+}
+
+li {
+	margin-bottom: 0.4em;
 }
 
 dt {
-	font-weight: 700;
+	font-weight: 600;
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+	margin: 0 0 1em 1.4em;
 }

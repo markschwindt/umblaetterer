@@ -1,8 +1,6 @@
 <?php
 /**
- * Template part for displaying a message that posts cannot be found
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * "Nothing found" — a blank galley
  *
  * @package Umblätterer
  */
@@ -10,42 +8,36 @@
 ?>
 
 <section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'umblaetterer' ); ?></h1>
-	</header><!-- .page-header -->
+	<p class="page-header__kicker"><?php esc_html_e( 'Fehlanzeige', 'umblaetterer' ); ?></p>
 
-	<div class="page-content">
+	<h1 class="page-title"><?php esc_html_e( 'Eine leere Spalte', 'umblaetterer' ); ?></h1>
+
+	<div class="error-404__note">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
 			printf(
 				'<p>' . wp_kses(
-					/* translators: 1: link to WP admin new post page. */
-					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'umblaetterer' ),
-					array(
-						'a' => array(
-							'href' => array(),
-						),
-					)
+					/* translators: %s: link to the WordPress new-post screen. */
+					__( 'Noch ist nichts gesetzt. <a href="%s">Hier beginnt der erste Beitrag</a>.', 'umblaetterer' ),
+					array( 'a' => array( 'href' => array() ) )
 				) . '</p>',
 				esc_url( admin_url( 'post-new.php' ) )
 			);
 
 		elseif ( is_search() ) :
 			?>
-
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'umblaetterer' ); ?></p>
+			<p><?php esc_html_e( 'Zu dieser Suche findet sich im Archiv nichts. Vielleicht mit weniger Worten noch einmal?', 'umblaetterer' ); ?></p>
 			<?php
 			get_search_form();
 
 		else :
 			?>
-
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'umblaetterer' ); ?></p>
+			<p><?php esc_html_e( 'An dieser Stelle steht nichts. Der Weg zurück führt über die Suche.', 'umblaetterer' ); ?></p>
 			<?php
 			get_search_form();
 
 		endif;
 		?>
-	</div><!-- .page-content -->
+	</div>
 </section><!-- .no-results -->

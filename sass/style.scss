@@ -1,25 +1,25 @@
 /*!
 Theme Name: Umblätterer
-Theme URI: http://underscores.me/
+Theme URI: https://markschwindt.com/
 Author: Mark Schwindt
 Author URI: https://markschwindt.com
-Description: Original custom theme for the Umblaetterer
-Version: 1.0.0
-Tested up to: 5.4
-Requires PHP: 5.6
+Description: Ein Feuilleton auf Papier. A typographic WordPress theme for Der Umblätterer, set in two inks on ivory stock after the German press of the twentieth century.
+Version: 2.0.0
+Tested up to: 6.9
+Requires PHP: 7.4
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: umblaetterer
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: blog, two-columns, custom-menu, editor-style, translation-ready, accessibility-ready
 
 This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned.
 
 Umblätterer is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+Type: Old Standard TT (Alexey Kryukov), Spectral (Production Type),
+Jost* (Owen Earl, after Paul Renner) — all under the SIL Open Font License,
+self-hosted in assets/fonts.
 */
 
 /*--------------------------------------------------------------
@@ -29,25 +29,24 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Normalize
 	- Box sizing
 # Base
-	- Typography
-	- Elements
-	- Links
-	- Forms
-## Layouts
+	- The sheet (custom properties, paper, grain)
+	- Typography (fonts, copy, headings)
+	- Elements (rules, lists, media, tables, links, forms)
 # Components
+	- Masthead & colophon
 	- Navigation
+	- Forms
+	- The front page (kickers, the issue)
+	- Registers & indices
+	- The article & pagination
 	- Posts and pages
-	- Comments
-	- Widgets
-	- Media
-	- Captions
-	- Galleries
-# plugins
+	- Comments, widgets, media
+# Plugins
 	- Jetpack infinite scroll
 # Utilities
 	- Accessibility
 	- Alignments
-
+	- Print
 --------------------------------------------------------------*/
 
 // Import variables and mixins.
@@ -69,12 +68,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Base
 --------------------------------------------------------------*/
 @import "base/base";
-
-/*--------------------------------------------------------------
-# Layouts
---------------------------------------------------------------*/
-// @import "layouts/content-sidebar"; // Uncomment this line for a sidebar on right side of your content.
-// @import "layouts/sidebar-content"; // Uncomment this line for a sidebar on left side of your content.
 
 /*--------------------------------------------------------------
 # Components
@@ -100,3 +93,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Alignments
 --------------------------------------------- */
 @import "utilities/alignments";
+
+/* Print
+--------------------------------------------- */
+@import "utilities/print";

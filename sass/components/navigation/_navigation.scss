@@ -1,109 +1,205 @@
+/*
+ * Navigation
+ * ----------
+ * A single line of letterspaced caps below the dateline, the rubrics of the
+ * paper set as a running head. Items are separated by a thin rule rather than
+ * by a bullet or a pipe, which is how a printed index would do it.
+ */
+
 .main-navigation {
-	display: block;
-	width: 100%;
-
-	ul {
-		display: none;
-		list-style: none;
-		margin: 0;
-		padding-left: 0;
-
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 100%;
-			left: -999em;
-			z-index: 99999;
-
-			ul {
-				left: -999em;
-				top: 0;
-			}
-
-			li {
-
-				&:hover > ul,
-				&.focus > ul {
-					display: block;
-					left: auto;
-				}
-			}
-
-			a {
-				width: 200px;
-			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
-		}
-
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
-		}
-	}
-
-	li {
-		position: relative;
-
-		&:hover > a,
-		&.focus > a {
-		}
-	}
-
-	a {
-		display: block;
-		text-decoration: none;
-	}
-
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
-	}
+	border-bottom: 2px solid var(--blue);
+	position: relative;
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
+.main-navigation .menu,
+.main-navigation ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
-@media screen and (min-width: 37.5em) {
+.main-navigation li {
+	margin: 0;
+	position: relative;
+}
+
+.main-navigation a {
+	@include kicker(0.7rem, 0.15em);
+
+	color: var(--ink);
+	display: block;
+	padding: 0.85rem clamp(0.6rem, 1.6vw, 1.15rem);
+	text-decoration: none;
+	transition: color 0.15s ease;
+}
+
+/* The separating hairline, hung between items rather than after them. */
+.main-navigation li + li::before {
+	background: var(--rule);
+	content: "";
+	height: 0.85em;
+	left: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 1px;
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus {
+	color: var(--blue);
+}
+
+/* The current rubric is underscored in navy, as a compositor would mark it. */
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-ancestor > a {
+	box-shadow: 0 -3px 0 var(--blue) inset;
+	color: var(--blue);
+}
+
+/* Sub-menus drop as a pasted slip of paper. */
+.main-navigation ul ul {
+	background: var(--paper);
+	border: 1px solid var(--rule);
+	box-shadow: 0 6px 18px #{rgba($ink, 0.1)};
+	display: block;
+	flex-direction: column;
+	left: 0;
+	min-width: 13rem;
+	opacity: 0;
+	padding: 0.3rem 0;
+	pointer-events: none;
+	position: absolute;
+	top: 100%;
+	transform: translateY(-4px);
+	transition:
+		opacity 0.15s ease,
+		transform 0.15s ease;
+	z-index: 50;
+}
+
+.main-navigation li:hover > ul,
+.main-navigation li:focus-within > ul {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translateY(0);
+}
+
+.main-navigation ul ul li + li::before {
+	display: none;
+}
+
+.main-navigation ul ul a {
+	padding: 0.5rem 1rem;
+	text-align: left;
+}
+
+/*
+ * Small screens: the running head folds into a stack behind a toggle.
+ */
+.menu-toggle {
+	display: none;
+}
+
+@include until($bp__quart) {
 
 	.menu-toggle {
+		background: transparent;
+		border: 0;
+		color: var(--blue);
+		display: block;
+		margin: 0 auto;
+		padding: 0.8rem 1rem;
+		width: 100%;
+	}
+
+	.menu-toggle::after {
+		content: " ▾";
+	}
+
+	.main-navigation[aria-expanded="true"] .menu-toggle::after,
+	.main-navigation .menu-toggle[aria-expanded="true"]::after {
+		content: " ▴";
+	}
+
+	.main-navigation .menu,
+	.main-navigation > div > ul {
+		display: none;
+		flex-direction: column;
+		padding-bottom: 0.6rem;
+	}
+
+	.main-navigation.toggled .menu,
+	.main-navigation.toggled > div > ul {
+		display: flex;
+	}
+
+	.main-navigation li + li::before {
 		display: none;
 	}
 
-	.main-navigation ul {
-		display: flex;
+	.main-navigation li + li {
+		border-top: 1px solid var(--rule-soft);
+	}
+
+	.main-navigation a {
+		padding: 0.7rem 0.4rem;
+		text-align: center;
+	}
+
+	.main-navigation ul ul {
+		border: 0;
+		box-shadow: none;
+		opacity: 1;
+		pointer-events: auto;
+		position: static;
+		transform: none;
+	}
+
+	.main-navigation ul ul a {
+		color: var(--ink-soft);
+		text-align: center;
 	}
 }
 
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
+/*
+ * The utility line: search and the edition switch, tucked under the nav.
+ */
+.masthead-utility {
+	align-items: center;
+	border-bottom: 1px solid var(--rule);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem 1.25rem;
+	justify-content: space-between;
+	padding: 0.5rem 0;
+}
 
-	.site-main & {
-		margin: 0 0 1.5em;
-	}
+.masthead-utility .search-form {
+	flex: 1 1 14rem;
+	max-width: 22rem;
+	min-width: 0;
+}
 
-	.nav-links {
-		display: flex;
-	}
+/* The day / night edition toggle. Labelled as an edition, not as a theme,
+   because a paper had a morning edition and an evening edition. */
+.edition-toggle {
+	@include kicker(0.68rem, 0.14em);
 
-	.nav-previous {
-		flex: 1 0 50%;
-	}
+	background: transparent;
+	border: 1px solid var(--rule);
+	color: var(--ink-soft);
+	flex: none;
+	padding: 0.42em 0.85em;
+}
 
-	.nav-next {
-		text-align: end;
-		flex: 1 0 50%;
-	}
+.edition-toggle:hover,
+.edition-toggle:focus {
+	background: var(--blue);
+	border-color: var(--blue);
+	color: var(--paper);
 }

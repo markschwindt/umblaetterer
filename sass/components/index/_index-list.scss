@@ -1,0 +1,173 @@
+/*
+ * Das Register — indices with dot leaders
+ * ---------------------------------------
+ * The table-of-contents device: title on the left, date on the right, dots
+ * running between them. It is the single most "printed" thing a web page can
+ * do, and with 1,600 posts in the archive it is also the most useful.
+ */
+
+.section-head {
+	align-items: baseline;
+	border-bottom: 2px solid var(--blue);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 1rem;
+	justify-content: space-between;
+	margin-bottom: 1.4rem;
+	padding-bottom: 0.45rem;
+}
+
+.section-head__title {
+	@include kicker(0.76rem, 0.19em, 600);
+
+	color: var(--blue);
+	margin: 0;
+}
+
+.section-head__note {
+	@include kicker(0.68rem, 0.1em);
+
+	color: var(--ink-faint);
+}
+
+.index-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.index-list > li {
+	border-bottom: 1px solid var(--rule-soft);
+	margin: 0;
+	padding: 0.72rem 0;
+}
+
+.index-list > li:last-child {
+	border-bottom: 0;
+}
+
+.index-list__row {
+	align-items: baseline;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.45rem;
+}
+
+.index-list__title {
+	font-family: $font__display;
+	font-size: 1.12rem;
+	line-height: 1.22;
+	min-width: 0;
+	overflow-wrap: break-word;
+}
+
+.index-list__title a {
+	color: var(--ink);
+	text-decoration: none;
+}
+
+.index-list__title a:hover,
+.index-list__title a:focus {
+	color: var(--blue);
+}
+
+/* The leader. A dotted rule that grows to fill whatever is left of the line —
+   which is why it must not shrink below zero and must never wrap. */
+.index-list__leader {
+	border-bottom: 1px dotted var(--paper-edge);
+	flex: 1 1 1.5rem;
+	min-width: 1.5rem;
+	position: relative;
+	top: -0.22em;
+}
+
+.index-list__meta {
+	@include kicker(0.68rem, 0.1em);
+
+	color: var(--ink-faint);
+	flex: none;
+	font-variant-numeric: lining-nums;
+	white-space: nowrap;
+}
+
+.index-list__sub {
+	@include kicker(0.68rem, 0.13em);
+
+	color: var(--blue);
+	margin-top: 0.3rem;
+}
+
+.index-list__sub a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.index-list__sub a:hover {
+	text-decoration: underline;
+	text-underline-offset: 0.25em;
+}
+
+/*
+ * Die Rubriken — the standing columns, set as a two-column register.
+ */
+.rubrik-index {
+	columns: 2;
+	column-gap: 1.6rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	@include until($bp__oktav) {
+		columns: 1;
+	}
+}
+
+.rubrik-index > li {
+	break-inside: avoid;
+	margin: 0 0 0.42rem;
+}
+
+.rubrik-index__row {
+	align-items: baseline;
+	display: flex;
+	gap: 0.35rem;
+	min-width: 0;
+}
+
+.rubrik-index__row > a {
+	min-width: 0;
+	overflow-wrap: break-word;
+}
+
+.rubrik-index a {
+	color: var(--ink);
+	font-size: 0.92rem;
+	text-decoration: none;
+}
+
+.rubrik-index a:hover,
+.rubrik-index a:focus {
+	color: var(--blue);
+}
+
+.rubrik-index__count {
+	@include kicker(0.7rem, 0.06em);
+
+	color: var(--ink-faint);
+	flex: none;
+	font-variant-numeric: lining-nums;
+}
+
+/* A well on slightly deeper stock, for the rail. */
+.issue__rail .rubrik-index {
+	columns: 1;
+}
+
+.well {
+	background: var(--paper-warm);
+	padding: clamp(1.1rem, 2.5vw, 1.6rem);
+}
+
+.well .section-head {
+	margin-bottom: 1rem;
+}

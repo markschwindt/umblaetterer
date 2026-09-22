@@ -1,6 +1,64 @@
+/*
+ * Rules
+ * -----
+ * A newspaper page is held together by rules, not by whitespace. These are the
+ * compositor's stock: the hairline, the thick-over-thin pair that opens a page,
+ * and the fleuron that closes an article.
+ */
+
 hr {
-	background-color: $color__background-hr;
+	background: none;
 	border: 0;
+	border-top: 1px solid var(--rule);
+	height: 0;
+	margin: 2.5em 0;
+}
+
+/* A hairline. The workhorse. */
+.rule {
+	border: 0;
+	border-top: 1px solid var(--rule);
+	height: 0;
+	margin: 0;
+}
+
+.rule--blue {
+	border-top-color: var(--rule-blue);
+}
+
+/* Thick over thin — opens and closes the page. */
+.rule--double {
+	border: 0;
+	border-bottom: 1px solid var(--blue);
+	border-top: 4px solid var(--blue);
+	height: 4px;
+	margin: 0;
+}
+
+.rule--double-thin {
+	border-top-width: 2px;
+}
+
+/* A rule with a fleuron set into it, for closing a section. */
+.rule--fleuron {
+	align-items: center;
+	border: 0;
+	color: var(--blue);
+	display: flex;
+	gap: 1.1rem;
+	margin: 3rem 0;
+}
+
+.rule--fleuron::before,
+.rule--fleuron::after {
+	background: var(--rule);
+	content: "";
+	flex: 1;
 	height: 1px;
-	margin-bottom: 1.5em;
+}
+
+.rule--fleuron > span {
+	font-family: $font__display;
+	font-size: 1.1rem;
+	line-height: 1;
 }
