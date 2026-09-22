@@ -55,12 +55,16 @@
 		endif;
 		?>
 
-		<section class="widget colophon__block">
-			<h2 class="colophon__title"><?php esc_html_e('Die Jahrgänge', 'umblaetterer'); ?></h2>
-			<ul class="rubrik-index">
-				<?php umblaetterer_jahrgaenge(); ?>
-			</ul>
-		</section>
+		<?php
+		/*
+		 * Normally the volumes have already been placed, immediately after the
+		 * recent-posts widget, by umblaetterer_colophon_order(). This catches
+		 * the case where that widget is not in the sidebar at all.
+		 */
+		if ( ! umblaetterer_jahrgaenge_placed() ) {
+			get_template_part( 'template-parts/colophon', 'jahrgaenge' );
+		}
+		?>
 	</div>
 
 	<?php

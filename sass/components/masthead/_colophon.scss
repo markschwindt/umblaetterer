@@ -146,6 +146,12 @@
 }
 
 .colophon> :has(li:nth-child(40)) ul {
+	/* Four sub-columns at most. The width alone fits five or six across the
+	   full measure, but the band then reads as a finer grain than the four
+	   columns beneath it and the two stop looking like the same page. The
+	   width stays as the lower bound, so narrow viewports still fold the list
+	   down to three, two or one. */
+	column-count: 4;
 	column-gap: 1.6rem;
 	column-width: 11rem;
 }

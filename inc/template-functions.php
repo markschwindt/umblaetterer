@@ -78,6 +78,57 @@ function umblaetterer_menu_fallback() {
 }
 
 /**
+ * Whether the volumes register has already been placed in the colophon.
+ *
+ * @param bool $set Pass true to record that it has.
+ * @return bool
+ */
+function umblaetterer_jahrgaenge_placed( $set = false ) {
+	static $placed = false;
+
+	if ( $set ) {
+		$placed = true;
+	}
+
+	return $placed;
+}
+
+/**
+ * Put the volumes register directly before the recent-posts widget.
+ *
+ * "Die Jahrgänge" is the theme's own block, not a widget, so it would
+ * otherwise have to sit wherever the template prints it — at the end of the
+ * colophon, a long way from the recent pieces it belongs beside. Rather than
+ * splice it into the widgets' markup by hand, which means parsing HTML and
+ * hoping no widget contains a stray closing tag, it is pushed in front of that
+ * one widget's own `before_widget` through WordPress's own filter.
+ *
+ * If the recent-posts widget is not in the sidebar there is nothing to hang it
+ * from, and footer.php falls back to printing it at the end.
+ *
+ * @param array $params Parameters for the widget about to be rendered.
+ * @return array
+ */
+function umblaetterer_colophon_order( $params ) {
+	if ( empty( $params[0]['id'] ) || 'sidebar-1' !== $params[0]['id'] ) {
+		return $params;
+	}
+
+	if ( empty( $params[0]['widget_id'] ) || 0 !== strpos( $params[0]['widget_id'], 'recent-posts' ) ) {
+		return $params;
+	}
+
+	ob_start();
+	get_template_part( 'template-parts/colophon', 'jahrgaenge' );
+	$params[0]['before_widget'] = ob_get_clean() . $params[0]['before_widget'];
+
+	umblaetterer_jahrgaenge_placed( true );
+
+	return $params;
+}
+add_filter( 'dynamic_sidebar_params', 'umblaetterer_colophon_order' );
+
+/**
  * Use the theme's own vocabulary in the archive title.
  *
  * WordPress prefixes archive titles with "Category:" and friends. On a page
