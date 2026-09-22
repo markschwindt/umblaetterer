@@ -13,11 +13,17 @@ video {
 	max-width: 100%;
 }
 
+/*
+ * No background tint here. There was one — a whisper of warm stock behind every
+ * image, meant to sit the archive's scanned photographs on the paper rather
+ * than on top of it. It assumed every image was a photograph, which in twenty
+ * years of this archive is not true: thirty-odd entries carry PNGs, GIFs and
+ * SVGs with transparency, and every one of them showed the tint through as a
+ * rectangle. The warmth was barely perceptible against ivory; the boxes were
+ * not.
+ */
 img {
 	display: block;
-	/* Halftone-era photographs were never crisp. A whisper of warmth sits them
-	   on the ivory instead of on top of it. */
-	background-color: var(--paper-warm);
 }
 
 /* Legacy content sets width="" on images; let it scale down but not up. */
