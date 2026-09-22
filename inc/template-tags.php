@@ -284,6 +284,25 @@ if ( ! function_exists( 'umblaetterer_wordmark' ) ) :
 			$svg
 		);
 
+		/*
+		 * Number the letters in document order.
+		 *
+		 * The fourteen paths are the fourteen letters, drawn left to right, but
+		 * Illustrator has them in two groups — "Der" and "Umblätterer" — so a
+		 * CSS :nth-child stagger would restart counting at the U. Each path
+		 * carries its own index instead, and the stylesheet multiplies it into
+		 * an animation delay.
+		 */
+		$umblaetterer_letter = 0;
+
+		$svg = preg_replace_callback(
+			'/<path\b/',
+			static function () use ( &$umblaetterer_letter ) {
+				return sprintf( '<path style="--i:%d"', $umblaetterer_letter++ );
+			},
+			$svg
+		);
+
 		echo $svg; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 endif;

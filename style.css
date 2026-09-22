@@ -1396,6 +1396,46 @@ label {
   width: min(100%, 54rem);
 }
 
+/*
+ * Der Federzug — the wordmark writes itself
+ * -----------------------------------------
+ * Fourteen paths, fourteen letters, drawn left to right. Each one is revealed
+ * by a clip that sweeps down across it, and the clip's leading edge is not
+ * level: it runs some forty percent lower on the left than on the right, which
+ * at these proportions is an angle of roughly twenty-five degrees.
+ *
+ * That angle is the whole point. Blackletter is written with a broad nib held
+ * at a constant slant, and the letter appears beneath it as a downstroke, edge
+ * first. A level wipe would read as a shutter; a slanted one reads as a pen.
+ *
+ * Fast and once: 240ms a letter, 32ms apart, the whole word set in two-thirds
+ * of a second. A masthead that takes longer than that is a masthead the reader
+ * has to wait for.
+ */
+@keyframes umbl-federzug {
+  from {
+    clip-path: polygon(-15% -60%, 115% -60%, 115% -45%, -15% -5%);
+  }
+  to {
+    clip-path: polygon(-15% -60%, 115% -60%, 115% 105%, -15% 145%);
+  }
+}
+/*
+ * The index comes from the inlined SVG, where umblaetterer_wordmark() numbers
+ * each path — the letters sit in two groups, so :nth-child would restart
+ * counting partway through the word.
+ */
+.site-logo path {
+  animation: umbl-federzug 512ms cubic-bezier(0.25, 0.8, 0.35, 1) backwards;
+  animation-delay: calc(var(--i, 0) * 32ms);
+}
+
+/* A reader who has asked for less motion gets the word already written. */
+@media (prefers-reduced-motion: reduce) {
+  .site-logo path {
+    animation: none;
+  }
+}
 .site-logo--fallback {
   font-family: "Noto Serif", "Times New Roman", times, serif;
   font-size: clamp(2.4rem, 9vw, 5.5rem);
