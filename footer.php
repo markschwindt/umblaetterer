@@ -108,12 +108,23 @@
 		</a>
 
 		<a class="badges__item" href="https://www.grimme-online-award.de/archiv/2010/nominierte/n/d/der-umblaetterer-in-der-halbwelt-des-feuilletons" rel="noopener">
+			<?php
+			/*
+			 * The alt is empty on purpose. The caption below now says what the
+			 * badge says, and a screen reader that announced both would read
+			 * the same award twice inside one link.
+			 */
+			?>
 			<img
 				class="badges__mark badges__mark--image"
 				src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/grimme-nominiert-2010.gif' ); ?>"
 				width="120" height="85" loading="lazy" decoding="async"
-				alt="<?php esc_attr_e( 'Für den Grimme Online Award 2010 nominiert', 'umblaetterer' ); ?>"
+				alt=""
 			>
+			<span class="badges__text">
+				<?php esc_html_e( 'Grimme Online Award', 'umblaetterer' ); ?><br>
+				<?php esc_html_e( 'Nominee 2010', 'umblaetterer' ); ?>
+			</span>
 		</a>
 
 		<a class="badges__item" href="https://www.umblaetterer.de/wp-content/uploads/Kaffeehaus_des_Monats.kmz">
