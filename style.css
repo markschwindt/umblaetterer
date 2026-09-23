@@ -2263,8 +2263,18 @@ svg.badges__mark {
 	background: transparent;
 	border: 1px solid var(--rule);
 	color: var(--ink-soft);
-	flex: none;
 	padding: 1em 2em;
+}
+
+.edition-toggle:hover,
+.edition-toggle:focus {
+	background: var(--blue);
+	border-color: var(--blue);
+	color: var(--paper);
+}
+
+.edition-toggle {
+	flex: none;
 }
 
 /*
@@ -2287,13 +2297,6 @@ svg.badges__mark {
 	.edition-toggle {
 		margin-inline: auto;
 	}
-}
-
-.edition-toggle:hover,
-.edition-toggle:focus {
-	background: var(--blue);
-	border-color: var(--blue);
-	color: var(--paper);
 }
 
 /* Forms
@@ -2322,9 +2325,30 @@ svg.badges__mark {
 	min-width: 0;
 }
 
+/* Set like the edition switch it stands next to, from the same definition. */
+.search-form .search-submit {
+	font-family: jost, futura, "Century Gothic", "Helvetica Neue", sans-serif;
+	font-size: 0.68rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.14em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	background: transparent;
+	border: 1px solid var(--rule);
+	color: var(--ink-soft);
+	padding: 1em 2em;
+}
+
+.search-form .search-submit:hover,
+.search-form .search-submit:focus {
+	background: var(--blue);
+	border-color: var(--blue);
+	color: var(--paper);
+}
+
 .search-form .search-submit {
 	flex: none;
-	padding: 1em 2em;
 }
 
 .search-form label {

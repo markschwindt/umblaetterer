@@ -188,13 +188,9 @@
 /* The day / night edition toggle. Labelled as an edition, not as a theme,
    because a paper had a morning edition and an evening edition. */
 .edition-toggle {
-	@include kicker(0.68rem, 0.14em);
+	@include button-outline;
 
-	background: transparent;
-	border: 1px solid var(--rule);
-	color: var(--ink-soft);
 	flex: none;
-	padding: 1em 2em;
 }
 
 /*
@@ -219,9 +215,3 @@
 	}
 }
 
-.edition-toggle:hover,
-.edition-toggle:focus {
-	background: var(--blue);
-	border-color: var(--blue);
-	color: var(--paper);
-}

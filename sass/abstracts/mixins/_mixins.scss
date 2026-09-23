@@ -49,6 +49,29 @@
 	line-height: $leading;
 }
 
+/// The quiet button: an outline that fills with ink when pressed.
+///
+/// The counterpart to the solid stamp in _buttons.scss. Where that one is
+/// already inked, this is the empty forme — a ruled box in the paper's own
+/// hairline that takes the navy only on hover or focus. Used wherever a
+/// control sits in the furniture rather than in the content: the masthead's
+/// search and the edition switch beside it.
+@mixin button-outline {
+	@include kicker(0.68rem, 0.14em);
+
+	background: transparent;
+	border: 1px solid var(--rule);
+	color: var(--ink-soft);
+	padding: 1em 2em;
+
+	&:hover,
+	&:focus {
+		background: var(--blue);
+		border-color: var(--blue);
+		color: var(--paper);
+	}
+}
+
 /// The thick-over-thin rule pair that opens and closes a newspaper page.
 @mixin rule-double($weight: 4px) {
 	border-bottom: 1px solid var(--blue);

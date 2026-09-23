@@ -22,9 +22,11 @@
 	min-width: 0;
 }
 
+/* Set like the edition switch it stands next to, from the same definition. */
 .search-form .search-submit {
+	@include button-outline;
+
 	flex: none;
-	padding: 1em 2em;
 }
 
 .search-form label {
