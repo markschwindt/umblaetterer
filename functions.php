@@ -102,6 +102,23 @@ add_action( 'after_setup_theme', 'umblaetterer_content_width', 0 );
  * theme keep their assignment and simply reappear in the new position.
  */
 function umblaetterer_widgets_init() {
+	/*
+	 * The badge band above the imprint. before/after are empty on purpose:
+	 * each widget renders one .badges__item, and the flex row wants those as
+	 * its direct children with nothing wrapped round them.
+	 */
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Auszeichnungen', 'umblaetterer' ),
+			'id'            => 'badges',
+			'description'   => esc_html__( 'Die Leiste über dem Impressum. Ein Widget je Auszeichnung; leer bleibt die Leiste, wie der Titel sie setzt.', 'umblaetterer' ),
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '',
+			'after_title'   => '',
+		)
+	);
+
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Fußleiste', 'umblaetterer' ),
@@ -115,6 +132,38 @@ function umblaetterer_widgets_init() {
 	);
 }
 add_action( 'widgets_init', 'umblaetterer_widgets_init' );
+
+/**
+ * Register the badge widget.
+ */
+function umblaetterer_register_widgets() {
+	register_widget( 'Umblaetterer_Badge_Widget' );
+}
+add_action( 'widgets_init', 'umblaetterer_register_widgets' );
+
+/**
+ * The media picker the badge widget's form needs.
+ *
+ * Loaded on the widgets screen and in the Customizer, the two places a widget
+ * form is ever shown, and nowhere else.
+ *
+ * @param string $hook The current admin page.
+ */
+function umblaetterer_badge_admin_assets( $hook ) {
+	if ( 'widgets.php' !== $hook && 'customize.php' !== $hook ) {
+		return;
+	}
+
+	wp_enqueue_media();
+	wp_enqueue_script(
+		'umblaetterer-admin-badge',
+		get_template_directory_uri() . '/js/admin-badge.js',
+		array( 'jquery' ),
+		UMBLAETTERER_VERSION,
+		true
+	);
+}
+add_action( 'admin_enqueue_scripts', 'umblaetterer_badge_admin_assets' );
 
 /**
  * Enqueue scripts and styles.
@@ -703,6 +752,11 @@ require get_template_directory() . '/inc/custom-header.php';
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * The badge widget behind the band above the imprint.
+ */
+require get_template_directory() . '/inc/class-umblaetterer-badge-widget.php';
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
