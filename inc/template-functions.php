@@ -35,6 +35,99 @@ function umblaetterer_pingback_header() {
 add_action( 'wp_head', 'umblaetterer_pingback_header' );
 
 /**
+ * Read the real dimensions of an SVG attachment.
+ *
+ * WordPress sizes images with getimagesize(), which cannot read SVG, so an
+ * uploaded vector is recorded as 1×1. The width and height come from the file
+ * itself: its own attributes if it has them, otherwise the viewBox.
+ *
+ * @param int $attachment_id Attachment to measure.
+ * @return array{width: int, height: int}|false
+ */
+function umblaetterer_svg_dimensions( $attachment_id ) {
+	$cached = get_post_meta( $attachment_id, '_umblaetterer_svg_size', true );
+
+	if ( is_array( $cached ) && ! empty( $cached['width'] ) ) {
+		return $cached;
+	}
+
+	$file = get_attached_file( $attachment_id );
+
+	if ( ! $file || ! file_exists( $file ) ) {
+		return false;
+	}
+
+	// The opening tag is all that matters; SVGs here run to several kilobytes
+	// of path data that nothing below needs to read.
+	$head = file_get_contents( $file, false, null, 0, 2048 ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+
+	if ( ! $head || ! preg_match( '/<svg\b[^>]*>/i', $head, $tag ) ) {
+		return false;
+	}
+
+	$width  = 0;
+	$height = 0;
+
+	if ( preg_match( '/\bwidth="([\d.]+)/i', $tag[0], $m ) ) {
+		$width = (float) $m[1];
+	}
+
+	if ( preg_match( '/\bheight="([\d.]+)/i', $tag[0], $m ) ) {
+		$height = (float) $m[1];
+	}
+
+	if ( ( ! $width || ! $height ) && preg_match( '/viewBox="\s*[\d.-]+[ ,]+[\d.-]+[ ,]+([\d.]+)[ ,]+([\d.]+)/i', $tag[0], $m ) ) {
+		$width  = (float) $m[1];
+		$height = (float) $m[2];
+	}
+
+	if ( ! $width || ! $height ) {
+		return false;
+	}
+
+	$size = array(
+		'width'  => (int) round( $width ),
+		'height' => (int) round( $height ),
+	);
+
+	update_post_meta( $attachment_id, '_umblaetterer_svg_size', $size );
+
+	return $size;
+}
+
+/**
+ * Give wp_get_attachment_image() the true size of an SVG.
+ *
+ * Without this every uploaded vector renders as width="1" height="1", and a
+ * rule of `width: auto; height: auto` then collapses it to nothing at all.
+ * Only steps in when WordPress has clearly failed to measure, so a plugin that
+ * gets it right is left alone.
+ *
+ * @param array|false $image         Array of image data, or false.
+ * @param int         $attachment_id Attachment ID.
+ * @return array|false
+ */
+function umblaetterer_svg_image_src( $image, $attachment_id ) {
+	if ( ! is_array( $image ) || 'image/svg+xml' !== get_post_mime_type( $attachment_id ) ) {
+		return $image;
+	}
+
+	if ( ! empty( $image[1] ) && $image[1] > 1 && ! empty( $image[2] ) && $image[2] > 1 ) {
+		return $image;
+	}
+
+	$size = umblaetterer_svg_dimensions( $attachment_id );
+
+	if ( $size ) {
+		$image[1] = $size['width'];
+		$image[2] = $size['height'];
+	}
+
+	return $image;
+}
+add_filter( 'wp_get_attachment_image_src', 'umblaetterer_svg_image_src', 10, 2 );
+
+/**
  * A running head for sites that have not yet assigned a menu.
  *
  * Rather than the usual "here is every page you own" fallback, this prints the
