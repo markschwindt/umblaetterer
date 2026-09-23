@@ -8,7 +8,7 @@
  */
 
 if ( ! defined( 'UMBLAETTERER_VERSION' ) ) {
-	define( 'UMBLAETTERER_VERSION', '2.1.3' );
+	define( 'UMBLAETTERER_VERSION', '2.1.4' );
 }
 
 /**
@@ -219,7 +219,16 @@ add_action( 'wp_head', 'umblaetterer_preload_fonts', 1 );
  * @return string
  */
 function umblaetterer_social_image() {
-	return get_template_directory_uri() . '/assets/social-card.jpg';
+	/*
+	 * Versioned, because scrapers cache the card against its URL and will go on
+	 * serving an old one indefinitely. Changing the URL is the only reliable
+	 * way to make a re-shot card actually appear.
+	 */
+	return add_query_arg(
+		'ver',
+		UMBLAETTERER_VERSION,
+		get_template_directory_uri() . '/assets/social-card.jpg'
+	);
 }
 
 /**
