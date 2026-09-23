@@ -109,9 +109,9 @@ function umblaetterer_widgets_init() {
 	 */
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Auszeichnungen', 'umblaetterer' ),
+			'name'          => esc_html__( 'Badges', 'umblaetterer' ),
 			'id'            => 'badges',
-			'description'   => esc_html__( 'Die Leiste über dem Impressum. Ein Widget je Auszeichnung; leer bleibt die Leiste, wie der Titel sie setzt.', 'umblaetterer' ),
+			'description'   => esc_html__( 'Die Leiste über dem Impressum. Ein Widget je Badge; leer bleibt die Leiste, wie der Titel sie setzt.', 'umblaetterer' ),
 			'before_widget' => '',
 			'after_widget'  => '',
 			'before_title'  => '',

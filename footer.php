@@ -69,7 +69,7 @@
 
 	<?php
 	/*
-	 * Die Auszeichnungen — the badge band above the imprint.
+	 * Die Badges — the badge band above the imprint.
 	 *
 	 * One widget is one badge. While the area is empty the theme sets the band
 	 * itself, so a site that has never opened Appearance → Widgets still shows

@@ -1,8 +1,8 @@
 <?php
 /**
- * Die Auszeichnungen — the badges the theme ships with
+ * Die Badges — the badges the theme ships with
  *
- * Used only while the "Auszeichnungen" widget area is empty. Add a badge
+ * Used only while the "Badges" widget area is empty. Add a badge
  * widget and this steps aside entirely; the four below are then a record of
  * what the band held when it was still hard-coded.
  *
@@ -10,7 +10,7 @@
  */
 
 /*
- * Die Auszeichnungen — the badges above the imprint.
+ * Die Badges — the badges above the imprint.
  *
  * The awards, the pointer to the Bluesky account and the Google Earth tour
  * of the Kaffeehäuser: the matter a paper prints in its own cause, set

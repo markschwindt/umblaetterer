@@ -72,7 +72,7 @@ npm run bundle           # ../umblaetterer.zip
 
 ## Where things sit
 
-The theme has **two widget areas**. `Auszeichnungen` is the badge band above the imprint: one *Umblätterer: Auszeichnung* widget is one badge, so they can be added, reordered and retired without touching a template. Each takes a mark (an image from the media library, or the Bluesky butterfly or map pin the theme draws itself so they inherit `currentColor`), an optional kicker, two lines of caption and a link — and a badge with no link renders as a `div` rather than a dead anchor. While the area is empty, `template-parts/badges-default.php` sets the band instead, so a site that never opens Appearance → Widgets still shows the awards rather than a gap.
+The theme has **two widget areas**. `Badges` is the badge band above the imprint: one *Umblätterer: Badge* widget is one badge, so they can be added, reordered and retired without touching a template. Each takes a mark (an image from the media library, or the Bluesky butterfly or map pin the theme draws itself so they inherit `currentColor`), an optional kicker, two lines of caption and a link — and a badge with no link renders as a `div` rather than a dead anchor. While the area is empty, `template-parts/badges-default.php` sets the band instead, so a site that never opens Appearance → Widgets still shows the awards rather than a gap.
 
 `Fußleiste` is the foot of the page. The rail beside the listings is not a widget area on purpose: it carries the one register this archive is actually navigated by — the 105 rubrics — and that is generated from the taxonomy rather than arranged by hand. Everything else, the run of volumes included, sits in the colophon.
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Die Auszeichnung — one badge in the footer band, as a widget
+ * Das Badge — one badge in the footer band, as a widget
  *
  * The badges were four hard-coded links in footer.php. They are the kind of
  * thing that changes without a developer: an award won, an account moved, a
@@ -36,10 +36,10 @@ class Umblaetterer_Badge_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'umblaetterer_badge',
-			__( 'Umblätterer: Auszeichnung', 'umblaetterer' ),
+			__( 'Umblätterer: Badge', 'umblaetterer' ),
 			array(
 				'classname'                   => 'umblaetterer-badge',
-				'description'                 => __( 'Ein Zeichen mit Unterschrift für die Leiste über dem Impressum — eine Auszeichnung, ein Verweis, eine Karte.', 'umblaetterer' ),
+				'description'                 => __( 'Ein Zeichen mit Unterschrift für die Leiste über dem Impressum — ein Preis, ein Verweis, eine Karte.', 'umblaetterer' ),
 				'customize_selective_refresh' => true,
 			)
 		);
