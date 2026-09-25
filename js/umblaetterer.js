@@ -8,7 +8,7 @@
  * Everything here degrades to a perfectly readable page if it never runs.
  */
 
-( function() {
+(function () {
 	'use strict';
 
 	/* ---------------------------------------------------------------
@@ -16,47 +16,47 @@
 	 * ------------------------------------------------------------- */
 
 	function initNavigation() {
-		const nav = document.getElementById( 'site-navigation' );
+		const nav = document.getElementById('site-navigation');
 
-		if ( ! nav ) {
+		if (!nav) {
 			return;
 		}
 
-		const button = nav.querySelector( '.menu-toggle' );
-		const menu = nav.querySelector( 'ul' );
+		const button = nav.querySelector('.menu-toggle');
+		const menu = nav.querySelector('ul');
 
-		if ( ! button || ! menu ) {
+		if (!button || !menu) {
 			return;
 		}
 
-		if ( ! menu.id ) {
+		if (!menu.id) {
 			menu.id = 'primary-menu';
 		}
 
-		button.setAttribute( 'aria-controls', menu.id );
+		button.setAttribute('aria-controls', menu.id);
 
-		button.addEventListener( 'click', function() {
-			const open = nav.classList.toggle( 'toggled' );
-			button.setAttribute( 'aria-expanded', open ? 'true' : 'false' );
-		} );
+		button.addEventListener('click', function () {
+			const open = nav.classList.toggle('toggled');
+			button.setAttribute('aria-expanded', open ? 'true' : 'false');
+		});
 
 		// Close the fold when focus leaves it, so tabbing does not strand the reader.
-		document.addEventListener( 'click', function( event ) {
-			if ( ! nav.classList.contains( 'toggled' ) || nav.contains( event.target ) ) {
+		document.addEventListener('click', function (event) {
+			if (!nav.classList.contains('toggled') || nav.contains(event.target)) {
 				return;
 			}
 
-			nav.classList.remove( 'toggled' );
-			button.setAttribute( 'aria-expanded', 'false' );
-		} );
+			nav.classList.remove('toggled');
+			button.setAttribute('aria-expanded', 'false');
+		});
 
-		document.addEventListener( 'keydown', function( event ) {
-			if ( 'Escape' === event.key && nav.classList.contains( 'toggled' ) ) {
-				nav.classList.remove( 'toggled' );
-				button.setAttribute( 'aria-expanded', 'false' );
+		document.addEventListener('keydown', function (event) {
+			if ('Escape' === event.key && nav.classList.contains('toggled')) {
+				nav.classList.remove('toggled');
+				button.setAttribute('aria-expanded', 'false');
 				button.focus();
 			}
-		} );
+		});
 	}
 
 	/* ---------------------------------------------------------------
@@ -69,10 +69,10 @@
 	 * ------------------------------------------------------------- */
 
 	function initReadingRule() {
-		const rule = document.getElementById( 'reading-rule' );
-		const article = document.querySelector( '.single .entry-content, .page .entry-content' );
+		const rule = document.getElementById('reading-rule');
+		const article = document.querySelector('.single .entry-content, .page .entry-content');
 
-		if ( ! rule || ! article ) {
+		if (!rule || !article) {
 			return;
 		}
 
@@ -82,26 +82,26 @@
 			const box = article.getBoundingClientRect();
 			const start = box.top + window.scrollY;
 			const span = article.offsetHeight - window.innerHeight;
-			const progress = span > 0 ? ( window.scrollY - start ) / span : 0;
+			const progress = span > 0 ? (window.scrollY - start) / span : 0;
 
-			rule.style.transform = 'scaleX(' + Math.min( 1, Math.max( 0, progress ) ) + ')';
+			rule.style.transform = 'scaleX(' + Math.min(1, Math.max(0, progress)) + ')';
 			ticking = false;
 		}
 
 		function onScroll() {
-			if ( ! ticking ) {
-				window.requestAnimationFrame( draw );
+			if (!ticking) {
+				window.requestAnimationFrame(draw);
 				ticking = true;
 			}
 		}
 
-		window.addEventListener( 'scroll', onScroll, { passive: true } );
-		window.addEventListener( 'resize', onScroll, { passive: true } );
+		window.addEventListener('scroll', onScroll, { passive: true });
+		window.addEventListener('resize', onScroll, { passive: true });
 		draw();
 	}
 
 	/* ---------------------------------------------------------------
-	 * Tagausgabe / Nachtausgabe
+	 * Morgenblatt / Abendblatt
 	 *
 	 * The morning edition and the evening edition. The morning edition is
 	 * always what a reader gets first: the ivory is the point of the theme,
@@ -112,44 +112,44 @@
 	 * ------------------------------------------------------------- */
 
 	function initEdition() {
-		const button = document.getElementById( 'edition-toggle' );
+		const button = document.getElementById('edition-toggle');
 
-		if ( ! button ) {
+		if (!button) {
 			return;
 		}
 
 		const root = document.documentElement;
-		const chrome = document.querySelector( 'meta[name="theme-color"]' );
+		const chrome = document.querySelector('meta[name="theme-color"]');
 
 		function isNight() {
-			return 'nacht' === root.getAttribute( 'data-edition' );
+			return 'nacht' === root.getAttribute('data-edition');
 		}
 
 		function label() {
 			const night = isNight();
 
-			button.textContent = night ? 'Tagausgabe' : 'Nachtausgabe';
-			button.setAttribute( 'aria-pressed', night ? 'true' : 'false' );
+			button.textContent = night ? 'Morgenblatt' : 'Abendblatt';
+			button.setAttribute('aria-pressed', night ? 'true' : 'false');
 
 			// Keep the browser chrome on the same stock as the page.
-			if ( chrome ) {
-				chrome.setAttribute( 'content', night ? '#11141b' : '#f4efe1' );
+			if (chrome) {
+				chrome.setAttribute('content', night ? '#11141b' : '#f4efe1');
 			}
 		}
 
-		button.addEventListener( 'click', function() {
+		button.addEventListener('click', function () {
 			const next = isNight() ? 'tag' : 'nacht';
 
-			root.setAttribute( 'data-edition', next );
+			root.setAttribute('data-edition', next);
 
 			try {
-				localStorage.setItem( 'umbl-edition', next );
-			} catch ( err ) {
+				localStorage.setItem('umbl-edition', next);
+			} catch (err) {
 				// A reader with storage blocked still gets the switch, just not the memory.
 			}
 
 			label();
-		} );
+		});
 
 		label();
 	}
@@ -160,9 +160,9 @@
 		initEdition();
 	}
 
-	if ( 'loading' === document.readyState ) {
-		document.addEventListener( 'DOMContentLoaded', init );
+	if ('loading' === document.readyState) {
+		document.addEventListener('DOMContentLoaded', init);
 	} else {
 		init();
 	}
-}() );
+}());
