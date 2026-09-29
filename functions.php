@@ -763,6 +763,11 @@ require get_template_directory() . '/inc/custom-header.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
+ * Der Ort — the dateline's place, and its editing box.
+ */
+require get_template_directory() . '/inc/ort.php';
+
+/**
  * The badge widget behind the band above the imprint.
  */
 require get_template_directory() . '/inc/class-umblaetterer-badge-widget.php';

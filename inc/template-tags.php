@@ -65,6 +65,7 @@ if ( ! function_exists( 'umblaetterer_dateline' ) ) :
 		$args = wp_parse_args(
 			$args,
 			array(
+				'ort'      => true,
 				'author'   => true,
 				'date'     => true,
 				'reading'  => false,
@@ -80,6 +81,18 @@ if ( ! function_exists( 'umblaetterer_dateline' ) ) :
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 				esc_html( get_the_author() )
 			);
+		}
+
+		/*
+		 * Then the place: who wrote it, and where from. Twenty years of these
+		 * entries carry one, and the date follows both.
+		 */
+		if ( $args['ort'] ) {
+			$ort = umblaetterer_ort();
+
+			if ( $ort ) {
+				$parts[] = sprintf( '<span class="dateline-ort">%s</span>', esc_html( $ort ) );
+			}
 		}
 
 		if ( $args['date'] ) {

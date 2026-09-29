@@ -65,8 +65,12 @@
 	color: var(--blue);
 }
 
-/* The author's name is the one thing in the dateline that is not a fact about
-   the file, so it gets the ink. */
+/*
+ * The place and the author are what a dateline is actually for — where the
+ * piece was written and by whom. They take the ink; the date, the length and
+ * the letter count are housekeeping and stay quiet behind them.
+ */
+.dateline-line .dateline-ort,
 .dateline-line .byline {
 	color: var(--ink-soft);
 	font-weight: 600;

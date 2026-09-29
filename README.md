@@ -82,6 +82,14 @@ The column width is tuned so a 390px phone still resolves to two columns, and ca
 
 When no widgets are placed, `template-parts/colophon-default.php` sets the grid from what the archive already knows about itself: the contributors and their counts, the three yearbook series collapsed to rows of years, and the imprint. The volumes are always in the colophon; on a single piece — where there is no rail — the rubrics join them there, so a reader arriving from a search engine is not left without a way into the other sixteen hundred.
 
+## Der Ort
+
+Every piece in this archive carries a place in a custom field keyed `Ort` — Leipzig, Berlin, Konstanz, London, and for the ones written nowhere in particular the bibliographers' *sine loco*. 1,632 entries have one, which makes it the only custom field on the site and the oldest editorial habit in it.
+
+`inc/ort.php` registers the field (typed, sanitised, exposed to REST so the block editor and the API can both reach it), puts a box in the sidebar of the post editor, and adds an **Ort** column to the posts list so the archive can be scanned by place. The box offers every place already in use as a datalist, so the twentieth piece from Konstanz is filed under the same spelling as the first.
+
+`umblaetterer_dateline()` prints it after the byline — who wrote it, where from, and then when. A piece without a place simply omits it; nothing is invented and no separator is left hanging.
+
 ### Notes for whoever comes next
 
 - **The wordmark writes itself on load.** The fourteen paths in the SVG are the fourteen letters, already in left-to-right order, and `umblaetterer_wordmark()` numbers each one with a `--i` custom property — they sit in two Illustrator groups, so a CSS `:nth-child` stagger would restart counting at the *U*. Each letter is then revealed by a `clip-path` that sweeps down across it, with its leading edge running about forty percent lower on the left than on the right: roughly a twenty-five-degree slant, which is a broad nib's angle. A level wipe reads as a shutter; a slanted one reads as a pen. 240ms a letter, 32ms apart, the whole word in about two-thirds of a second, and nothing at all under `prefers-reduced-motion`.
