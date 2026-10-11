@@ -601,7 +601,7 @@ add_action( 'deleted_post', 'umblaetterer_flush_issue_number' );
  * WordPress's own date_i18n() depends on the site locale being German, which
  * cannot be assumed of a local install, so the names are carried here.
  *
- * @param string $format 'long' for "Montag, 22. September 2026", 'short' for "22. Sept. 2026".
+ * @param string $format 'long' for "Montag, 22. September 2026", 'short' for "22. Sep. 2026".
  * @param mixed  $when   Anything strtotime() understands. Defaults to now.
  * @return string
  */
@@ -638,9 +638,20 @@ function umblaetterer_datum( $format = 'long', $when = null ) {
 	$year  = wp_date( 'Y', $time );
 
 	if ( 'short' === $format ) {
-		$abbr = in_array( $month, array( 'März', 'Mai', 'Juni', 'Juli' ), true ) ? $month : mb_substr( $month, 0, 4 ) . '.';
+		// Use standard German month abbreviations; März through Juli are written out in full.
+		$abbr = array(
+			'Januar'    => 'Jan.',
+			'Februar'   => 'Feb.',
+			'August'    => 'Aug.',
+			'September' => 'Sep.',
+			'Oktober'   => 'Okt.',
+			'November'  => 'Nov.',
+			'Dezember'  => 'Dez.',
+		);
 
-		return sprintf( '%d. %s %s', $day, $abbr, $year );
+		$month = isset( $abbr[ $month ] ) ? $abbr[ $month ] : $month;
+
+		return sprintf( '%d. %s %s', $day, $month, $year );
 	}
 
 	return sprintf( '%s, %d. %s %s', $days[ (int) wp_date( 'w', $time ) ], $day, $month, $year );
